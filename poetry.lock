@@ -1197,10 +1197,8 @@ version = "2.4.5"
 description = "A cross platform helper library for ModernGL making window creation and resource loading simple"
 optional = false
 python-versions = ">=3.8"
-files = [
-    {file = "moderngl-window-2.4.5.tar.gz", hash = "sha256:2ee6e80b215ce4e7db5bef8d166010a3f2b9060449688652bfe06fa7c904d01b"},
-    {file = "moderngl_window-2.4.5-py3-none-any.whl", hash = "sha256:4451c2b4508c6324c93319f1fee9874ac56ae0ae0c45f6b666b75e32731ebe26"},
-]
+files = []
+develop = true
 
 [package.dependencies]
 moderngl = "<6"
@@ -1222,6 +1220,10 @@ pyside2 = ["PySide2 (<6)"]
 pywavefront = ["pywavefront (>=1.2.0,<2)"]
 tk = ["pyopengltk (>=0.0.3)"]
 trimesh = ["trimesh (>=3.2.6,<4)"]
+
+[package.source]
+type = "directory"
+url = "../ShaderFlow/Custom/ModernGLW"
 
 [[package]]
 name = "more-itertools"
@@ -2893,4 +2895,4 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10,<3.13"
-content-hash = "dad3b70585f007999364ba7313e740dca37474676933ba0a1b9d87d77d516725"
+content-hash = "267042c255c73f1c246e4b8e6121094ae7fb6aebe2955ecb7b7d0a452e8d5cb0"

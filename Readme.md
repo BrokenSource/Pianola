@@ -22,15 +22,16 @@
 
   <br>
 
-  **[**[**Pianola**](https://github.com/BrokenSource/Pianola)**]**: World's Smoothest and Most Customizable Piano Roll
+  **[**Pianola**](https://github.com/BrokenSource/Pianola)**: World's Smoothest and Most Customizable Piano Roll
 </div>
 
+<!--
 <br>
 
 🎧 • Remember to Enable Audio on the Videos !
 
-<!-- Todo: Add videos -->
-
+Todo: Add videos
+ -->
 
 <br>
 <br>

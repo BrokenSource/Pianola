@@ -1,4 +1,4 @@
-from Pianola import *
+from . import *
 
 
 def main():

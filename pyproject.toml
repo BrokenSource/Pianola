@@ -1,7 +1,7 @@
 [tool.poetry]
 name        = "Pianola"
 version     = "2024.3.6"
-description = "🎹 World's Smoothest and Most Customizable Piano Roll in pure Pixel Shader. Real time, Black Midi proof"
+description = "World's Smoothest and Most Customizable Piano Roll. Real time, Interactive, Black Midi proof"
 authors     = ["Tremeschin <tremeschin@users.noreply.github.com>"]
 license     = "AGPLv3-only"
 
@@ -20,5 +20,6 @@ python        = ">=3.10,<3.13"
 broken-source = "^2024.1.15"
 
 [tool.poetry.dev-dependencies]
-broken-source = {path="../../", develop=true}
-shaderflow    = {path="../ShaderFlow", develop=true}
+broken-source   = {path="../../", develop=true}
+shaderflow      = {path="../ShaderFlow", develop=true}
+moderngl-window = {path="../ShaderFlow/Custom/ModernGLW", develop=true}
