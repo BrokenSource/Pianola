@@ -25,13 +25,7 @@
   **[**Pianola**](https://github.com/BrokenSource/Pianola)**: World's Smoothest and Most Customizable Piano Roll
 </div>
 
-<!--
-<br>
-
-🎧 • Remember to Enable Audio on the Videos !
-
-Todo: Add videos
- -->
+![image](https://github.com/BrokenSource/Pianola/assets/29046864/078f380b-c4c6-4c7d-a198-0b4a34478500)
 
 <br>
 <br>
