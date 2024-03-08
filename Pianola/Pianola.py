@@ -5,6 +5,9 @@ class PianolaSoundFont(BrokenEnum):
     Salamander = "https://freepats.zenvoid.org/Piano/SalamanderGrandPiano/SalamanderGrandPiano-SF2-V3+20200602.tar.xz"
     """# Note: Salamander Grand Piano, Licensed under CC BY 3.0, by Alexander Holm"""
 
+@define
+class PianolaConfig:
+    soundfont: PianolaSoundFont = PianolaSoundFont.Salamander.Field()
 
 @define
 class PianolaScene(ShaderFlowScene):
@@ -19,7 +22,7 @@ class PianolaScene(ShaderFlowScene):
     ):
         ...
 
-    def _build_(self):
+    def build(self):
         self.soundfont_file = next(BrokenPath.easy_external(PianolaSoundFont.Salamander).glob("**/*.sf2"))
 
         # Define scene inputs
@@ -33,7 +36,9 @@ class PianolaScene(ShaderFlowScene):
         self.piano.fluid_load(self.soundfont_file)
         self.engine.fragment = (PIANOLA.RESOURCES.SHADERS/"Pianola.frag")
 
-    def _handle_(self, message: ShaderFlowMessage):
+    def handle(self, message: ShaderFlowMessage):
+        ShaderFlowScene.handle(self, message)
+
         if isinstance(message, ShaderFlowMessage.Window.FileDrop):
             file = BrokenPath(message.files[0])
 
@@ -52,13 +57,13 @@ class PianolaScene(ShaderFlowScene):
             elif (file.suffix in (".png", ".jpg", ".jpeg")):
                 log.warning("No background image support yet")
 
-    def _setup_(self):
+    def setup(self):
 
         # Midi -> Audio if rendering or input audio doesn't exist
         if (self.rendering and not self.benchmark) and not Path(self.audio.file).exists():
             self.audio.file = self.piano.fluid_render(soundfont=self.soundfont_file, midi=self.midi_file)
 
-    def _update_(self):
+    def update(self):
 
         # Mouse drag time scroll to match piano roll size
         self._mouse_drag_time_factor = (self.piano.roll_time/(self.piano.height - 1))/self.camera.zoom.value
