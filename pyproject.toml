@@ -22,4 +22,4 @@ broken-source = "^2024.1.15"
 [tool.poetry.dev-dependencies]
 broken-source   = {path="../../", develop=true}
 shaderflow      = {path="../ShaderFlow", develop=true}
-moderngl-window = {path="../ShaderFlow/Custom/ModernGLW", develop=true}
+moderngl-window = {path="../../Meta/Fork/ModernGLW", develop=true}
