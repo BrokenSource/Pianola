@@ -23,6 +23,7 @@ class PianolaScene(ShaderFlowScene):
         ...
 
     def build(self):
+        ShaderFlowScene.build(self)
         self.soundfont_file = next(BrokenPath.get_external(PianolaSoundFont.Salamander).glob("**/*.sf2"))
 
         # Define scene inputs
