@@ -10,7 +10,7 @@ class PianolaConfig:
     soundfont: PianolaSoundFont = PianolaSoundFont.Salamander.Field()
 
 @define
-class PianolaScene(ShaderFlowScene):
+class PianolaScene(Scene):
     """Basic piano roll"""
     __name__ = "Pianola"
 
@@ -23,7 +23,7 @@ class PianolaScene(ShaderFlowScene):
         ...
 
     def build(self):
-        ShaderFlowScene.build(self)
+        Scene.build(self)
         self.soundfont_file = next(BrokenPath.get_external(PianolaSoundFont.Salamander).glob("**/*.sf2"))
 
         # Define scene inputs
@@ -31,16 +31,16 @@ class PianolaScene(ShaderFlowScene):
         self.audio_file = "/path/to/your/midis/audio.ogg"
 
         # Make modules
-        self.audio = self.add(ShaderFlowAudio(name="Audio"))
-        self.piano = self.add(ShaderFlowPiano)
+        self.audio = ShaderFlowAudio(scene=self, name="Audio")
+        self.piano = ShaderFlowPiano(scene=self)
         self.piano.load_midi(self.midi_file)
         self.piano.fluid_load(self.soundfont_file)
-        self.engine.fragment = (PIANOLA.RESOURCES.SHADERS/"Pianola.frag")
+        self.shader.fragment = (PIANOLA.RESOURCES.SHADERS/"Pianola.frag")
 
-    def handle(self, message: ShaderFlowMessage):
-        ShaderFlowScene.handle(self, message)
+    def handle(self, message: Message):
+        Scene.handle(self, message)
 
-        if isinstance(message, ShaderFlowMessage.Window.FileDrop):
+        if isinstance(message, Message.Window.FileDrop):
             file = BrokenPath(message.files[0])
 
             if (file.suffix == ".mid"):
