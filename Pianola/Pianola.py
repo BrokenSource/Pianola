@@ -10,7 +10,7 @@ class PianolaConfig:
     soundfont: PianolaSoundFont = PianolaSoundFont.Salamander.Field()
 
 @define
-class PianolaScene(Scene):
+class PianolaScene(ShaderScene):
     """Basic piano roll"""
     __name__ = "Pianola"
 
@@ -23,7 +23,7 @@ class PianolaScene(Scene):
         ...
 
     def build(self):
-        Scene.build(self)
+        ShaderScene.build(self)
         self.soundfont_file = next(BrokenPath.get_external(PianolaSoundFont.Salamander).glob("**/*.sf2"))
 
         # Define scene inputs
@@ -31,14 +31,14 @@ class PianolaScene(Scene):
         self.audio_file = "/path/to/your/midis/audio.ogg"
 
         # Make modules
-        self.audio = ShaderFlowAudio(scene=self, name="Audio")
-        self.piano = ShaderFlowPiano(scene=self)
+        self.audio = ShaderAudio(scene=self, name="Audio")
+        self.piano = ShaderPiano(scene=self)
         self.piano.load_midi(self.midi_file)
         self.piano.fluid_load(self.soundfont_file)
         self.shader.fragment = (PIANOLA.RESOURCES.SHADERS/"Pianola.frag")
 
     def handle(self, message: Message):
-        Scene.handle(self, message)
+        ShaderScene.handle(self, message)
 
         if isinstance(message, Message.Window.FileDrop):
             file = BrokenPath(message.files[0])
