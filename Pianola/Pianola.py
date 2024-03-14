@@ -46,11 +46,8 @@ class PianolaScene(ShaderScene):
             if (file.suffix == ".mid"):
                 self.piano.fluid_all_notes_off()
                 self.piano.clear()
-                self.time = 1e6
-                def after():
-                    # self.piano.normalize_velocities()
-                    self.time = -1
-                BrokenThread(self.piano.load_midi, file, callback=after)
+                self.piano.load_midi(file)
+                self.time = 0
 
             elif (file.suffix == ".sf2"):
                 self.piano.fluid_load(file)
