@@ -1,6 +1,6 @@
 [tool.poetry]
 name        = "Pianola"
-version     = "2024.3.14"
+version     = "2024.3.16"
 description = "World's Smoothest and Most Customizable Piano Roll. Real time, Interactive, Black Midi proof"
 authors     = ["Tremeschin <tremeschin@users.noreply.github.com>"]
 license     = "AGPLv3-only"
