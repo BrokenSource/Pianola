@@ -24,7 +24,7 @@ class PianolaScene(ShaderScene):
 
     def build(self):
         ShaderScene.build(self)
-        self.soundfont_file = next(BrokenPath.get_external(PianolaSoundFont.Salamander).glob("**/*.sf2"))
+        self.soundfont_file = next(BrokenPath.get_external(PianolaSoundFont.Salamander).rglob("*.sf2"))
 
         # Define scene inputs
         self.midi_file  = PIANOLA.RESOURCES/"Midis"/"Hopeless Sparkle.mid"
