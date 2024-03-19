@@ -227,7 +227,7 @@ void main() {
     float fade = 3;
     if (iRendering) {
         fragColor.rgb *= mix(0.5, 1, smoothstep(0, fade, iTime));
-        fragColor.rgb *= mix(1, 0, smoothstep(iTimeEnd - fade, iTimeEnd, iTime));
+        fragColor.rgb *= mix(1, 0, smoothstep(iDuration - fade, iDuration, iTime));
     }
 
     return;
