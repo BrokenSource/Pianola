@@ -1,4 +1,17 @@
-from . import *
+from pathlib import Path
+from typing import Annotated
+
+from attr import define
+from ShaderFlow.Message import Message
+from ShaderFlow.Modules.Audio import ShaderAudio
+from ShaderFlow.Modules.Piano import ShaderPiano
+from ShaderFlow.Scene import ShaderScene
+from typer import Option
+
+from Broken.Base import BrokenPath
+from Broken.BrokenEnum import BrokenEnum
+from Broken.Logging import log
+from Pianola import PIANOLA
 
 
 class PianolaSoundFont(BrokenEnum):
@@ -7,7 +20,7 @@ class PianolaSoundFont(BrokenEnum):
 
 @define
 class PianolaConfig:
-    soundfont: PianolaSoundFont = PianolaSoundFont.Salamander.Field()
+    soundfont: PianolaSoundFont = PianolaSoundFont.Salamander.field()
 
 @define
 class PianolaScene(ShaderScene):
@@ -16,9 +29,9 @@ class PianolaScene(ShaderScene):
 
     # Todo: Think better ways of presetting Scenes in general
     def input(self,
-        midi:      Annotated[str,  TyperOption("--midi",      "-m", help="Midi file to load")],
-        audio:     Annotated[str,  TyperOption("--audio",     "-a", help="Pre-rendered Audio File of the Input Midi")]=None,
-        normalize: Annotated[bool, TyperOption("--normalize", "-n", help="Normalize the velocities of the Midi")]=False,
+        midi:      Annotated[str,  Option("--midi",      "-m", help="Midi file to load")],
+        audio:     Annotated[str,  Option("--audio",     "-a", help="Pre-rendered Audio File of the Input Midi")]=None,
+        normalize: Annotated[bool, Option("--normalize", "-n", help="Normalize the velocities of the Midi")]=False,
     ):
         ...
 

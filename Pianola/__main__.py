@@ -1,4 +1,8 @@
-from . import *
+import sys
+
+from Broken.Base import BrokenProfiler
+from Pianola import PIANOLA
+from Pianola.Pianola import PianolaScene
 
 
 def main():
