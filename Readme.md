@@ -63,6 +63,8 @@ After you are inside the Development Environment:
 
 # ⚖️ License
 
-**See [BrokenSource](https://github.com/BrokenSource/BrokenSource) Repository** for the License of the Code, Assets, Projects and User Generated Content.
+**See [BrokenSource](https://github.com/BrokenSource/BrokenSource) Repository** for the License of the Code, Assets, Projects and User Generated Content
+
+- **Pianola** Shader is CC-BY-SA 4.0, just attribute on videos and same-license modifications :)
 
 </div>

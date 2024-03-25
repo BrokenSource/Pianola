@@ -1,5 +1,5 @@
 /*
-// (c) 2024 CC BY-SA 4.0, Tremeschin, part of ShaderFlow project.
+// (c) 2024 CC BY-SA 4.0, Tremeschin
 */
 
 #define WHITE_COLOR vec3(0.9)
