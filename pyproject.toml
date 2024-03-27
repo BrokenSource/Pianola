@@ -1,25 +1,26 @@
-[tool.poetry]
-name        = "Pianola"
-version     = "2024.3.24"
-description = "World's Smoothest and Most Customizable Piano Roll. Real time, Interactive, Black Midi proof"
-authors     = ["Tremeschin <tremeschin@users.noreply.github.com>"]
-license     = "AGPL-3.0-only"
+[project]
+name         = "pianola"
+version      = "2024.3.27"
+description  = "World's Smoothest and Most Customizable Piano Roll. Real time, Interactive, Black Midi proof"
+authors      = [{name="Tremeschin", email="29046864+Tremeschin@users.noreply.github.com"}]
+readme       = "Readme.md"
+dependencies = [
+    "broken-source>=2024.1.15",
+]
+requires-python = ">=3.10"
 
-[[tool.poetry.packages]]
-include = "Pianola"
+[project.scripts]
+pianola = "Pianola.__main__:main"
 
-[tool.poetry.scripts]
-main = "Pianola.__main__:main"
+[tool.hatch.build.targets.wheel]
+packages = ["Pianola"]
 
 [build-system]
-requires      = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires      = ["hatchling"]
+build-backend = "hatchling.build"
 
-[tool.poetry.dependencies]
-python        = ">=3.10,<3.13"
-broken-source = "^2024.1.15"
+[tool.hatch.metadata]
+allow-direct-references = true
 
-[tool.poetry.dev-dependencies]
-broken-source   = {path="../../", develop=true}
-shaderflow      = {path="../ShaderFlow", develop=true}
-moderngl-window = {path="../../Meta/Fork/ModernGLW", develop=true}
+[tool.rye]
+managed = true

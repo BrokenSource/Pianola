@@ -36,27 +36,26 @@
 
 <br>
 
-> 🔴🟡🟢&nbsp; **For Extra Installation Help**, check out the [**Monorepo**](https://github.com/BrokenSource/BrokenSource#-running-from-the-source-code)
+> 🔴🟡🟢&nbsp; **For Extra** and **Alternative Installation Help**, check out the [**Monorepo**](https://github.com/BrokenSource/BrokenSource#-running-from-the-source-code)
 >
-> - **🐧 Linux and MacOS 🍎**: Open a Terminal in some Folder and run:
->   ```ps
->   /bin/bash -c "$(curl -sS https://brakeit.github.io/get.sh)"
->   ```
->
-> - **💠 Windows**: Open a PowerShell in some Folder and run:
+> - **💠 Windows**: Open a Folder, Press <kbd>Ctrl+L</kbd>, Run `powershell` and execute
 >   ```ps
 >   irm https://brakeit.github.io/get.ps1 | iex
 >   ```
+>
+> - **🐧 Linux and MacOS 🍎**: Open a Terminal in some Directory and run
+>   ```ps
+>   /bin/bash -c "$(curl -sS https://brakeit.github.io/get.sh)"
+>   ```
+> <sub><b>⚠️ Warning:</b> Recent Tooling changes may cause new issues. Get in touch for any issues 🤝</sub>
 >
 > <sub><b>Note:</b> The commands above are safe. You can read what they do <b><a href="https://github.com/Brakeit/brakeit.github.io">here</a></b>.</sub>
 
 <br>
 
-After you are inside the Development Environment:
-
-- Run `broken pianola` for a real-time window
-
-- Run `broken pianola --help` for rendering options
+After activating the Virtual Environment on `.venv`:
+- Run `pianola` for a real-time window
+- Run `pianola --help` for rendering options
 
 <br>
 <br>
