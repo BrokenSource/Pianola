@@ -47,8 +47,6 @@
 >   ```ps
 >   /bin/bash -c "$(curl -sS https://brakeit.github.io/get.sh)"
 >   ```
-> <sub><b>⚠️ Warning:</b> Recent Tooling changes may cause new issues. Get in touch for any issues 🤝</sub>
->
 > <sub><b>Note:</b> The commands above are safe. You can read what they do <b><a href="https://github.com/Brakeit/brakeit.github.io">here</a></b>.</sub>
 
 <br>
