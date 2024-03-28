@@ -1,5 +1,3 @@
-from ShaderFlow import *
-
 import Broken
 import Pianola.Resources as PianolaResources
 from Broken import *
@@ -11,6 +9,6 @@ PIANOLA = PROJECT = BrokenProject(
     RESOURCES=PianolaResources,
 )
 
-Broken.PROJECT = PIANOLA
+Broken.set_project(PIANOLA)
 
 from .Pianola import *
