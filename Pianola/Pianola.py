@@ -47,6 +47,7 @@ class PianolaScene(ShaderScene):
         self.audio = ShaderAudio(scene=self, name="Audio")
         self.piano = ShaderPiano(scene=self)
         self.piano.load_midi(self.midi_file)
+        self.piano.normalize_velocities(100, 100)
         self.piano.fluid_load(self.soundfont_file)
         self.shader.fragment = (PIANOLA.RESOURCES.SHADERS/"Pianola.frag")
 
