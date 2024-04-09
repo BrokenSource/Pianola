@@ -136,7 +136,7 @@ void main() {
         float seconds = iTime+iPianoRollTime*roll.y;
 
         // Find the current tempo on iPianoTempo texture, pairs or (when, tempo)
-        float beat;
+        float beat = 120;
         for (int i=0; i<100; i++) {
             vec4 tempo = texelFetch(iPianoTempo, ivec2(i, 0), 0);
             if (tempo.y < 1) break;
