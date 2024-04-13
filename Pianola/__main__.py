@@ -1,6 +1,6 @@
 import sys
 
-from Broken.Base import BrokenProfiler
+from Broken import BrokenProfiler
 from Pianola import PIANOLA
 from Pianola.Pianola import PianolaScene
 
