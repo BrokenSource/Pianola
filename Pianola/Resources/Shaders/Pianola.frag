@@ -60,8 +60,8 @@ void main() {
     #endif
 
     // Calculate indices and coordinates
-    float iPianoMin = (iPianoDynamic.x - iPianoExtra);
-    float iPianoMax = (iPianoDynamic.y + iPianoExtra);
+    float iPianoMin = (iPianoDynamic.x - iPianoExtra) - 0.1;
+    float iPianoMax = (iPianoDynamic.y + iPianoExtra) + 0.1;
     float octave    = abs(mix(iPianoMin, iPianoMax, uv.x))/12;
     float nkeys     = abs(iPianoMax - iPianoMin);
     float whiteSize = 1/( 7*(nkeys/12));
@@ -115,10 +115,10 @@ void main() {
         }
 
         // Separation lines
-        fragColor.rgb *= 0.7 + 0.3*pow(1 - abs(keyGluv.x), 0.1);
+        fragColor.rgb *= (0.7 - press) + (press + 0.3)*pow(1 - abs(keyGluv.x), 0.1);
 
         // Fade to Black
-        fragColor.rgb *= pow(1 - 1*press*(uv.y/iPianoHeight), 0.5);
+        fragColor.rgb *= pow(1 - 1*press*(uv.y/iPianoHeight), 0.3);
 
         // Top border
         float topBorder = iPianoHeight*(1 - TOP_BORDER);
@@ -147,11 +147,12 @@ void main() {
         }
 
         /* Draw the beat lines */ {
-            fragColor.rgb = fragColor.rgb*mix(1, 0.95, smoothstep(2, 0, fract(seconds/beat)));
-            fragColor.rgb *= mix(0.9, 1, 1 - pow(abs(fract(seconds/beat/4)*2 - 1), 100));
-        }
+            float full = fract(seconds/beat/4);
+            float beat = fract(seconds/beat);
 
-        // fragColor.rgb += 0.2*smoothstep(0.005, 0, abs(fract(seconds/(beat*4)) - 0.5));
+            fragColor.rgb += 0.1*pow(max(2*full-1, 1-2*full), 500);
+            fragColor.rgb += 0.3*pow(max(2*beat-1, 1-2*beat), 80)*(abs(agluv.x)>0.97?1:0);
+        }
 
         // Draw the white key then black key
         for (int layer=0; layer<2; layer++) {
@@ -193,15 +194,14 @@ void main() {
                     vec3 color = thisColor;
 
                     // Round shadows "as borders"
-                    float border_size = 0.003;
+                    float border_size = 0.002;
                     float border = (smoothstep(1, 1-border_size, real.x) * smoothstep(1, 1-border_size, real.y));
-                    color *= border;
-                    color *= thisBlack?0.4:1.0;
-                    fragColor.rgb += color;
+                    color *= border * (thisBlack?0.4:1.0);
+                    fragColor.rgb = mix(fragColor.rgb, color, border);
                     color *= (dist.x<border*2)?0.5:1;
                     fragColor.rgb = mix(
                         fragColor.rgb,
-                        fragColor.rgb*mix(0.3, 1, border),
+                        fragColor.rgb*mix(0.1, 1, border),
                         mix(0, 1, border)
                     );
                 }
