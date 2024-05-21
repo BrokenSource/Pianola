@@ -71,7 +71,7 @@ class PianolaScene(ShaderScene):
     def setup(self):
 
         # Midi -> Audio if rendering or input audio doesn't exist
-        if (self.rendering and not self.benchmark) and not Path(self.audio.file).exists():
+        if (self.rendering and not self.benchmark) and not BrokenPath(self.audio.file):
             self.audio.file = self.piano.fluid_render(soundfont=self.soundfont_file, midi=self.midi_file)
 
     def update(self):
