@@ -219,7 +219,7 @@ void main() {
     #endif
 
     // Progress bar
-    if (uv.y > 0.99 && uv.x < iTau) {
+    if (uv.y > 0.985 && uv.x < iTau) {
         fragColor.rgb *= 0.8 - 0.2 * smoothstep(0, 1, uv.x);
     }
 

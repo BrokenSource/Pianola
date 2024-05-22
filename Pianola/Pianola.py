@@ -45,10 +45,17 @@ class PianolaScene(ShaderScene):
         # Make modules
         self.audio = ShaderAudio(scene=self, name="Audio")
         self.piano = ShaderPiano(scene=self)
-        self.piano.load_midi(self.midi_file)
         self.piano.normalize_velocities(100, 100)
         self.piano.fluid_load(self.soundfont_file)
         self.shader.fragment = (PIANOLA.RESOURCES.SHADERS/"Pianola.frag")
+        self.load_midi(self.midi_file)
+
+    def load_midi(self, path: Path):
+        self.piano.fluid_all_notes_off()
+        self.piano.clear()
+        self.piano.load_midi(path)
+        self.time = (-1 * self.piano.roll_time)
+        self.set_duration(self.piano.duration)
 
     def handle(self, message: Message):
         ShaderScene.handle(self, message)
@@ -57,10 +64,7 @@ class PianolaScene(ShaderScene):
             file = BrokenPath(message.files[0])
 
             if (file.suffix == ".mid"):
-                self.piano.fluid_all_notes_off()
-                self.piano.clear()
-                self.piano.load_midi(file)
-                self.time = 0
+                self.load_midi(file)
 
             elif (file.suffix == ".sf2"):
                 self.piano.fluid_load(file)
