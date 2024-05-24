@@ -1,7 +1,7 @@
 from pathlib import Path
 from typing import Annotated
 
-from attr import define
+from attr import Factory, define
 from loguru import logger as log
 from ShaderFlow.Message import Message
 from ShaderFlow.Modules.Audio import ShaderAudio
@@ -13,18 +13,27 @@ from Broken import BrokenEnum, BrokenPath
 from Pianola import PIANOLA
 
 
-class PianolaSoundFont(BrokenEnum):
-    Salamander = "https://freepats.zenvoid.org/Piano/SalamanderGrandPiano/SalamanderGrandPiano-SF2-V3+20200602.tar.xz"
-    """# Note: Salamander Grand Piano, Licensed under CC BY 3.0, by Alexander Holm"""
-
 @define
 class PianolaConfig:
-    soundfont: PianolaSoundFont = PianolaSoundFont.Salamander.field()
+    class SoundFont(BrokenEnum):
+        Salamander = "https://freepats.zenvoid.org/Piano/SalamanderGrandPiano/SalamanderGrandPiano-SF2-V3+20200602.tar.xz"
+        """# Note: Salamander Grand Piano, Licensed under CC BY 3.0, by Alexander Holm"""
+
+    class Songs(BrokenEnum):
+        TheEntertainer = "https://bitmidi.com/uploads/28765.mid"
+
+    soundfont: SoundFont = SoundFont.Salamander.field()
+    midi:      Songs     = Songs.TheEntertainer.field()
+
+# -------------------------------------------------------------------------------------------------|
+
 
 @define
 class PianolaScene(ShaderScene):
     """Basic piano roll"""
     __name__ = "Pianola"
+
+    config: PianolaConfig = Factory(PianolaConfig)
 
     # Todo: Think better ways of presetting Scenes in general
     def input(self,
@@ -36,10 +45,10 @@ class PianolaScene(ShaderScene):
 
     def build(self):
         ShaderScene.build(self)
-        self.soundfont_file = next(BrokenPath.get_external(PianolaSoundFont.Salamander).rglob("*.sf2"))
+        self.soundfont_file = next(BrokenPath.get_external(self.config.soundfont).rglob("*.sf2"))
 
         # Define scene inputs
-        self.midi_file  = PIANOLA.RESOURCES/"Midis"/"Hopeless Sparkle.mid"
+        self.midi_file  = BrokenPath.get_external(self.config.midi)
         self.audio_file = "/path/to/your/midis/audio.ogg"
 
         # Make modules

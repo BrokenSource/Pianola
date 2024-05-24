@@ -101,7 +101,7 @@ void main() {
         vec3 keyColor     = getKeyColor(keyIndex);
         vec2 keyGluv      = stuv2gluv(keyStuv);
         float press       = (texelFetch(iPianoKeys, ivec2(keyIndex, 0), 0).r)/128;
-        float dark        = mix(1, 0.5, press) * (black?0.3:0.8);
+        float dark        = mix(1, 0.5, press) * (black?0.3+press:0.8);
         float down        = mix(0.11, 0, press); // Key perspective
 
         // Color the key
@@ -110,7 +110,7 @@ void main() {
         // fragColor.rgb = keyColor;
 
         // Press animation
-        if (keyStuv.y < down+iPianoHeight*0.05) {
+        if (keyStuv.y < down+iPianoHeight*0.1) {
             fragColor.rgb *= dark;
         }
 
@@ -196,7 +196,7 @@ void main() {
                     // Round shadows "as borders"
                     float border_size = 0.002;
                     float border = (smoothstep(1, 1-border_size, real.x) * smoothstep(1, 1-border_size, real.y));
-                    color *= border * (thisBlack?0.4:1.0);
+                    color *= border * (thisBlack?0.55:1.0);
                     fragColor.rgb = mix(fragColor.rgb, color, border);
                     color *= (dist.x<border*2)?0.5:1;
                     fragColor.rgb = mix(
