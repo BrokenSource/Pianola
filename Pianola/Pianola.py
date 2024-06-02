@@ -3,7 +3,7 @@ from typing import Annotated
 
 from attr import Factory, define
 from loguru import logger as log
-from ShaderFlow.Message import Message
+from ShaderFlow.Message import ShaderMessage
 from ShaderFlow.Modules.Audio import ShaderAudio
 from ShaderFlow.Modules.Piano import ShaderPiano
 from ShaderFlow.Scene import ShaderScene
@@ -66,10 +66,10 @@ class PianolaScene(ShaderScene):
         self.time = (-1 * self.piano.roll_time)
         self.set_duration(self.piano.duration)
 
-    def handle(self, message: Message):
+    def handle(self, message: ShaderMessage):
         ShaderScene.handle(self, message)
 
-        if isinstance(message, Message.Window.FileDrop):
+        if isinstance(message, ShaderMessage.Window.FileDrop):
             file = BrokenPath(message.files[0])
 
             if (file.suffix == ".mid"):
