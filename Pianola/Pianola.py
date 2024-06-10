@@ -2,14 +2,13 @@ from pathlib import Path
 from typing import Annotated
 
 from attr import Factory, define
-from loguru import logger as log
 from ShaderFlow.Message import ShaderMessage
 from ShaderFlow.Modules.Audio import ShaderAudio
 from ShaderFlow.Modules.Piano import ShaderPiano
 from ShaderFlow.Scene import ShaderScene
 from typer import Option
 
-from Broken import BrokenEnum, BrokenPath
+from Broken import BrokenEnum, BrokenPath, log
 from Pianola import PIANOLA
 
 
