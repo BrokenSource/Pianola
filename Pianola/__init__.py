@@ -9,6 +9,4 @@ PIANOLA = PROJECT = BrokenProject(
     RESOURCES=PianolaResources,
 )
 
-Broken.set_project(PIANOLA)
-
 from .Pianola import *
