@@ -1,6 +1,6 @@
 [project]
 name        = "pianola"
-version     = "0.0"
+version     = "0.0.0"
 description = "World's Smoothest and Most Customizable Piano Roll. Real time, Interactive, Black Midi proof"
 authors     = [{name="Tremeschin", email="29046864+Tremeschin@users.noreply.github.com"}]
 readme      = "Readme.md"
@@ -8,6 +8,9 @@ license     = "AGPL-3.0"
 
 [tool.rye]
 managed = true
+
+[project.scripts]
+pianola = "Pianola.__main__:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["Pianola"]
