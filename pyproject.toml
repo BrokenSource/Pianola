@@ -1,10 +1,14 @@
 [project]
 name        = "pianola"
-version     = "0.0.0"
+version     = "0.4.0.dev1"
 description = "World's Smoothest and Most Customizable Piano Roll. Real time, Interactive, Black Midi proof"
 authors     = [{name="Tremeschin", email="29046864+Tremeschin@users.noreply.github.com"}]
 readme      = "Readme.md"
 license     = "AGPL-3.0"
+dependencies = [
+    "broken-source", # dynamic
+    "shaderflow", # dynamic
+]
 
 [tool.rye]
 managed = true
