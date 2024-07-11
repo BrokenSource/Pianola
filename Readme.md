@@ -1,4 +1,4 @@
-<sup>⚠️ **Warning**: This repository [**shouldn't be cloned alone**](https://brokensrc.dev/get/source) ⚠️</sup>
+<sup>⚠️ **Warning**: This repository [**shouldn't be cloned alone**](https://brokensrc.dev/get/source)</sup>
 
 <div align="center">
   <a href="https://brokensrc.dev"><img src="https://raw.githubusercontent.com/BrokenSource/Pianola/Master/Pianola/Resources/Images/Pianola.png" width="200"></a>
