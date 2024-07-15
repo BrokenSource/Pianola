@@ -1,3 +1,9 @@
+[project.urls]
+issues        = "https://github.com/BrokenSource/Pianola/issues"
+repository    = "https://github.com/BrokenSource/Pianola"
+documentation = "https://brokensrc.dev/pianola"
+homepage      = "https://brokensrc.dev"
+
 [project]
 name        = "pianola"
 version     = "0.0.0"
@@ -6,8 +12,8 @@ authors     = [{name="Tremeschin", email="29046864+Tremeschin@users.noreply.gith
 readme      = "Readme.md"
 license     = "AGPL-3.0"
 dependencies = [
-    "broken-source", # dynamic
-    "shaderflow", # dynamic
+    "broken-source>=0.0.0",
+    "shaderflow>=0.0.0",
 ]
 
 [tool.rye]
