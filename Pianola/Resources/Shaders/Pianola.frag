@@ -55,6 +55,9 @@ void main() {
     fragColor = vec4(vec3(0.2), 1);
     vec2 uv   = iCamera.astuv;
 
+    if (iCamera.out_of_bounds)
+        return;
+
     #if HORIZONTAL
         uv = vec2(uv.y, uv.x);
     #endif
