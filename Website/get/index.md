@@ -1,6 +1,6 @@
 # 🎹 Pianola
 
-{!include/install.md!}
+{% include-markdown "include/install.md" %}
 
 !!! warning "This project will receive further development soon"
     For now, manual work is needed to change anything

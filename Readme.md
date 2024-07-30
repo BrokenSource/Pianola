@@ -1,5 +1,5 @@
 > [!IMPORTANT]
-> This repository is part of a [**monorepo**](https://github.com/BrokenSource/BrokenSource) and [**shouldn't be cloned alone**](https://brokensrc.dev/get/source)
+> <sub>This repository is part of a [**monorepo**](https://github.com/BrokenSource/BrokenSource) and [**shouldn't be cloned alone**](https://brokensrc.dev/get/source)</sub>
 
 <div align="center">
   <a href="https://brokensrc.dev/pianola"><img src="https://raw.githubusercontent.com/BrokenSource/Pianola/Master/Pianola/Resources/Images/Pianola.png" width="200"></a>
