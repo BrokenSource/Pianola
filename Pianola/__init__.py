@@ -1,6 +1,5 @@
-import Broken
 import Pianola.Resources as PianolaResources
-from Broken import *
+from Broken import BrokenProject
 
 PIANOLA = PROJECT = BrokenProject(
     PACKAGE=__file__,
@@ -8,5 +7,3 @@ PIANOLA = PROJECT = BrokenProject(
     APP_AUTHOR="BrokenSource",
     RESOURCES=PianolaResources,
 )
-
-from .Pianola import *
