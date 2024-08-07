@@ -3,8 +3,6 @@ Changelog = "https://brokensrc.dev/news/category/releases"
 GitHub    = "https://github.com/BrokenSource/Pianola"
 Funding   = "https://brokensrc.dev/about/sponsors"
 Contact   = "https://brokensrc.dev/about/contact"
-Credits   = "https://brokensrc.dev/about/credits"
-License   = "https://brokensrc.dev/about/license"
 Download  = "https://brokensrc.dev/get/releases"
 Docs      = "https://brokensrc.dev/pianola"
 Homepage  = "https://brokensrc.dev"
@@ -16,6 +14,7 @@ description = "🎹 World's Smoothest and Most Customizable Piano Roll. Real tim
 authors     = [{name="Tremeschin", email="29046864+Tremeschin@users.noreply.github.com"}]
 readme      = "Readme.md"
 license     = "AGPL-3.0"
+requires-python = ">=3.9"
 dependencies = [
     "broken-source>=0.0.0",
     "shaderflow>=0.0.0",
@@ -31,5 +30,5 @@ pianola = "Pianola.__main__:main"
 packages = ["Pianola"]
 
 [build-system]
-requires      = ["hatchling"]
+requires = ["hatchling"]
 build-backend = "hatchling.build"

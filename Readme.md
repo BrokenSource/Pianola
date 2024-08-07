@@ -5,6 +5,14 @@
   <a href="https://brokensrc.dev/pianola"><img src="https://raw.githubusercontent.com/BrokenSource/Pianola/main/Pianola/Resources/Images/Pianola.png" width="200"></a>
   <h1>Pianola</h1>
   World's <b>Smoothest</b> and Most Customizable <b>Piano Roll</b>.
+  <br>
+  <br>
+  <a href="https://pypi.org/project/pianola/"><img src="https://img.shields.io/pypi/v/pianola?label=PyPI&color=blue"></a>
+  <a href="https://pypi.org/project/pianola/"><img src="https://img.shields.io/pypi/dw/pianola?label=Installs&color=blue"></a>
+  <a href="https://github.com/BrokenSource/Pianola/releases/"><img src="https://img.shields.io/github/v/release/BrokenSource/Pianola?label=Release&color=green"></a>
+  <a href="https://github.com/BrokenSource/Pianola/releases/"><img src="https://img.shields.io/github/downloads/BrokenSource/Pianola/total?label=Downloads&color=green"></a>
+  <a href="https://github.com/BrokenSource/Pianola/"><img src="https://img.shields.io/github/stars/BrokenSource/Pianola?label=Stars&color=orange&style=flat"></a>
+  <a href="https://discord.gg/KjqvcYwRHm"><img src="https://img.shields.io/discord/1184696441298485370?label=Discord&color=orange&style=flat"></a>
 </div>
 
 ![image](https://github.com/BrokenSource/Pianola/assets/29046864/078f380b-c4c6-4c7d-a198-0b4a34478500)
