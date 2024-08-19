@@ -52,6 +52,7 @@ Segment makeSegment(float x, int a, int b, int offset) {
 }
 
 void main() {
+    iCameraInit();
     fragColor = vec4(vec3(0.2), 1);
     vec2 uv   = iCamera.astuv;
 
