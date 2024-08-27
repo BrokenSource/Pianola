@@ -69,7 +69,7 @@ class PianolaScene(ShaderScene):
         ShaderScene.handle(self, message)
 
         if isinstance(message, ShaderMessage.Window.FileDrop):
-            file = BrokenPath(message.files[0])
+            file = BrokenPath.get(message.files[0])
 
             if (file.suffix == ".mid"):
                 self.load_midi(file)
@@ -83,7 +83,7 @@ class PianolaScene(ShaderScene):
     def setup(self):
 
         # Midi -> Audio if rendering or input audio doesn't exist
-        if (self.rendering and not self.benchmark) and not BrokenPath(self.audio.file):
+        if (self.rendering and not self.benchmark) and not BrokenPath.get(self.audio.file):
             self.audio.file = self.piano.fluid_render(soundfont=self.soundfont_file, midi=self.midi_file)
 
     def update(self):
