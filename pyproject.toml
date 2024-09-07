@@ -20,11 +20,11 @@ dependencies = [
     "shaderflow>=0.0.0",
 ]
 
-[tool.rye]
-managed = true
-
 [project.scripts]
 pianola = "Pianola.__main__:main"
+
+[tool.rye]
+managed = true
 
 [tool.hatch.build.targets.wheel]
 packages = ["Pianola"]
