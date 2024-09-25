@@ -24,7 +24,7 @@ class PianolaConfig:
     soundfont: SoundFont = SoundFont.Salamander.field()
     midi:      Songs     = Songs.TheEntertainer.field()
 
-# -------------------------------------------------------------------------------------------------|
+# ------------------------------------------------------------------------------------------------ #
 
 
 @define
