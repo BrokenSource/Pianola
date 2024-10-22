@@ -14,17 +14,18 @@ version     = "0.0.0"
 description = "🎹 World's Smoothest and Most Customizable Piano Roll. Real time, Interactive, Black Midi proof"
 authors     = [{name="Tremeschin", email="29046864+Tremeschin@users.noreply.github.com"}]
 license     = "AGPL-3.0"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 dependencies = [
     "broken-source>=0.0.0",
     "shaderflow>=0.0.0",
 ]
 
+[tool.uv.sources]
+broken-source = {workspace=true}
+shaderflow    = {workspace=true}
+
 [project.scripts]
 pianola = "Pianola.__main__:main"
-
-[tool.rye]
-managed = true
 
 [tool.hatch.build.targets.wheel]
 packages = ["Pianola"]
