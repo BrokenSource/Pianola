@@ -8,13 +8,40 @@
   World's <b>Smoothest</b> and Most Customizable <b>Piano Roll</b>.
   <br>
   <br>
-  <a href="https://pypi.org/project/pianola/"><img src="https://img.shields.io/pypi/v/pianola?label=PyPI&color=blue"></a>
-  <a href="https://pypi.org/project/pianola/"><img src="https://img.shields.io/pypi/dw/pianola?label=Installs&color=blue"></a>
-  <a href="https://github.com/BrokenSource/BrokenSource"><img src="https://img.shields.io/github/v/tag/BrokenSource/BrokenSource?label=GitHub&color=orange"></a>
-  <a href="https://github.com/BrokenSource/Pianola/stargazers"><img src="https://img.shields.io/github/stars/BrokenSource/Pianola?label=Stars&style=flat&color=orange"></a>
-  <a href="https://github.com/BrokenSource/Pianola/releases/"><img src="https://img.shields.io/github/v/release/BrokenSource/Pianola?label=Release&color=light-green"></a>
-  <a href="https://github.com/BrokenSource/Pianola/releases/"><img src="https://img.shields.io/github/downloads/BrokenSource/Pianola/total?label=Downloads&color=light-green"></a>
-  <a href="https://discord.gg/KjqvcYwRHm"><img src="https://img.shields.io/discord/1184696441298485370?label=Discord&style=flat&color=purple"></a>
+  <a href="https://pypi.org/project/pianola/">
+    <img src="https://img.shields.io/pypi/v/pianola?label=PyPI&color=blue">
+  </a>
+  <a href="https://pypi.org/project/pianola/">
+    <img src="https://img.shields.io/pypi/dw/pianola?label=Installs&color=blue">
+  </a>
+  <a href="https://github.com/BrokenSource/BrokenSource">
+    <img src="https://img.shields.io/github/v/tag/BrokenSource/BrokenSource?label=GitHub&color=orange">
+  </a>
+  <a href="https://github.com/BrokenSource/Pianola/stargazers">
+    <img src="https://img.shields.io/github/stars/BrokenSource/Pianola?label=Stars&style=flat&color=orange">
+  </a>
+  <a href="https://github.com/BrokenSource/Pianola/releases/">
+    <img src="https://img.shields.io/github/v/release/BrokenSource/Pianola?label=Release&color=light-green">
+  </a>
+  <a href="https://github.com/BrokenSource/Pianola/releases/">
+    <img src="https://img.shields.io/github/downloads/BrokenSource/Pianola/total?label=Downloads&color=light-green">
+  </a>
+  <a href="https://discord.gg/KjqvcYwRHm">
+    <img src="https://img.shields.io/discord/1184696441298485370?label=Discord&style=flat&color=purple">
+  </a>
+  <br>
+  <br>
+  <b>
+    Links:
+    <a href="https://brokensrc.dev/pianola/">Quick Start</a> •
+    <a href="https://brokensrc.dev/get/releases/">Releases</a> •
+    <a href="https://brokensrc.dev/get/pypi/">PyPI</a> •
+    <a href="https://brokensrc.dev/get/docker/">Cloud/Docker</a> •
+    <a href="https://brokensrc.dev/get/source/">Cloning</a> •
+    <a href="https://brokensrc.dev/pianola/">Documentation</a>
+  </b>
+  <br>
+  <sub><small>⭐️ Consider starring the project to help it grow! ⭐️</small></sub>
 </div>
 
 <br>
