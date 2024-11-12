@@ -1,5 +1,7 @@
 import Pianola.Resources as PianolaResources
-from Broken import BrokenProject
+from Broken import BrokenProject, __version__
+
+__version__ = __version__
 
 PIANOLA = PROJECT = BrokenProject(
     PACKAGE=__file__,
