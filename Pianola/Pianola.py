@@ -88,5 +88,5 @@ class PianolaScene(ShaderScene):
     def update(self):
 
         # Mouse drag time scroll to match piano roll size
-        self._mouse_drag_time_factor = (self.piano.roll_time/(self.piano.height - 1))/self.camera.zoom.value
+        self._mouse_drag_time_factor = (self.piano.roll_time/(self.piano.height - 1))*self.camera.zoom.value
 
