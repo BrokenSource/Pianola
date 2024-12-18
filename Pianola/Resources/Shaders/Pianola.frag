@@ -1,6 +1,4 @@
-/*
-// (c) 2024 CC BY-SA 4.0, Tremeschin
-*/
+/* Copyright (c) 2024-2025, CC BY-SA 4.0, Tremeschin */
 
 #define WHITE_COLOR vec3(0.9)
 #define BLACK_COLOR vec3(0.2)
