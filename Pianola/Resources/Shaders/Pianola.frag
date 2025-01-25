@@ -116,6 +116,12 @@ void main() {
             fragColor.rgb *= dark;
         }
 
+        // Vintage black shading
+        fragColor.rgb *= pow(1 - abs(keyGluv.y), 0.1);
+
+        // Concave body effect
+        if (black) fragColor.rgb *= pow(1 - abs(keyGluv.x), 0.1);
+
         // Separation lines
         fragColor.rgb *= (0.7 - press) + (press + 0.3)*pow(1 - abs(keyGluv.x), 0.1);
 
@@ -221,7 +227,7 @@ void main() {
     #endif
 
     // Progress bar
-    if (uv.y > 0.985 && uv.x < iTau) {
+    if ((uv.y > 0.985) && (uv.x < iTau) && (iTime > 0)) {
         fragColor.rgb *= 0.8 - 0.2 * smoothstep(0, 1, uv.x);
     }
 
