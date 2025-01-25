@@ -49,6 +49,9 @@
   <sub><small>⭐️ Consider starring the project to help it grow! ⭐️</small></sub>
 </div>
 
+<video src="https://github.com/user-attachments/assets/c6b4510a-5f8d-4be1-93d6-b59d89876cb9" controls></video>
+<sup><b>⚖️</b> The Entertainer by Scott Joplin (Public Domain), Salamander Grand Piano by Alexander Holm CC-BY 3.0</sup>
+
 ## 🔥 Description
 
 - **🛡️ Open source:** trust and transparency, cross platform, configurable
@@ -57,12 +60,7 @@
 - **🎨 No watermarks:** user first experience
 - **🌵 Fastest** rendering times in the west
 
-## 📸 Showcase
-
-<video src="https://assets.brokensrc.dev/pianola/the-entertainer.mp4" controls></video>
-<sup><b>⚖️</b> The Entertainer by Scott Joplin (Public Domain), Salamander Grand Piano by Alexander Holm CC-BY 3.0</sup>
-
-- **Pianola** Shader is CC-BY-SA 4.0, just attribute and same-license modifications :)
+<sup><b>Pianola</b> Shader is CC-BY-SA 4.0, just attribute and same-license modifications :)</sup>
 
 <!-- Website end -->
 <br><br><div align="center">
