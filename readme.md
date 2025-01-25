@@ -5,7 +5,7 @@
 <div align="center">
   <a href="https://brokensrc.dev/pianola"><img src="https://raw.githubusercontent.com/BrokenSource/Pianola/main/Pianola/Resources/Images/Pianola.png" width="200"></a>
   <h1 style="margin-top: 0">Pianola</h1>
-  World's <b>Smoothest</b> and Most Customizable <b>Piano Roll</b>.
+  World's <b>Smoothest</b> and Most Customizable <b>Piano Roll</b> visualizer
   <br>
   <br>
   <a href="https://pypi.org/project/pianola/">
@@ -49,22 +49,20 @@
   <sub><small>⭐️ Consider starring the project to help it grow! ⭐️</small></sub>
 </div>
 
-<br>
-
 ## 🔥 Description
+
 - **🛡️ Open source:** trust and transparency, cross platform, configurable
 - **📔 Video codecs:** easily export to H264, HEVC, AV1, (+NVENC)
 - **🔱 High quality:** any resolution, framerate, bitrate, SSAA
 - **🎨 No watermarks:** user first experience
 - **🌵 Fastest** rendering times in the west
 
-<br>
-
 ## 📸 Showcase
 
-![image](https://github.com/BrokenSource/Pianola/assets/29046864/078f380b-c4c6-4c7d-a198-0b4a34478500)
+<video src="https://assets.brokensrc.dev/pianola/the-entertainer.mp4" controls></video>
+<sup><b>⚖️</b> The Entertainer by Scott Joplin (Public Domain), Salamander Grand Piano by Alexander Holm CC-BY 3.0</sup>
 
-- **Pianola** Shader is CC-BY-SA 4.0, just attribute on videos and same-license modifications :)
+- **Pianola** Shader is CC-BY-SA 4.0, just attribute and same-license modifications :)
 
 <!-- Website end -->
 <br><br><div align="center">

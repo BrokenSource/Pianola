@@ -52,7 +52,10 @@ Segment makeSegment(float x, int a, int b, int offset) {
 void main() {
     iCameraInit();
     fragColor = vec4(vec3(0.2), 1);
-    vec2 uv   = iCamera.astuv;
+    vec2 uv = iCamera.astuv;
+
+    // Zoom out at the start
+    uv = zoom(uv, 0.9 + 0.1 * (2/PI)*atan(3*iTime), vec2(0.5));
 
     if (iCamera.out_of_bounds)
         return;
@@ -232,9 +235,9 @@ void main() {
     }
 
     // Fade in/out
-    float fade = 3;
+    float fade = 1.0;
     if (iRendering) {
-        fragColor.rgb *= mix(0.5, 1, smoothstep(0, fade, iTime));
+        fragColor.rgb *= mix(0, 1, smoothstep(0, fade, iTime));
         fragColor.rgb *= mix(1, 0, smoothstep(iDuration - fade, iDuration, iTime));
     }
 
