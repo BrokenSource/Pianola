@@ -125,9 +125,11 @@ class PianolaScene(ShaderScene):
             file = BrokenPath.get(message.files[0])
 
             if (file.suffix == ".mid"):
+                self.config.midi.file = file
                 self.load_midi(file)
 
             elif (file.suffix == ".sf2"):
+                self.config.soundfont.file = file
                 self.piano.fluid_load(file)
 
             elif (file.suffix in {".png", ".jpg", ".jpeg"}):
@@ -169,5 +171,3 @@ class PianolaScene(ShaderScene):
             minimum=self.config.midi.minimum_velocity,
             maximum=self.config.midi.maximum_velocity
         )
-        self.set_duration(self.piano.duration)
-        # self.time = (-1 * self.piano.roll_time)
