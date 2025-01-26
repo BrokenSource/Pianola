@@ -120,7 +120,7 @@ void main() {
         }
 
         // Vintage black shading
-        fragColor.rgb *= pow(1 - abs(keyGluv.y), 0.1);
+        fragColor.rgb *= pow(1 - abs(max(0, keyGluv.y)), 0.1);
 
         // Concave body effect
         if (black) fragColor.rgb *= pow(1 - abs(keyGluv.x), 0.1);
@@ -235,7 +235,7 @@ void main() {
     }
 
     // Fade in/out
-    float fade = 1.0;
+    float fade = 2.0;
     if (iRendering) {
         fragColor.rgb *= mix(0, 1, smoothstep(0, fade, iTime));
         fragColor.rgb *= mix(1, 0, smoothstep(iDuration - fade, iDuration, iTime));
