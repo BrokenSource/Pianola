@@ -1,6 +1,6 @@
 <!-- PyPI Start -->
 <div align="center">
-  <a href="https://brokensrc.dev/pianola"><img src="https://raw.githubusercontent.com/BrokenSource/Pianola/main/Pianola/Resources/Images/Pianola.png" width="200"></a>
+  <a href="https://brokensrc.dev/pianola"><img src="https://raw.githubusercontent.com/BrokenSource/Pianola/main/Pianola/Resources/Images/Pianola.png" width="220"></a>
   <h1 style="margin-top: 0">Pianola</h1>
   <b>World's finest</b> piano roll visualizer, where elegance meets motion.
   <br>
