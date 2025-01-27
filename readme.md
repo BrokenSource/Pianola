@@ -39,13 +39,13 @@
 
 ## 🔥 Description
 
-**Pianola** is an elegant and powerful _dynamic_ piano roll visualizer written in Python and GLSL Shaders, with an focus on quality, performance and visuals.
+**Pianola** is an elegant and powerful _dynamic_ piano roll visualizer written in Python and GLSL Shaders, with an focus on quality, performance and visuals. Unresistable after you see it.
 
 - [x] **Visualize** your midi files in a beautiful and smooth piano roll animation, with unrestricted customization in the code and high quality output.
 
 - [x] **Spring** physics model governing many animations, providing a realistic and organic feel to the visuals - a unique innovation in the market.
 
-- [x] **Commercial** use allowed and encouraged - Simply attribute the project, go the extra mile by [supporting](https://brokensrc.dev/about/sponsors) this project and others directly!
+- [x] **Commercial** use allowed and encouraged - Simply attribute the project, and go the extra mile by [supporting](https://brokensrc.dev/about/sponsors) this project and others directly!
 
 All the benefits of the parent project [ShaderFlow](https://brokensrc.dev/shaderflow/) are also present 🎉
 
@@ -56,3 +56,15 @@ Head out to the [**official website**](https://brokensrc.dev/get) for the latest
 <a href="https://brokensrc.dev/get">
   <img src="https://github.com/user-attachments/assets/8470c0d2-46de-4068-b9ce-a1261a6c0e69">
 </a>
+
+## ⭐️ Usage
+
+**🚧 Under construction 🚧**
+
+Run `pianola --help` to see all available commands for now!
+
+## ♻️ Community
+
+> Be featured here if you make any integrations or a channel using Pianola!
+
+_🌵 Such an empty place here, for now.._
