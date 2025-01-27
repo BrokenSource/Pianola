@@ -9,7 +9,7 @@ Homepage  = "https://brokensrc.dev"
 
 [project]
 name        = "pianola"
-description = "🎹 World's Smoothest and Most Customizable Piano Roll visualizer"
+description = "🎹 World's finest piano roll visualizer, where elegance meets motion."
 version     = "0.0.0" # Part of a monorepo, managed on final builds
 authors     = [{name="Tremeschin", email="29046864+Tremeschin@users.noreply.github.com"}]
 dynamic     = ["readme"]

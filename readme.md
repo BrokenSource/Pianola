@@ -2,7 +2,7 @@
 <div align="center">
   <a href="https://brokensrc.dev/pianola"><img src="https://raw.githubusercontent.com/BrokenSource/Pianola/main/Pianola/Resources/Images/Pianola.png" width="200"></a>
   <h1 style="margin-top: 0">Pianola</h1>
-  World's <b>Smoothest</b> and Most Customizable <b>Piano Roll</b> visualizer
+  <b>World's finest</b> piano roll visualizer, where elegance meets motion.
   <br>
   <br>
   <a href="https://pypi.org/project/pianola/"><img src="https://img.shields.io/pypi/v/pianola?label=PyPI&color=blue"></a>
@@ -15,38 +15,41 @@
   <br>
   <br>
   <b>
-    Links:
-    <a href="https://brokensrc.dev/pianola/">Quick Start</a> •
-    <a href="https://brokensrc.dev/get/releases/">Releases</a> •
-    <a href="https://brokensrc.dev/get/pypi/">PyPI</a> •
-    <a href="https://brokensrc.dev/get/source/">Cloning</a> •
-    <a href="https://brokensrc.dev/get/docker/">Cloud/Docker</a> •
-    <a href="https://brokensrc.dev/pianola/">Documentation</a>
-    <br>
-    <sub>
-      Extras:
-      <a target="_blank" href="https://www.youtube.com/@Tremeschin">YouTube</a> •
-      <a target="_blank" href="https://www.github.com/BrokenSource/Pianola">GitHub</a> •
-    </sub>
+    Links •
+    <a href="https://brokensrc.dev/get/">✅ Installation</a> •
+    <a href="https://brokensrc.dev/pianola/">📦 Documentation</a> •
+    <a href="https://github.com/BrokenSource/Pianola/issues">🔥 Issues</a> •
+    <a href="https://brokensrc.dev/about/sponsors">❤️ Funding</a>
   </b>
+  <br>
+  <sub>
+    <a href="https://www.youtube.com/@Tremeschin">YouTube</a> •
+    <a href="https://www.github.com/BrokenSource/Pianola">GitHub</a> •
+    <a href="https://brokensrc.dev/about/contact">Contact</a> •
+    <a href="https://brokensrc.dev/about/changelog">Changelog</a> •
+    <a href="https://brokensrc.dev/get/uninstalling">Uninstalling</a> •
+    <a href="https://brokensrc.dev/about/license">License</a>
+  </sub>
   <br>
   <br>
 </div>
 
 <video src="https://github.com/user-attachments/assets/a6cf478a-04b6-4ee2-9d5a-d286bf3dbd6d" controls></video>
-<sup><b>⚖️</b> The Entertainer by Scott Joplin (Public Domain), Salamander Grand Piano by Alexander Holm CC-BY 3.0</sup>
+<sup><b>⚖️</b> _The Entertainer_ by Scott Joplin (Public Domain), _Salamander Grand Piano_ by Alexander Holm (CC-BY 3.0)</sup>
 
 ## 🔥 Description
 
-- **🛡️ Open source:** trust and transparency, cross platform, configurable
-- **📔 Video codecs:** easily export to H264, HEVC, AV1, (+NVENC)
-- **🔱 High quality:** any resolution, framerate, bitrate, SSAA
-- **🎨 No watermarks:** user first experience
-- **🌵 Fastest** rendering times in the west
+**Pianola** is an elegant and powerful _dynamic_ piano roll visualizer written in Python and GLSL Shaders, with an focus on quality, performance and visuals.
 
-<sup><b>Pianola</b> Shader is CC-BY-SA 4.0, just attribute and same-license modifications :)</sup>
+- [x] **Visualize** your midi files in a beautiful and smooth piano roll animation, with unrestricted customization in the code and high quality output.
 
-## 📦 Installation, usage
+- [x] **Spring** physics model governing many animations, providing a realistic and organic feel to the visuals - a unique innovation in the market.
+
+- [x] **Commercial** use allowed and encouraged - Simply attribute the project, go the extra mile by [supporting](https://brokensrc.dev/about/sponsors) this project and others directly!
+
+All the benefits of the parent project [ShaderFlow](https://brokensrc.dev/shaderflow/) are also present 🎉
+
+## 📦 Installation
 
 Head out to the [**official website**](https://brokensrc.dev/get) for the latest installation instructions and more!
 
