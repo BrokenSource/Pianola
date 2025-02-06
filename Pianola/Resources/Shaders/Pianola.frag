@@ -3,8 +3,8 @@
 #define WHITE_COLOR vec3(0.9)
 #define BLACK_COLOR vec3(0.2)
 #define TOP_BORDER 0.03
-#define VIGNETTE 0
 #define HORIZONTAL 0
+#define VIGNETTE 1
 
 // Channel colors definitions for keys and notes
 vec3 getChannelColor(int channel) {
@@ -24,11 +24,9 @@ vec3 getChannelColor(int channel) {
 
 // Get color of a piano key by index
 vec3 getKeyColor(int index) {
-    if (isWhiteKey(index)) {
+    if (isWhiteKey(index))
         return WHITE_COLOR;
-    } else {
-        return BLACK_COLOR;
-    }
+    return BLACK_COLOR;
 }
 
 // Divisors shenanigans
@@ -50,15 +48,13 @@ Segment makeSegment(float x, int a, int b, int offset) {
 }
 
 void main() {
-    iCameraInit();
-    fragColor = vec4(vec3(0.2), 1);
-    vec2 uv = iCamera.astuv;
-
-    // Zoom out at the start
-    uv = zoom(uv, 0.9 + 0.1 * (2/PI)*atan(3*iTime), vec2(0.5));
+    GetCamera(iCamera);
 
     if (iCamera.out_of_bounds)
         return;
+
+    fragColor = vec4(vec3(0.2), 1);
+    vec2 uv = iCamera.astuv;
 
     #if HORIZONTAL
         uv = vec2(uv.y, uv.x);
@@ -69,8 +65,8 @@ void main() {
     float iPianoMax = (iPianoDynamic.y + iPianoExtra) + 0.1;
     float octave    = abs(mix(iPianoMin, iPianoMax, uv.x))/12;
     float nkeys     = abs(iPianoMax - iPianoMin);
-    float whiteSize = 1/( 7*(nkeys/12));
-    float blackSize = 1/(12*(nkeys/12));
+    float whiteSize = 12.0/( 7*nkeys);
+    float blackSize = 12.0/(12*nkeys);
     Segment segment;
 
     /* Ugly calculate segments */ {
@@ -181,7 +177,7 @@ void main() {
 
                 // Local coordinate for the note
                 vec2 nagluv = vec2(
-                    mix(whiteX, rollX, float(layer))*2-1,
+                    mix(whiteX, rollX, float(layer))*2 - 1,
                     lerp(note.x, -1, note.y, 1, seconds)
                 );
 
