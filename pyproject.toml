@@ -11,8 +11,9 @@ Homepage  = "https://brokensrc.dev"
 name        = "pianola"
 description = "🎹 World's finest piano roll visualizer, where elegance meets motion."
 authors     = [{name="Tremeschin", email="29046864+Tremeschin@users.noreply.github.com"}]
+dynamic     = ["license-files"] # Fixme: Dummy to trigger hooks
 version     = "0.0.0" # Managed by a hatchling metadata hook
-dynamic     = ["readme"]
+readme      = "readme.md"
 license     = "AGPL-3.0"
 requires-python = ">=3.10"
 dependencies = [
@@ -28,7 +29,7 @@ shaderflow    = {workspace=true}
 pianola = "Pianola.__main__:main"
 
 [build-system]
-requires = ["hatchling", "hatch-fancy-pypi-readme"]
+requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
@@ -39,10 +40,3 @@ path = ".github/hatch_build.py"
 
 [tool.hatch.build.targets.sdist]
 exclude = ["*"]
-
-[tool.hatch.metadata.hooks.fancy-pypi-readme]
-content-type = "text/markdown"
-
-[[tool.hatch.metadata.hooks.fancy-pypi-readme.fragments]]
-start-after = "<!-- PyPI Start -->"
-path = "readme.md"

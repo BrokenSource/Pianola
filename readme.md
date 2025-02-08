@@ -1,4 +1,3 @@
-<!-- PyPI Start -->
 <div align="center">
   <img src="https://raw.githubusercontent.com/BrokenSource/Pianola/main/Pianola/Resources/Images/Pianola.png" width="210">
   <h1 style="margin-top: 0">Pianola</h1>
