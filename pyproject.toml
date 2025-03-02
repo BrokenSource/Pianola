@@ -17,13 +17,9 @@ readme      = "readme.md"
 license     = "AGPL-3.0"
 requires-python = ">=3.10"
 dependencies = [
-    "broken-source>=0.0.0",
-    "shaderflow>=0.0.0",
+    "broken-source @ git+https://github.com/BrokenSource/BrokenSource",
+    "shaderflow @ git+https://github.com/BrokenSource/ShaderFlow",
 ]
-
-[tool.uv.sources]
-broken-source = {workspace=true}
-shaderflow    = {workspace=true}
 
 [project.scripts]
 pianola = "Pianola.__main__:main"
@@ -37,6 +33,9 @@ packages = ["Pianola"]
 
 [tool.hatch.metadata.hooks.custom]
 path = ".github/hatch_build.py"
+
+[tool.hatch.metadata]
+allow-direct-references = true
 
 [tool.hatch.build.targets.sdist]
 exclude = ["*"]
