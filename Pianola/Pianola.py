@@ -32,7 +32,7 @@ class Songs(StaticClass):
     @staticmethod
     @functools.lru_cache
     def TheEntertainer() -> Path:
-        """The Entertainer by Scott Joplin, Public Domain Composition"""
+        """The Entertainer, Public Domain, by Scott Joplin"""
         return BrokenPath.get_external("https://bitmidi.com/uploads/28765.mid")
 
 # ------------------------------------------------------------------------------------------------ #
@@ -61,19 +61,7 @@ class PianolaScene(ShaderScene):
                 "--max-velocity", "--max", min=0, max=127)] = 127
             """Normalize velocities to this maximum value"""
 
-        def __set_midi__(self, value): self.midi = value
         midi: Midi = Field(default_factory=Midi)
-
-        # --------------------------------------|
-
-        class SoundFont(BrokenModel):
-            """Input and configure a soundfont to be used"""
-
-            file: Annotated[Path, Option("--input", "-i")] = SoundFonts.Salamander()
-            """The soundfont to use for the piano, automatically downloaded if URL"""
-
-        def __set_soundfont__(self, value): self.soundfont = value
-        soundfont: SoundFont = Field(default_factory=SoundFont)
 
         # --------------------------------------|
 
@@ -96,8 +84,17 @@ class PianolaScene(ShaderScene):
                 "--extra-keys", "-e", min=0)] = 6
             """Display the dynamic range plus this many keys on each side"""
 
-        def __set_piano__(self, value): self.piano = value
         piano: Piano = Field(default_factory=Piano)
+
+        # --------------------------------------|
+
+        class SoundFont(BrokenModel):
+            """Input and configure a soundfont to be used"""
+
+            file: Annotated[Path, Option("--input", "-i")] = SoundFonts.Salamander()
+            """The soundfont to use for the piano, automatically downloaded if URL"""
+
+        soundfont: SoundFont = Field(default_factory=SoundFont)
 
     # -------------------------------------------------------------------------------------------- #
     # Command line interface
@@ -106,9 +103,9 @@ class PianolaScene(ShaderScene):
         self.cli.description = PIANOLA_ABOUT
 
         with self.cli.panel(self.scene_panel):
-            self.cli.command(self.config.midi,      post=self.config.__set_midi__)
-            self.cli.command(self.config.soundfont, post=self.config.__set_soundfont__)
-            self.cli.command(self.config.piano,     post=self.config.__set_piano__)
+            self.cli.command(self.config.midi)
+            self.cli.command(self.config.piano)
+            self.cli.command(self.config.soundfont)
 
     # -------------------------------------------------------------------------------------------- #
     # Module implementation
