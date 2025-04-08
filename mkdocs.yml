@@ -6,6 +6,9 @@ repo_url: https://github.com/BrokenSource/Pianola/
 nav:
   - Home:
     - index.md
+    - About:
+      - 🧭 Roadmap: about/roadmap.md
+      - 💬 Contact: about/contact.md
   - Installation:
     - get/index.md
     - 📦 Installers: get/installers.md
