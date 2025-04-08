@@ -11,14 +11,13 @@ nav:
     - 📦 Installers: get/installers.md
     - 🧀 Wheels: get/wheels.md
     - 🔥 Source: get/source.md
-  - Usage:
-    - quickstart/index.md
-    - 🔴 Gradio WebUI: webui.md
-    - 🟡 Command line: commands.md
-    - 🟢 Python scripts: scripts.md
-  - Documentation:
-    - docs/index.md
-  - Code:
-      - 📦 Package: code/pianola/
+  # - Documentation:
+  #   - docs/index.md
+  # - Code:
+  #   - 📦 Package: Code/
 theme:
   custom_dir: ../../Website/overrides
+  favicon: Pianola/Resources/Images/Pianola.png
+markdown_extensions:
+  pymdownx.snippets:
+    base_path: [../../Website]
