@@ -7,7 +7,7 @@ nav:
   - Home:
     - index.md
     - About:
-      - 🧭 Roadmap: about/roadmap.md
+      - 🧭 Roadmap: https://github.com/orgs/BrokenSource/projects/2
       - 💬 Contact: about/contact.md
   - Installation:
     - get/index.md

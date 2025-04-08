@@ -15,8 +15,8 @@
   <br>
   <b>
     Links •
-    <a href="https://brokensrc.dev/get/">✅ Installation</a> •
-    <a href="https://brokensrc.dev/pianola/">📦 Documentation</a> •
+    <a href="https://pianola.brokensrc.dev/get/">✅ Installation</a> •
+    <a href="https://pianola.brokensrc.dev/">📦 Documentation</a> •
     <a href="https://github.com/BrokenSource/Pianola/issues">🔥 Issues</a> •
     <a href="https://brokensrc.dev/about/sponsors">❤️ Funding</a>
   </b>
