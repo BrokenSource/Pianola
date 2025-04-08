@@ -1,7 +1,12 @@
+---
+template: home.html
+---
+<style>.md-nav {display: none}</style>
+
 <div align="center">
   <img src="https://raw.githubusercontent.com/BrokenSource/Pianola/main/Pianola/Resources/Images/Pianola.png" width="210">
   <h1 style="margin-top: 0">Pianola</h1>
-  <b>World's finest</b> piano roll visualizer, where elegance meets motion.
+  <b>World's finest</b> piano roll visualizer, where elegance meets motion
   <br>
   <br>
   <a href="https://pypi.org/project/pianola/"><img src="https://img.shields.io/pypi/v/pianola?label=PyPI&color=blue"></a>

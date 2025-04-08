@@ -1,0 +1,24 @@
+INHERIT: ../../mkdocs-base.yml
+site_name: Pianola
+site_description: 🎹 World's finest piano roll visualizer, where elegance meets motion
+site_url: https://pianola.brokensrc.dev/
+repo_url: https://github.com/BrokenSource/Pianola/
+nav:
+  - Home:
+    - index.md
+  - Installation:
+    - get/index.md
+    - 📦 Installers: get/installers.md
+    - 🧀 Wheels: get/wheels.md
+    - 🔥 Source: get/source.md
+  - Usage:
+    - quickstart/index.md
+    - 🔴 Gradio WebUI: webui.md
+    - 🟡 Command line: commands.md
+    - 🟢 Python scripts: scripts.md
+  - Documentation:
+    - docs/index.md
+  - Code:
+      - 📦 Package: code/pianola/
+theme:
+  custom_dir: ../../Website/overrides

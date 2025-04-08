@@ -1,7 +1,3 @@
----
-title: Pianola/Install
----
-
 --8<--
 include/get/index.md
 include/get/installers.md

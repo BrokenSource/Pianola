@@ -9,7 +9,7 @@ Homepage  = "https://brokensrc.dev"
 
 [project]
 name        = "pianola"
-description = "🎹 World's finest piano roll visualizer, where elegance meets motion."
+description = "🎹 World's finest piano roll visualizer, where elegance meets motion"
 authors     = [{name="Tremeschin", email="29046864+Tremeschin@users.noreply.github.com"}]
 dynamic     = ["license-files"] # Fixme: Dummy to trigger hooks
 version     = "0.0.0" # Managed by a hatchling metadata hook
