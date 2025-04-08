@@ -425,11 +425,491 @@ uv<span class=w> </span>run<span class=w> </span>broken
 <span class=normal>3</span></pre></div></td><td class=code><div><pre><span></span><code>broken
 shaderflow
 depthflow
-</code></pre></div></td></tr></table></div></p> </div> </div> </div> </div> </div> </div> </div> <details class=quote> <summary>Check what <a href=https://github.com/BrokenSource/BrokenSource/blob/main/Website/get.sh><code>get.sh</code></a> and <a href=https://github.com/BrokenSource/BrokenSource/blob/main/Website/get.ps1><code>get.ps1</code></a> does</summary> <p>The content below is a <strong>verbatim copy</strong> of the current live script on this website</p> <div class="tabbed-set tabbed-alternate" data-tabs=3:2><input checked=checked id=windows--getps1 name=__tabbed_3 type=radio><input id=linux-and-macos--getsh name=__tabbed_3 type=radio><div class=tabbed-labels><label for=windows--getps1>(Windows) • get.ps1</label><label for=linux-and-macos--getsh>(Linux and macOS) • get.sh</label></div> <div class=tabbed-content> <div class=tabbed-block> <p><span/> <div class=highlight><table class=highlighttable><tr><th colspan=2 class=filename><span class=filename>PowerShell script</span></th></tr><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal>1</span></pre></div></td><td class=code><div><pre><span></span><code>
-</code></pre></div></td></tr></table></div></p> </div> <div class=tabbed-block> <p><span/> <div class=highlight><table class=highlighttable><tr><th colspan=2 class=filename><span class=filename>Bash script</span></th></tr><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal>1</span></pre></div></td><td class=code><div><pre><span></span><code>
+</code></pre></div></td></tr></table></div></p> </div> </div> </div> </div> </div> </div> </div> <details class=quote> <summary>Check what <a href=https://github.com/BrokenSource/BrokenSource/blob/main/Website/get.sh><code>get.sh</code></a> and <a href=https://github.com/BrokenSource/BrokenSource/blob/main/Website/get.ps1><code>get.ps1</code></a> does</summary> <p>The content below is a <strong>verbatim copy</strong> of the current live script on this website</p> <div class="tabbed-set tabbed-alternate" data-tabs=3:2><input checked=checked id=windows--getps1 name=__tabbed_3 type=radio><input id=linux-and-macos--getsh name=__tabbed_3 type=radio><div class=tabbed-labels><label for=windows--getps1>(Windows) • get.ps1</label><label for=linux-and-macos--getsh>(Linux and macOS) • get.sh</label></div> <div class=tabbed-content> <div class=tabbed-block> <p><span/> <div class=highlight><table class=highlighttable><tr><th colspan=2 class=filename><span class=filename>PowerShell script</span></th></tr><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal>  1</span>
+<span class=normal>  2</span>
+<span class=normal>  3</span>
+<span class=normal>  4</span>
+<span class=normal>  5</span>
+<span class=normal>  6</span>
+<span class=normal>  7</span>
+<span class=normal>  8</span>
+<span class=normal>  9</span>
+<span class=normal> 10</span>
+<span class=normal> 11</span>
+<span class=normal> 12</span>
+<span class=normal> 13</span>
+<span class=normal> 14</span>
+<span class=normal> 15</span>
+<span class=normal> 16</span>
+<span class=normal> 17</span>
+<span class=normal> 18</span>
+<span class=normal> 19</span>
+<span class=normal> 20</span>
+<span class=normal> 21</span>
+<span class=normal> 22</span>
+<span class=normal> 23</span>
+<span class=normal> 24</span>
+<span class=normal> 25</span>
+<span class=normal> 26</span>
+<span class=normal> 27</span>
+<span class=normal> 28</span>
+<span class=normal> 29</span>
+<span class=normal> 30</span>
+<span class=normal> 31</span>
+<span class=normal> 32</span>
+<span class=normal> 33</span>
+<span class=normal> 34</span>
+<span class=normal> 35</span>
+<span class=normal> 36</span>
+<span class=normal> 37</span>
+<span class=normal> 38</span>
+<span class=normal> 39</span>
+<span class=normal> 40</span>
+<span class=normal> 41</span>
+<span class=normal> 42</span>
+<span class=normal> 43</span>
+<span class=normal> 44</span>
+<span class=normal> 45</span>
+<span class=normal> 46</span>
+<span class=normal> 47</span>
+<span class=normal> 48</span>
+<span class=normal> 49</span>
+<span class=normal> 50</span>
+<span class=normal> 51</span>
+<span class=normal> 52</span>
+<span class=normal> 53</span>
+<span class=normal> 54</span>
+<span class=normal> 55</span>
+<span class=normal> 56</span>
+<span class=normal> 57</span>
+<span class=normal> 58</span>
+<span class=normal> 59</span>
+<span class=normal> 60</span>
+<span class=normal> 61</span>
+<span class=normal> 62</span>
+<span class=normal> 63</span>
+<span class=normal> 64</span>
+<span class=normal> 65</span>
+<span class=normal> 66</span>
+<span class=normal> 67</span>
+<span class=normal> 68</span>
+<span class=normal> 69</span>
+<span class=normal> 70</span>
+<span class=normal> 71</span>
+<span class=normal> 72</span>
+<span class=normal> 73</span>
+<span class=normal> 74</span>
+<span class=normal> 75</span>
+<span class=normal> 76</span>
+<span class=normal> 77</span>
+<span class=normal> 78</span>
+<span class=normal> 79</span>
+<span class=normal> 80</span>
+<span class=normal> 81</span>
+<span class=normal> 82</span>
+<span class=normal> 83</span>
+<span class=normal> 84</span>
+<span class=normal> 85</span>
+<span class=normal> 86</span>
+<span class=normal> 87</span>
+<span class=normal> 88</span>
+<span class=normal> 89</span>
+<span class=normal> 90</span>
+<span class=normal> 91</span>
+<span class=normal> 92</span>
+<span class=normal> 93</span>
+<span class=normal> 94</span>
+<span class=normal> 95</span>
+<span class=normal> 96</span>
+<span class=normal> 97</span>
+<span class=normal> 98</span>
+<span class=normal> 99</span>
+<span class=normal>100</span>
+<span class=normal>101</span>
+<span class=normal>102</span>
+<span class=normal>103</span>
+<span class=normal>104</span>
+<span class=normal>105</span>
+<span class=normal>106</span>
+<span class=normal>107</span>
+<span class=normal>108</span>
+<span class=normal>109</span>
+<span class=normal>110</span>
+<span class=normal>111</span>
+<span class=normal>112</span>
+<span class=normal>113</span>
+<span class=normal>114</span>
+<span class=normal>115</span>
+<span class=normal>116</span>
+<span class=normal>117</span>
+<span class=normal>118</span>
+<span class=normal>119</span>
+<span class=normal>120</span>
+<span class=normal>121</span>
+<span class=normal>122</span>
+<span class=normal>123</span>
+<span class=normal>124</span>
+<span class=normal>125</span>
+<span class=normal>126</span>
+<span class=normal>127</span>
+<span class=normal>128</span>
+<span class=normal>129</span>
+<span class=normal>130</span>
+<span class=normal>131</span>
+<span class=normal>132</span>
+<span class=normal>133</span>
+<span class=normal>134</span>
+<span class=normal>135</span></pre></div></td><td class=code><div><pre><span></span><code><span class=c>#!/usr/bin/env pwsh</span>
+<span class=c># (c) MIT License, Tremeschin</span>
+<span class=c># Script version: 2024.11.10</span>
+
+<span class=c># This function reloads the &quot;PATH&quot; environment variable so that we can</span>
+<span class=c># find newly installed applications on the same script execution</span>
+<span class=k>function</span> <span class=n>Reload-Path</span> <span class=p>{</span>
+    <span class=nv>$wingetPath</span>  <span class=p>=</span> <span class=nv>$env:LocalAppData</span> <span class=p>+</span> <span class=s2>&quot;\Microsoft\WindowsApps&quot;</span>
+    <span class=nv>$machinePath</span> <span class=p>=</span> <span class=no>[System.Environment]</span><span class=p>::</span><span class=n>GetEnvironmentVariable</span><span class=p>(</span><span class=s2>&quot;Path&quot;</span><span class=p>,</span> <span class=s2>&quot;Machine&quot;</span><span class=p>)</span>
+    <span class=nv>$userPath</span>    <span class=p>=</span> <span class=no>[System.Environment]</span><span class=p>::</span><span class=n>GetEnvironmentVariable</span><span class=p>(</span><span class=s2>&quot;Path&quot;</span><span class=p>,</span> <span class=s2>&quot;User&quot;</span><span class=p>)</span>
+    <span class=nv>$env:Path</span>    <span class=p>=</span> <span class=nv>$machinePath</span> <span class=p>+</span> <span class=s2>&quot;;&quot;</span> <span class=p>+</span> <span class=nv>$userPath</span> <span class=p>+</span> <span class=s2>&quot;;&quot;</span> <span class=p>+</span> <span class=nv>$wingetPath</span>
+<span class=p>}</span>
+
+<span class=c># Option to continue normally even on errors</span>
+<span class=k>function</span> <span class=n>Ask-Continue</span> <span class=p>{</span>
+    <span class=nb>echo </span><span class=s2>&quot;</span><span class=se>`n</span><span class=s2>Press Enter to continue normally, or Ctrl+C to exit&quot;</span>
+    <span class=nb>Read-Host</span>
+<span class=p>}</span>
+
+<span class=c># Consistency in showing steps</span>
+<span class=k>function</span> <span class=n>Print-Step</span> <span class=p>{</span>
+    <span class=nb>echo </span><span class=s2>&quot;</span><span class=se>`n</span><span class=s2>:: $args</span><span class=se>`n</span><span class=s2>&quot;</span>
+<span class=p>}</span>
+
+<span class=c># This function immediately exits if Winget is found, else it tries to install it with</span>
+<span class=c># the official Microsoft docs &#39;Add-AppxPackage&#39; method. If it still fails, it tries</span>
+<span class=c># to download the Appx package (.msibundle) and install it manually.</span>
+<span class=k>function</span> <span class=n>Have-Winget</span> <span class=p>{</span>
+    <span class=n>Reload-Path</span>
+    <span class=k>if</span> <span class=p>((</span><span class=nb>Get-Command</span> <span class=n>winget</span> <span class=n>-ErrorAction</span> <span class=n>SilentlyContinue</span><span class=p>))</span> <span class=p>{</span>
+        <span class=k>return</span>
+    <span class=p>}</span>
+
+    <span class=n>Print-Step</span> <span class=s2>&quot;Installing Winget&quot;</span>
+
+    <span class=c># Attempt via: https://learn.microsoft.com/en-us/windows/package-manager/winget/</span>
+    <span class=nb>Add-AppxPackage</span> <span class=n>-RegisterByFamilyName</span> <span class=n>-MainPackage</span> <span class=n>Microsoft</span><span class=p>.</span><span class=n>DesktopAppInstaller_8wekyb3d8bbwe</span>
+    <span class=n>Reload-Path</span>
+
+    <span class=c># Attempt manual method if still not found</span>
+    <span class=k>if</span> <span class=p>(</span><span class=o>-not</span> <span class=p>(</span><span class=nb>Get-Command</span> <span class=n>winget</span> <span class=n>-ErrorAction</span> <span class=n>SilentlyContinue</span><span class=p>))</span> <span class=p>{</span>
+        <span class=nb>echo </span><span class=s2>&quot;Winget installation with Add-AppxPackage failed, trying &#39;manual&#39; method..&quot;</span>
+        <span class=n>Print-Step</span> <span class=s2>&quot;Downloading Winget installer, might take a while..&quot;</span>
+
+        <span class=c># Why tf does disabling progress bar yields 50x faster downloads????? https://stackoverflow.com/a/43477248</span>
+        <span class=nv>$msi</span><span class=p>=</span><span class=s2>&quot;https://github.com/microsoft/winget-cli/releases/download/v1.7.10582/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle&quot;</span>
+        <span class=nv>$tempFile</span> <span class=p>=</span> <span class=no>[System.IO.Path]</span><span class=p>::</span><span class=n>GetTempPath</span><span class=p>()</span> <span class=p>+</span> <span class=s2>&quot;\winget.msixbundle&quot;</span>
+        <span class=nv>$ProgressPreference</span> <span class=p>=</span> <span class=s1>&#39;SilentlyContinue&#39;</span>
+        <span class=nb>Invoke-WebRequest</span> <span class=n>-Uri</span> <span class=nv>$msi</span> <span class=n>-OutFile</span> <span class=nv>$tempFile</span>
+
+        <span class=c># Install the Appx package</span>
+        <span class=nb>echo </span><span class=s2>&quot;Finished download, now installing it, can take a while on HDDs systems..&quot;</span>
+        <span class=nb>Add-AppxPackage</span> <span class=n>-Path</span> <span class=nv>$tempFile</span>
+        <span class=n>Reload-Path</span>
+    <span class=p>}</span>
+
+    <span class=c># If Winget is still not available, exit</span>
+    <span class=k>if</span> <span class=p>(</span><span class=o>-not</span> <span class=p>(</span><span class=nb>Get-Command</span> <span class=n>winget</span> <span class=n>-ErrorAction</span> <span class=n>SilentlyContinue</span><span class=p>))</span> <span class=p>{</span>
+        <span class=n>Print-Step</span> <span class=s2>&quot;Winget was not found, and installation failed with Add-AppxPackage&quot;</span>
+        <span class=nb>echo </span><span class=s2>&quot;Winget was installed but still not found. Probably a Path issue or installation failure&quot;</span>
+        <span class=nb>echo </span><span class=s2>&quot;&gt; Please get it at https://learn.microsoft.com/en-us/windows/package-manager/winget&quot;</span>
+        <span class=nb>echo </span><span class=s2>&quot;&gt; Alternatively, install manually what was meant to be installed but failed&quot;</span>
+        <span class=n>Ask-Continue</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+
+<span class=k>if</span> <span class=p>(</span><span class=o>-not</span> <span class=p>(</span><span class=nb>Get-Command</span> <span class=n>git</span> <span class=n>-ErrorAction</span> <span class=n>SilentlyContinue</span><span class=p>))</span> <span class=p>{</span>
+    <span class=n>Print-Step</span> <span class=s2>&quot;Git was not found, installing with Winget&quot;</span>
+    <span class=n>Have-Winget</span>
+    <span class=n>winget</span> <span class=n>install</span> <span class=n>-e</span> <span class=p>-</span><span class=n>-id</span> <span class=n>Git</span><span class=p>.</span><span class=n>Git</span>
+    <span class=n>Reload-Path</span>
+    <span class=k>if</span> <span class=p>(</span><span class=o>-not</span> <span class=p>(</span><span class=nb>Get-Command</span> <span class=n>git</span> <span class=n>-ErrorAction</span> <span class=n>SilentlyContinue</span><span class=p>))</span> <span class=p>{</span>
+        <span class=n>Print-Step</span> <span class=s2>&quot;Git was not found, and installation failed with Winget&quot;</span>
+        <span class=nb>echo </span><span class=s2>&quot;Git was installed but still not found. Probably a Path issue or installation failure&quot;</span>
+        <span class=nb>echo </span><span class=s2>&quot;&gt; Please get it at https://git-scm.com&quot;</span>
+        <span class=n>Ask-Continue</span>
+    <span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+        <span class=nb>echo </span><span class=s2>&quot;Git was installed successfully&quot;</span>
+    <span class=p>}</span>
+<span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+    <span class=n>Print-Step</span> <span class=s2>&quot;Updating Git&quot;</span>
+    <span class=n>winget</span> <span class=n>upgrade</span> <span class=p>-</span><span class=n>-id</span> <span class=n>Git</span><span class=p>.</span><span class=n>Git</span>
+<span class=p>}</span>
+
+<span class=k>if</span> <span class=p>(</span><span class=o>-not</span> <span class=p>(</span><span class=nb>Get-Command</span> <span class=n>uv</span> <span class=n>-ErrorAction</span> <span class=n>SilentlyContinue</span><span class=p>))</span> <span class=p>{</span>
+    <span class=n>Print-Step</span> <span class=s2>&quot;uv was not found, installing with Winget&quot;</span>
+    <span class=n>Have-Winget</span>
+    <span class=n>winget</span> <span class=n>install</span> <span class=n>-e</span> <span class=p>-</span><span class=n>-id</span><span class=p>=</span><span class=n>astral-sh</span><span class=p>.</span><span class=n>uv</span>
+    <span class=n>Reload-Path</span>
+    <span class=k>if</span> <span class=p>(</span><span class=o>-not</span> <span class=p>(</span><span class=nb>Get-Command</span> <span class=n>uv</span> <span class=n>-ErrorAction</span> <span class=n>SilentlyContinue</span><span class=p>))</span> <span class=p>{</span>
+        <span class=n>Print-Step</span> <span class=s2>&quot;uv was not found, and installation failed with Winget&quot;</span>
+        <span class=nb>echo </span><span class=s2>&quot;uv was installed but still not found. Probably a Path issue or installation failure&quot;</span>
+        <span class=nb>echo </span><span class=s2>&quot;&gt; Please get it at https://docs.astral.sh/uv/&quot;</span>
+        <span class=n>Ask-Continue</span>
+    <span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+        <span class=nb>echo </span><span class=s2>&quot;uv was installed successfully&quot;</span>
+    <span class=p>}</span>
+<span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+    <span class=n>Print-Step</span> <span class=s2>&quot;Updating uv&quot;</span>
+    <span class=n>winget</span> <span class=n>upgrade</span> <span class=p>-</span><span class=n>-id</span> <span class=n>astral-sh</span><span class=p>.</span><span class=n>uv</span>
+<span class=p>}</span>
+
+<span class=c># # Clone the Repositories, Install Python Dependencies on venv and Spawn a new Shell</span>
+
+<span class=c># Skip cloning if already on a cloned directory</span>
+<span class=k>if</span> <span class=p>(</span><span class=o>-not</span> <span class=p>(</span><span class=nb>Test-Path</span> <span class=n>-Path</span> <span class=s2>&quot;Broken&quot;</span><span class=p>))</span> <span class=p>{</span>
+    <span class=n>Print-Step</span> <span class=s2>&quot;Cloning BrokenSource Repository and all Submodules&quot;</span>
+    <span class=n>git</span> <span class=n>clone</span> <span class=n>https</span><span class=p>://</span><span class=n>github</span><span class=p>.</span><span class=n>com</span><span class=p>/</span><span class=n>BrokenSource</span><span class=p>/</span><span class=n>BrokenSource</span> <span class=p>-</span><span class=n>-recurse-submodules</span> <span class=p>-</span><span class=n>-jobs</span> <span class=n>4</span>
+    <span class=nb>cd </span><span class=n>BrokenSource</span>
+
+    <span class=n>Print-Step</span> <span class=s2>&quot;Checking out main branch for all submodules&quot;</span>
+    <span class=n>git</span> <span class=n>submodule</span> <span class=k>foreach</span> <span class=p>-</span><span class=n>-recursive</span> <span class=s1>&#39;git checkout main || true&#39;</span>
+<span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+    <span class=n>Print-Step</span> <span class=s2>&quot;Already in a Cloned Directory, Skipping Cloning&quot;</span>
+<span class=p>}</span>
+
+<span class=c># The PowerShell execution policy must allow for the Python activation script to run</span>
+<span class=k>if</span> <span class=p>((</span><span class=nb>Get-ExecutionPolicy</span><span class=p>)</span> <span class=n>-notin</span> <span class=p>@(</span><span class=s2>&quot;Unrestricted&quot;</span><span class=p>,</span> <span class=s2>&quot;RemoteSigned&quot;</span><span class=p>,</span> <span class=s2>&quot;Bypass&quot;</span><span class=p>))</span> <span class=p>{</span>
+    <span class=nb>echo </span><span class=s2>&quot;</span><span class=se>`n</span><span class=s2>(Warning) The current PowerShell ExecutionPolicy disallows activating the Python venv&quot;</span>
+    <span class=nb>echo </span><span class=s2>&quot;&gt; More info: https://github.com/microsoft/vscode-python/issues/2559&quot;</span>
+    <span class=nb>echo </span><span class=s2>&quot;&gt; Need any of: &#39;Unrestricted&#39;, &#39;RemoteSigned&#39;, or &#39;Bypass&#39;&quot;</span>
+    <span class=nb>echo </span><span class=s2>&quot;&gt; Current ExecutionPolicy: &#39;</span><span class=p>$(</span><span class=nb>Get-ExecutionPolicy</span><span class=p>)</span><span class=s2>&#39;&quot;</span>
+
+    <span class=nb>echo </span><span class=s2>&quot;</span><span class=se>`n</span><span class=s2>Don&#39;t worry, we just need to run as admin the following:&quot;</span>
+    <span class=nb>echo </span><span class=s2>&quot;&gt; &#39;Set-ExecutionPolicy RemoteSigned&#39;</span><span class=se>`n</span><span class=s2>&quot;</span>
+    <span class=nb>Read-Host</span> <span class=s2>&quot;Press Enter to do it, or Ctrl+C to exit&quot;</span>
+
+    <span class=nb>Start-Process</span> <span class=n>powershell</span> <span class=n>-Verb</span> <span class=n>RunAs</span> <span class=n>-ArgumentList</span> <span class=s2>&quot;-Command Set-ExecutionPolicy RemoteSigned&quot;</span>
+<span class=p>}</span>
+
+<span class=n>Print-Step</span> <span class=s2>&quot;Creating Virtual Environment and Installing Dependencies&quot;</span>
+<span class=n>uv</span> <span class=n>sync</span> <span class=p>-</span><span class=n>-all-packages</span>
+
+<span class=n>Print-Step</span> <span class=s2>&quot;Spawning a new Shell in the Virtual Environment&quot;</span>
+<span class=n>powershell</span> <span class=n>-ExecutionPolicy</span> <span class=n>Bypass</span> <span class=n>-NoLogo</span> <span class=n>-NoExit</span> <span class=o>-File</span> <span class=p>.\.</span><span class=n>venv</span><span class=p>\</span><span class=n>Scripts</span><span class=p>\</span><span class=n>Activate</span><span class=p>.</span><span class=n>ps1</span>
+</code></pre></div></td></tr></table></div></p> </div> <div class=tabbed-block> <p><span/> <div class=highlight><table class=highlighttable><tr><th colspan=2 class=filename><span class=filename>Bash script</span></th></tr><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal>  1</span>
+<span class=normal>  2</span>
+<span class=normal>  3</span>
+<span class=normal>  4</span>
+<span class=normal>  5</span>
+<span class=normal>  6</span>
+<span class=normal>  7</span>
+<span class=normal>  8</span>
+<span class=normal>  9</span>
+<span class=normal> 10</span>
+<span class=normal> 11</span>
+<span class=normal> 12</span>
+<span class=normal> 13</span>
+<span class=normal> 14</span>
+<span class=normal> 15</span>
+<span class=normal> 16</span>
+<span class=normal> 17</span>
+<span class=normal> 18</span>
+<span class=normal> 19</span>
+<span class=normal> 20</span>
+<span class=normal> 21</span>
+<span class=normal> 22</span>
+<span class=normal> 23</span>
+<span class=normal> 24</span>
+<span class=normal> 25</span>
+<span class=normal> 26</span>
+<span class=normal> 27</span>
+<span class=normal> 28</span>
+<span class=normal> 29</span>
+<span class=normal> 30</span>
+<span class=normal> 31</span>
+<span class=normal> 32</span>
+<span class=normal> 33</span>
+<span class=normal> 34</span>
+<span class=normal> 35</span>
+<span class=normal> 36</span>
+<span class=normal> 37</span>
+<span class=normal> 38</span>
+<span class=normal> 39</span>
+<span class=normal> 40</span>
+<span class=normal> 41</span>
+<span class=normal> 42</span>
+<span class=normal> 43</span>
+<span class=normal> 44</span>
+<span class=normal> 45</span>
+<span class=normal> 46</span>
+<span class=normal> 47</span>
+<span class=normal> 48</span>
+<span class=normal> 49</span>
+<span class=normal> 50</span>
+<span class=normal> 51</span>
+<span class=normal> 52</span>
+<span class=normal> 53</span>
+<span class=normal> 54</span>
+<span class=normal> 55</span>
+<span class=normal> 56</span>
+<span class=normal> 57</span>
+<span class=normal> 58</span>
+<span class=normal> 59</span>
+<span class=normal> 60</span>
+<span class=normal> 61</span>
+<span class=normal> 62</span>
+<span class=normal> 63</span>
+<span class=normal> 64</span>
+<span class=normal> 65</span>
+<span class=normal> 66</span>
+<span class=normal> 67</span>
+<span class=normal> 68</span>
+<span class=normal> 69</span>
+<span class=normal> 70</span>
+<span class=normal> 71</span>
+<span class=normal> 72</span>
+<span class=normal> 73</span>
+<span class=normal> 74</span>
+<span class=normal> 75</span>
+<span class=normal> 76</span>
+<span class=normal> 77</span>
+<span class=normal> 78</span>
+<span class=normal> 79</span>
+<span class=normal> 80</span>
+<span class=normal> 81</span>
+<span class=normal> 82</span>
+<span class=normal> 83</span>
+<span class=normal> 84</span>
+<span class=normal> 85</span>
+<span class=normal> 86</span>
+<span class=normal> 87</span>
+<span class=normal> 88</span>
+<span class=normal> 89</span>
+<span class=normal> 90</span>
+<span class=normal> 91</span>
+<span class=normal> 92</span>
+<span class=normal> 93</span>
+<span class=normal> 94</span>
+<span class=normal> 95</span>
+<span class=normal> 96</span>
+<span class=normal> 97</span>
+<span class=normal> 98</span>
+<span class=normal> 99</span>
+<span class=normal>100</span>
+<span class=normal>101</span>
+<span class=normal>102</span>
+<span class=normal>103</span>
+<span class=normal>104</span>
+<span class=normal>105</span>
+<span class=normal>106</span>
+<span class=normal>107</span></pre></div></td><td class=code><div><pre><span></span><code><span class=c>#!/bin/bash</span>
+<span class=c># (c) MIT License, Tremeschin</span>
+<span class=c># Script version: 2024.11.10</span>
+
+<span class=p>{</span> <span class=c># Prevent execution if partially downloaded</span>
+
+<span class=c># Exit on any error or failed command (includes pipes)</span>
+<span class=nb>set </span><span class=n>-euo</span> <span class=n>pipefail</span>
+
+<span class=c># Detect current system</span>
+<span class=n>MACOS</span><span class=p>=</span><span class=n>false</span>
+<span class=p>[[</span> <span class=s2>&quot;$OSTYPE&quot;</span> <span class=p>==</span> <span class=s2>&quot;darwin&quot;</span><span class=p>*</span> <span class=p>]]</span> <span class=p>&amp;&amp;</span> <span class=n>MACOS</span><span class=p>=</span><span class=n>true</span>
+
+<span class=c># macOS: Must have &#39;Xcode Command Line Tools&#39; installed</span>
+<span class=k>if</span> <span class=nv>$MACOS</span><span class=p>;</span> <span class=n>then</span>
+  <span class=k>if</span> <span class=p>[</span> <span class=p>!</span> <span class=n>xcode-select</span> <span class=n>-p</span> <span class=p>&amp;&gt;</span> <span class=p>/</span><span class=n>dev</span><span class=p>/</span><span class=n>null</span> <span class=p>];</span> <span class=n>then</span>
+    <span class=n>printf</span> <span class=s2>&quot;(Error) Xcode Command Line Tools are not installed\n&quot;</span>
+    <span class=n>printf</span> <span class=s2>&quot;• Install them with &#39;xcode-select --install&#39;\n&quot;</span>
+    <span class=n>printf</span> <span class=s2>&quot;• Run again this script after installation\n&quot;</span>
+    <span class=n>exit</span> <span class=n>1</span>
+  <span class=n>fi</span>
+<span class=n>fi</span>
+
+<span class=c># Must have &#39;git&#39; installed</span>
+<span class=n>git</span><span class=p>=</span><span class=s2>&quot;&quot;</span>
+<span class=k>if</span> <span class=p>[</span> <span class=n>-x</span> <span class=s2>&quot;</span><span class=p>$(</span><span class=n>command</span> <span class=n>-v</span> <span class=n>git</span><span class=p>)</span><span class=s2>&quot;</span> <span class=p>];</span> <span class=n>then</span>
+  <span class=n>git</span><span class=p>=$(</span><span class=n>readlink</span> <span class=o>-f</span> <span class=p>$(</span><span class=n>which</span> <span class=n>git</span><span class=p>))</span>
+  <span class=n>printf</span> <span class=s2>&quot;\n• Found Git at ($git)\n&quot;</span>
+<span class=k>else</span>
+  <span class=n>printf</span> <span class=s2>&quot;\n(Error) Git wasn&#39;t found, and is required to clone the repositories\n&quot;</span>
+  <span class=n>printf</span> <span class=s2>&quot;• Get it at (https://git-scm.com/), or from your distro:\n&quot;</span>
+  <span class=n>printf</span> <span class=s2>&quot;• macOS:  &#39;brew install git&#39; - needs (https://brew.sh/)\n&quot;</span>
+  <span class=n>printf</span> <span class=s2>&quot;• Ubuntu: &#39;sudo apt update &amp;&amp; sudo apt install git&#39;\n&quot;</span>
+  <span class=n>printf</span> <span class=s2>&quot;• Arch:   &#39;sudo pacman -Syu git&#39;\n&quot;</span>
+  <span class=n>printf</span> <span class=s2>&quot;• Fedora: &#39;sudo dnf install git&#39;\n&quot;</span>
+  <span class=n>exit</span> <span class=n>1</span>
+<span class=n>fi</span>
+
+<span class=c># Must have &#39;uv&#39; installed</span>
+<span class=n>uv</span><span class=p>=</span><span class=s2>&quot;&quot;</span>
+<span class=k>for</span> <span class=n>attempt</span> <span class=k>in</span> <span class=p>$(</span><span class=n>seq</span> <span class=n>1</span> <span class=n>2</span><span class=p>);</span> <span class=k>do</span>
+  <span class=k>if</span> <span class=p>[</span> <span class=n>-x</span> <span class=s2>&quot;</span><span class=p>$(</span><span class=n>command</span> <span class=n>-v</span> <span class=n>uv</span><span class=p>)</span><span class=s2>&quot;</span> <span class=p>];</span> <span class=n>then</span>
+    <span class=n>uv</span><span class=p>=$(</span><span class=n>readlink</span> <span class=o>-f</span> <span class=p>$(</span><span class=n>which</span> <span class=n>uv</span><span class=p>))</span>
+    <span class=n>printf</span> <span class=s2>&quot;\n• Found uv at ($uv)\n&quot;</span>
+    <span class=k>break</span>
+  <span class=n>fi</span>
+
+  <span class=k>if</span> <span class=p>[</span> <span class=nv>$attempt</span> <span class=o>-eq</span> <span class=n>2</span> <span class=p>];</span> <span class=n>then</span>
+    <span class=n>printf</span> <span class=s2>&quot;\n(Error) uv wasn&#39;t found after an installation attempt\n&quot;</span>
+    <span class=n>printf</span> <span class=s2>&quot;• Do you have the Shims directory on PATH?\n&quot;</span>
+    <span class=n>printf</span> <span class=s2>&quot;• Try restarting the Shell and retrying\n&quot;</span>
+    <span class=n>printf</span> <span class=s2>&quot;• Get it at (https://docs.astral.sh/uv/)\n&quot;</span>
+    <span class=n>exit</span> <span class=n>1</span>
+  <span class=n>fi</span>
+
+  <span class=n>printf</span> <span class=s2>&quot;\n• uv wasn&#39;t found, will attempt to install it\n\n&quot;</span>
+  <span class=p>/</span><span class=n>bin</span><span class=p>/</span><span class=n>bash</span> <span class=n>-c</span> <span class=s2>&quot;</span><span class=p>$(</span><span class=nb>curl </span><span class=n>-sSfL</span> <span class=n>https</span><span class=p>://</span><span class=n>astral</span><span class=p>.</span><span class=n>sh</span><span class=p>/</span><span class=n>uv</span><span class=p>/</span><span class=n>install</span><span class=p>.</span><span class=n>sh</span><span class=p>)</span><span class=s2>&quot;</span>
+<span class=n>done</span>
+
+<span class=c># # Clone the Repositories, Install Python Dependencies on venv and Spawn a new Shell</span>
+
+<span class=c># Already inside a git repository</span>
+<span class=k>if</span> <span class=n>git</span> <span class=n>rev-parse</span> <span class=p>-</span><span class=o>-is</span><span class=n>-inside-work-tree</span> <span class=p>&amp;&gt;</span> <span class=p>/</span><span class=n>dev</span><span class=p>/</span><span class=n>null</span><span class=p>;</span> <span class=n>then</span>
+  <span class=n>work_tree</span><span class=p>=$(</span><span class=n>git</span> <span class=n>rev-parse</span> <span class=p>-</span><span class=n>-show-toplevel</span><span class=p>)</span>
+
+  <span class=c># Must be on BrokenSource to continue</span>
+  <span class=k>if</span> <span class=p>(</span><span class=nb>cd </span><span class=s2>&quot;$work_tree&quot;</span> <span class=p>&amp;&amp;</span> <span class=n>git</span> <span class=n>remote</span> <span class=nb>get-url</span> <span class=n>origin</span> <span class=n>2</span><span class=p>&gt;/</span><span class=n>dev</span><span class=p>/</span><span class=n>null</span> <span class=p>|</span> <span class=n>grep</span> <span class=n>-q</span> <span class=s2>&quot;BrokenSource&quot;</span><span class=p>);</span> <span class=n>then</span>
+    <span class=n>printf</span> <span class=s2>&quot;\n• Already inside the BrokenSource main repository\n&quot;</span>
+    <span class=n>printf</span> <span class=s2>&quot;  - For latest changes, run &#39;Scripts/update.sh&#39;\n&quot;</span>
+    <span class=nb>cd </span><span class=s2>&quot;$work_tree&quot;</span>
+  <span class=k>else</span>
+    <span class=n>printf</span> <span class=s2>&quot;\n(Error) Currently in a non-BrokenSource main git epository, exiting\n&quot;</span>
+    <span class=n>exit</span> <span class=n>1</span>
+  <span class=n>fi</span>
+
+<span class=c># Directory exists</span>
+<span class=n>elif</span> <span class=p>[</span> <span class=n>-d</span> <span class=s2>&quot;BrokenSource&quot;</span> <span class=p>];</span> <span class=n>then</span>
+  <span class=n>printf</span> <span class=s2>&quot;\n• BrokenSource directory exists. Assuming it&#39;s the repository\n&quot;</span>
+  <span class=n>printf</span> <span class=s2>&quot;  - On errors, try deleting the directory and run again\n&quot;</span>
+  <span class=n>printf</span> <span class=s2>&quot;  - For latest changes, run &#39;Scripts/update.sh&#39;\n&quot;</span>
+  <span class=nb>cd </span><span class=n>BrokenSource</span>
+
+<span class=c># Fresh clone</span>
+<span class=k>else</span>
+  <span class=n>printf</span> <span class=s2>&quot;\n• Cloning BrokenSource Repository and all Submodules\n\n&quot;</span>
+  <span class=nv>$git</span> <span class=n>clone</span> <span class=n>https</span><span class=p>://</span><span class=n>github</span><span class=p>.</span><span class=n>com</span><span class=p>/</span><span class=n>BrokenSource</span><span class=p>/</span><span class=n>BrokenSource</span><span class=p>/</span> <span class=p>-</span><span class=n>-recurse-submodules</span> <span class=p>-</span><span class=n>-jobs</span> <span class=n>4</span>
+  <span class=nb>cd </span><span class=n>BrokenSource</span>
+
+  <span class=n>printf</span> <span class=s2>&quot;\n• Checking out main branch for all submodules\n\n&quot;</span>
+  <span class=nv>$git</span> <span class=n>submodule</span> <span class=k>foreach</span> <span class=p>-</span><span class=n>-recursive</span> <span class=s1>&#39;git checkout main || true&#39;</span>
+<span class=n>fi</span>
+
+<span class=c># Make scripts executable for later use</span>
+<span class=n>chmod</span> <span class=p>+</span><span class=n>x</span> <span class=n>Website</span><span class=p>/</span><span class=n>get</span><span class=p>.</span><span class=n>sh</span>
+<span class=n>chmod</span> <span class=p>+</span><span class=n>x</span> <span class=p>./</span><span class=n>Scripts</span><span class=p>/</span><span class=n>activate</span><span class=p>.</span><span class=n>sh</span>
+
+<span class=n>printf</span> <span class=s2>&quot;\n• Creating Virtual Environment and Installing Dependencies\n\n&quot;</span>
+<span class=nv>$uv</span> <span class=n>self</span> <span class=n>update</span> <span class=p>||</span> <span class=n>printf</span> <span class=s2>&quot;\n• uv self update failed, ignoring..\n\n&quot;</span>
+<span class=nv>$uv</span> <span class=n>sync</span> <span class=p>-</span><span class=n>-all-packages</span> <span class=p>||</span> <span class=n>printf</span> <span class=s2>&quot;\n• uv sync failed, could cause issues..\n\n&quot;</span>
+
+<span class=n>printf</span> <span class=s2>&quot;\n• Spawning a new Shell in the Virtual Environment\n&quot;</span>
+<span class=n>printf</span> <span class=s2>&quot;  - Source the Virtual Environment to get here again\n&quot;</span>
+<span class=n>printf</span> <span class=s2>&quot;  - Tip: Alternative, run &#39;Scripts/activate.sh&#39;\n\n&quot;</span>
+<span class=n>source</span> <span class=p>.</span><span class=n>venv</span><span class=p>/</span><span class=n>bin</span><span class=p>/</span><span class=n>activate</span>
+<span class=n>exec</span> <span class=nv>$SHELL</span>
+
+<span class=p>}</span>
 </code></pre></div></td></tr></table></div></p> </div> </div> </div> </details> <h2 id=upgrading>🚀 Upgrading<a class=headerlink href=#upgrading title="Permanent link">&para;</a></h2> <h3 id=repositories>Repositories<a class=headerlink href=#repositories title="Permanent link">&para;</a></h3> <p>The installation script should've <strong>initialized</strong> and set all <a href=https://git-scm.com/book/en/v2/Git-Tools-Submodules><strong>submodules</strong></a> to the <strong>main branch</strong>:</p> <div class=highlight><table class=highlighttable><tr><th colspan=2 class=filename><span class=filename>Command</span></th></tr><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal>1</span></pre></div></td><td class=code><div><pre><span></span><code>git<span class=w> </span>submodule<span class=w> </span>foreach<span class=w> </span>--recursive<span class=w> </span><span class=s1>&#39;git checkout main || true&#39;</span>
 </code></pre></div></td></tr></table></div> <p>After that, you can <a href=https://git-scm.com/docs/git-pull><strong>pull</strong></a> the latest changes of all <a href=https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository><strong>repositories</strong></a> with:</p> <div class=highlight><table class=highlighttable><tr><th colspan=2 class=filename><span class=filename>Command</span></th></tr><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal>1</span></pre></div></td><td class=code><div><pre><span></span><code>git<span class=w> </span>pull<span class=w> </span>--recurse-submodules<span class=w> </span>--jobs<span class=o>=</span><span class=m>4</span>
-</code></pre></div></td></tr></table></div> <div class="admonition tip"> <p class=admonition-title>If you have any local changes</p> <ul> <li><strong>Keep them</strong>: Add <a href=https://git-scm.com/docs/git-rebase><strong><code>--rebase</code></strong></a> to the command above</li> <li><strong>Delete them</strong>: Add <code>--force</code> to the command above</li> </ul> </div> <h3 id=packages>Packages<a class=headerlink href=#packages title="Permanent link">&para;</a></h3> <p>The Python tooling I'm using to orchestrate the monorepo is <a href=https://docs.astral.sh/uv/ ><strong>uv</strong></a></p> <div class="admonition note"> <p class=admonition-title>Command: <a href=https://docs.astral.sh/uv/ ><code>uv sync --all-packages</code></a></p> <p>This will update the venv and install any new dependencies</p> </div> <h2 id=uninstalling>♻️ Uninstalling<a class=headerlink href=#uninstalling title="Permanent link">&para;</a></h2> <p>Apart from deleting the <code>BrokenSource</code> folder where you cloned the code,</p> </article> </div> <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script> <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script> </div> <button type=button class="md-top md-icon" data-md-component=top hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg> Back to top </button> </main> <style>
+</code></pre></div></td></tr></table></div> <div class="admonition tip"> <p class=admonition-title>If you have any local changes</p> <ul> <li><strong>Keep them</strong>: Add <a href=https://git-scm.com/docs/git-rebase><strong><code>--rebase</code></strong></a> to the command above</li> <li><strong>Delete them</strong>: Add <code>--force</code> to the command above</li> </ul> </div> <h3 id=packages>Packages<a class=headerlink href=#packages title="Permanent link">&para;</a></h3> <p>The Python tooling I'm using to orchestrate the monorepo is <a href=https://docs.astral.sh/uv/ ><strong>uv</strong></a></p> <div class="admonition note"> <p class=admonition-title>Command: <a href=https://docs.astral.sh/uv/ ><code>uv sync --all-packages</code></a></p> <p>This will update the venv and install any new dependencies</p> </div> <h2 id=uninstalling>♻️ Uninstalling<a class=headerlink href=#uninstalling title="Permanent link">&para;</a></h2> <p>Apart from deleting the <code>BrokenSource</code> folder where you cloned the code,</p> <div class="admonition tip"> <p class=admonition-title><strong>Workspaces</strong>: Where data, models, versions, cache of the projects are stored</p> <p>All project's Workspaces are located in your platform's <code>User Data</code> directory: <table markdown> <tbody class=slim-table> <tr> <td style="width: 20%"><span class=twemoji><svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M2 3h9v9H2zm9 19H2v-9h9zM21 3v9h-9V3zm0 19h-9v-9h9z"/></svg></span> Windows</td> <td><kbd>C:\\Users\(...)\AppData\Local\BrokenSource</kbd></td> </tr> <tr> <td><span class=twemoji><svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg></span> MacOS</td> <td><kbd>~/Library/Application Support/BrokenSource</kbd></td> </tr> <tr> <td><span class=twemoji><svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M12.504 0q-.232 0-.48.021c-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.4.4 0 0 0-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.134.063.198.114.333l.003.003c.391.778 1.113 1.132 1.884 1.071s1.592-.536 2.257-1.306c.631-.765 1.683-1.084 2.378-1.503.348-.199.629-.469.649-.853.023-.4-.2-.811-.714-1.376v-.097l-.003-.003c-.17-.2-.25-.535-.338-.926-.085-.401-.182-.786-.492-1.046h-.003c-.059-.054-.123-.067-.188-.135a.36.36 0 0 0-.19-.064c.431-1.278.264-2.55-.173-3.694-.533-1.41-1.465-2.638-2.175-3.483-.796-1.005-1.576-1.957-1.56-3.368.026-2.152.236-6.133-3.544-6.139m.529 3.405h.013c.213 0 .396.062.584.198.19.135.33.332.438.533.105.259.158.459.166.724 0-.02.006-.04.006-.06v.105l-.004-.021-.004-.024a1.8 1.8 0 0 1-.15.706.95.95 0 0 1-.213.335 1 1 0 0 0-.088-.042c-.104-.045-.198-.064-.284-.133a1.3 1.3 0 0 0-.22-.066c.05-.06.146-.133.183-.198q.08-.193.088-.402v-.02a1.2 1.2 0 0 0-.061-.4c-.045-.134-.101-.2-.183-.333-.084-.066-.167-.132-.267-.132h-.016c-.093 0-.176.03-.262.132a.8.8 0 0 0-.205.334 1.2 1.2 0 0 0-.09.4v.019q.002.134.02.267c-.193-.067-.438-.135-.607-.202a2 2 0 0 1-.018-.2v-.02a1.8 1.8 0 0 1 .15-.768 1.08 1.08 0 0 1 .43-.533 1 1 0 0 1 .594-.2zm-2.962.059h.036c.142 0 .27.048.399.135.146.129.264.288.344.465.09.199.14.4.153.667v.004c.007.134.006.2-.002.266v.08c-.03.007-.056.018-.083.024-.152.055-.274.135-.393.2q.018-.136.003-.267v-.015c-.012-.133-.04-.2-.082-.333a.6.6 0 0 0-.166-.267.25.25 0 0 0-.183-.064h-.021c-.071.006-.13.04-.186.132a.55.55 0 0 0-.12.27 1 1 0 0 0-.023.33v.015c.012.135.037.2.08.334.046.134.098.2.166.268q.014.014.034.024c-.07.057-.117.07-.176.136a.3.3 0 0 1-.131.068 2.6 2.6 0 0 1-.275-.402 1.8 1.8 0 0 1-.155-.667 1.8 1.8 0 0 1 .08-.668 1.4 1.4 0 0 1 .283-.535c.128-.133.26-.2.418-.2m1.37 1.706c.332 0 .733.065 1.216.399.293.2.523.269 1.052.468h.003c.255.136.405.266.478.399v-.131a.57.57 0 0 1 .016.47c-.123.31-.516.643-1.063.842v.002c-.268.135-.501.333-.775.465-.276.135-.588.292-1.012.267a1.1 1.1 0 0 1-.448-.067 4 4 0 0 1-.322-.198c-.195-.135-.363-.332-.612-.465v-.005h-.005c-.4-.246-.616-.512-.686-.71q-.104-.403.193-.6c.224-.135.38-.271.483-.336.104-.074.143-.102.176-.131h.002v-.003c.169-.202.436-.47.839-.601.139-.036.294-.065.466-.065zm2.8 2.142c.358 1.417 1.196 3.475 1.735 4.473.286.534.855 1.659 1.102 3.024.156-.005.33.018.513.064.646-1.671-.546-3.467-1.089-3.966-.22-.2-.232-.335-.123-.335.59.534 1.365 1.572 1.646 2.757.13.535.16 1.104.021 1.67.067.028.135.06.205.067 1.032.534 1.413.938 1.23 1.537v-.043c-.06-.003-.12 0-.18 0h-.016c.151-.467-.182-.825-1.065-1.224-.915-.4-1.646-.336-1.77.465-.008.043-.013.066-.018.135-.068.023-.139.053-.209.064-.43.268-.662.669-.793 1.187-.13.533-.17 1.156-.205 1.869v.003c-.02.334-.17.838-.319 1.35-1.5 1.072-3.58 1.538-5.348.334a2.7 2.7 0 0 0-.402-.533 1.5 1.5 0 0 0-.275-.333c.182 0 .338-.03.465-.067a.62.62 0 0 0 .314-.334c.108-.267 0-.697-.345-1.163s-.931-.995-1.788-1.521c-.63-.4-.986-.87-1.15-1.396-.165-.534-.143-1.085-.015-1.645.245-1.07.873-2.11 1.274-2.763.107-.065.037.135-.408.974-.396.751-1.14 2.497-.122 3.854a8.1 8.1 0 0 1 .647-2.876c.564-1.278 1.743-3.504 1.836-5.268.048.036.217.135.289.202.218.133.38.333.59.465.21.201.477.335.876.335q.058.005.11.006c.412 0 .73-.134.997-.268.29-.134.52-.334.74-.4h.005c.467-.135.835-.402 1.044-.7zm2.185 8.958c.037.6.343 1.245.882 1.377.588.134 1.434-.333 1.791-.765l.211-.01c.315-.007.577.01.847.268l.003.003c.208.199.305.53.391.876.085.4.154.78.409 1.066.486.527.645.906.636 1.14l.003-.007v.018l-.003-.012c-.015.262-.185.396-.498.595-.63.401-1.746.712-2.457 1.57-.618.737-1.37 1.14-2.036 1.191-.664.053-1.237-.2-1.574-.898l-.005-.003c-.21-.4-.12-1.025.056-1.69.176-.668.428-1.344.463-1.897.037-.714.076-1.335.195-1.814.12-.465.308-.797.641-.984l.045-.022zm-10.814.049h.01q.08 0 .157.014c.376.055.706.333 1.023.752l.91 1.664.003.003c.243.533.754 1.064 1.189 1.637.434.598.77 1.131.729 1.57v.006c-.057.744-.48 1.148-1.125 1.294-.645.135-1.52.002-2.395-.464-.968-.536-2.118-.469-2.857-.602q-.553-.1-.723-.4c-.11-.2-.113-.602.123-1.23v-.004l.002-.003c.117-.334.03-.752-.027-1.118-.055-.401-.083-.71.043-.94.16-.334.396-.4.69-.533.294-.135.64-.202.915-.47h.002v-.002c.256-.268.445-.601.668-.838.19-.201.38-.336.663-.336m7.159-9.074c-.435.201-.945.535-1.488.535-.542 0-.97-.267-1.28-.466-.154-.134-.28-.268-.373-.335-.164-.134-.144-.333-.074-.333.109.016.129.134.199.2.096.066.215.2.36.333.292.2.68.467 1.167.467.485 0 1.053-.267 1.398-.466.195-.135.445-.334.648-.467.156-.136.149-.267.279-.267.128.016.034.134-.147.332a8 8 0 0 1-.69.468zm-1.082-1.583V5.64c-.006-.02.013-.042.029-.05.074-.043.18-.027.26.004.063 0 .16.067.15.135-.006.049-.085.066-.135.066-.055 0-.092-.043-.141-.068-.052-.018-.146-.008-.163-.065m-.551 0c-.02.058-.113.049-.166.066-.047.025-.086.068-.14.068-.05 0-.13-.02-.136-.068-.01-.066.088-.133.15-.133.08-.031.184-.047.259-.005.019.009.036.03.03.05v.02h.003z"/></svg></span> Linux</td> <td><kbd>~/.local/share/BrokenSource</kbd></td> </tr> </tbody> </table></p> </div> <div class="admonition tip"> <p class=admonition-title><strong>Models</strong>: PyTorch, HuggingFace, TorchHub downloads models on:</p> <p><table markdown> <tbody class=slim-table> <tr> <td style="width: 20%"><span class=twemoji><svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M2 3h9v9H2zm9 19H2v-9h9zM21 3v9h-9V3zm0 19h-9v-9h9z"/></svg></span> Windows</td> <td><kbd>C:\\Users\(...)\.cache\{huggingface,transformers,torch}</kbd></td> </tr> <tr> <td><span class=twemoji><svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg></span> MacOS</td> <td><kbd>~/Library/Caches/{huggingface,transformers,torch}</kbd></td> </tr> <tr> <td><span class=twemoji><svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M12.504 0q-.232 0-.48.021c-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.4.4 0 0 0-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.134.063.198.114.333l.003.003c.391.778 1.113 1.132 1.884 1.071s1.592-.536 2.257-1.306c.631-.765 1.683-1.084 2.378-1.503.348-.199.629-.469.649-.853.023-.4-.2-.811-.714-1.376v-.097l-.003-.003c-.17-.2-.25-.535-.338-.926-.085-.401-.182-.786-.492-1.046h-.003c-.059-.054-.123-.067-.188-.135a.36.36 0 0 0-.19-.064c.431-1.278.264-2.55-.173-3.694-.533-1.41-1.465-2.638-2.175-3.483-.796-1.005-1.576-1.957-1.56-3.368.026-2.152.236-6.133-3.544-6.139m.529 3.405h.013c.213 0 .396.062.584.198.19.135.33.332.438.533.105.259.158.459.166.724 0-.02.006-.04.006-.06v.105l-.004-.021-.004-.024a1.8 1.8 0 0 1-.15.706.95.95 0 0 1-.213.335 1 1 0 0 0-.088-.042c-.104-.045-.198-.064-.284-.133a1.3 1.3 0 0 0-.22-.066c.05-.06.146-.133.183-.198q.08-.193.088-.402v-.02a1.2 1.2 0 0 0-.061-.4c-.045-.134-.101-.2-.183-.333-.084-.066-.167-.132-.267-.132h-.016c-.093 0-.176.03-.262.132a.8.8 0 0 0-.205.334 1.2 1.2 0 0 0-.09.4v.019q.002.134.02.267c-.193-.067-.438-.135-.607-.202a2 2 0 0 1-.018-.2v-.02a1.8 1.8 0 0 1 .15-.768 1.08 1.08 0 0 1 .43-.533 1 1 0 0 1 .594-.2zm-2.962.059h.036c.142 0 .27.048.399.135.146.129.264.288.344.465.09.199.14.4.153.667v.004c.007.134.006.2-.002.266v.08c-.03.007-.056.018-.083.024-.152.055-.274.135-.393.2q.018-.136.003-.267v-.015c-.012-.133-.04-.2-.082-.333a.6.6 0 0 0-.166-.267.25.25 0 0 0-.183-.064h-.021c-.071.006-.13.04-.186.132a.55.55 0 0 0-.12.27 1 1 0 0 0-.023.33v.015c.012.135.037.2.08.334.046.134.098.2.166.268q.014.014.034.024c-.07.057-.117.07-.176.136a.3.3 0 0 1-.131.068 2.6 2.6 0 0 1-.275-.402 1.8 1.8 0 0 1-.155-.667 1.8 1.8 0 0 1 .08-.668 1.4 1.4 0 0 1 .283-.535c.128-.133.26-.2.418-.2m1.37 1.706c.332 0 .733.065 1.216.399.293.2.523.269 1.052.468h.003c.255.136.405.266.478.399v-.131a.57.57 0 0 1 .016.47c-.123.31-.516.643-1.063.842v.002c-.268.135-.501.333-.775.465-.276.135-.588.292-1.012.267a1.1 1.1 0 0 1-.448-.067 4 4 0 0 1-.322-.198c-.195-.135-.363-.332-.612-.465v-.005h-.005c-.4-.246-.616-.512-.686-.71q-.104-.403.193-.6c.224-.135.38-.271.483-.336.104-.074.143-.102.176-.131h.002v-.003c.169-.202.436-.47.839-.601.139-.036.294-.065.466-.065zm2.8 2.142c.358 1.417 1.196 3.475 1.735 4.473.286.534.855 1.659 1.102 3.024.156-.005.33.018.513.064.646-1.671-.546-3.467-1.089-3.966-.22-.2-.232-.335-.123-.335.59.534 1.365 1.572 1.646 2.757.13.535.16 1.104.021 1.67.067.028.135.06.205.067 1.032.534 1.413.938 1.23 1.537v-.043c-.06-.003-.12 0-.18 0h-.016c.151-.467-.182-.825-1.065-1.224-.915-.4-1.646-.336-1.77.465-.008.043-.013.066-.018.135-.068.023-.139.053-.209.064-.43.268-.662.669-.793 1.187-.13.533-.17 1.156-.205 1.869v.003c-.02.334-.17.838-.319 1.35-1.5 1.072-3.58 1.538-5.348.334a2.7 2.7 0 0 0-.402-.533 1.5 1.5 0 0 0-.275-.333c.182 0 .338-.03.465-.067a.62.62 0 0 0 .314-.334c.108-.267 0-.697-.345-1.163s-.931-.995-1.788-1.521c-.63-.4-.986-.87-1.15-1.396-.165-.534-.143-1.085-.015-1.645.245-1.07.873-2.11 1.274-2.763.107-.065.037.135-.408.974-.396.751-1.14 2.497-.122 3.854a8.1 8.1 0 0 1 .647-2.876c.564-1.278 1.743-3.504 1.836-5.268.048.036.217.135.289.202.218.133.38.333.59.465.21.201.477.335.876.335q.058.005.11.006c.412 0 .73-.134.997-.268.29-.134.52-.334.74-.4h.005c.467-.135.835-.402 1.044-.7zm2.185 8.958c.037.6.343 1.245.882 1.377.588.134 1.434-.333 1.791-.765l.211-.01c.315-.007.577.01.847.268l.003.003c.208.199.305.53.391.876.085.4.154.78.409 1.066.486.527.645.906.636 1.14l.003-.007v.018l-.003-.012c-.015.262-.185.396-.498.595-.63.401-1.746.712-2.457 1.57-.618.737-1.37 1.14-2.036 1.191-.664.053-1.237-.2-1.574-.898l-.005-.003c-.21-.4-.12-1.025.056-1.69.176-.668.428-1.344.463-1.897.037-.714.076-1.335.195-1.814.12-.465.308-.797.641-.984l.045-.022zm-10.814.049h.01q.08 0 .157.014c.376.055.706.333 1.023.752l.91 1.664.003.003c.243.533.754 1.064 1.189 1.637.434.598.77 1.131.729 1.57v.006c-.057.744-.48 1.148-1.125 1.294-.645.135-1.52.002-2.395-.464-.968-.536-2.118-.469-2.857-.602q-.553-.1-.723-.4c-.11-.2-.113-.602.123-1.23v-.004l.002-.003c.117-.334.03-.752-.027-1.118-.055-.401-.083-.71.043-.94.16-.334.396-.4.69-.533.294-.135.64-.202.915-.47h.002v-.002c.256-.268.445-.601.668-.838.19-.201.38-.336.663-.336m7.159-9.074c-.435.201-.945.535-1.488.535-.542 0-.97-.267-1.28-.466-.154-.134-.28-.268-.373-.335-.164-.134-.144-.333-.074-.333.109.016.129.134.199.2.096.066.215.2.36.333.292.2.68.467 1.167.467.485 0 1.053-.267 1.398-.466.195-.135.445-.334.648-.467.156-.136.149-.267.279-.267.128.016.034.134-.147.332a8 8 0 0 1-.69.468zm-1.082-1.583V5.64c-.006-.02.013-.042.029-.05.074-.043.18-.027.26.004.063 0 .16.067.15.135-.006.049-.085.066-.135.066-.055 0-.092-.043-.141-.068-.052-.018-.146-.008-.163-.065m-.551 0c-.02.058-.113.049-.166.066-.047.025-.086.068-.14.068-.05 0-.13-.02-.136-.068-.01-.066.088-.133.15-.133.08-.031.184-.047.259-.005.019.009.036.03.03.05v.02h.003z"/></svg></span> Linux</td> <td><kbd>~/.cache/{huggingface,transformers,torch}</kbd></td> </tr> </tbody> </table></p> </div> <div class="admonition tip"> <p class=admonition-title><strong>Package</strong> manager cache: </p> <div class="tabbed-set tabbed-alternate" data-tabs=4:4><input checked=checked id=uninstalling-uv name=__tabbed_4 type=radio><input id=uninstalling-pip name=__tabbed_4 type=radio><input id=uninstalling-poetry name=__tabbed_4 type=radio><input id=uninstalling-pdm name=__tabbed_4 type=radio><div class=tabbed-labels><label for=uninstalling-uv><span class=twemoji><svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M1.44 0C.642 0 0 .642 0 1.44v21.12C0 23.358.642 24 1.44 24h21.12c.798 0 1.44-.642 1.44-1.44V1.44C24 .642 23.358 0 22.56 0Zm4.8 4.8h11.52c.795 0 1.44.645 1.44 1.44V19.2h-6.624v-4.32h-1.152v4.32H4.8V6.24c0-.795.645-1.44 1.44-1.44m4.032 5.472v1.152h3.456v-1.152z"/></svg></span> uv</label><label for=uninstalling-pip><span class=twemoji><svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="m14.25.18.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z"/></svg></span> Pip</label><label for=uninstalling-poetry><span class=twemoji><svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M21.604 0a19.14 19.14 0 0 1-5.268 13.213L2.396 0l13.583 13.583a19.15 19.15 0 0 1-13.583 5.624V0zm-1.911 17.297A24.46 24.46 0 0 1 7.189 24l-4.053-4.053a19.9 19.9 0 0 0 13.37-5.838z"/></svg></span> Poetry</label><label for=uninstalling-pdm><span class=twemoji><svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M10.44.418a3.12 3.12 0 0 1 3.12 0l7.69 4.44a3.12 3.12 0 0 1 1.56 2.702v8.88a3.12 3.12 0 0 1-1.56 2.702l-7.69 4.44a3.12 3.12 0 0 1-3.12 0l-7.69-4.44a3.12 3.12 0 0 1-1.56-2.702V7.56a3.12 3.12 0 0 1 1.56-2.702Zm3.87 3.315L12.311 2.58a.62.62 0 0 0-.624 0l-7.69 4.44a.62.62 0 0 0-.312.54v3.774l10.623-6.133Zm2.496 13.643 1.255.725 1.941-1.12a.62.62 0 0 0 .312-.541V7.56a.62.62 0 0 0-.312-.54l-3.196-1.845Zm-2.497-1.441V8.083l-6.8 3.926ZM3.686 14.217v2.223c0 .223.119.429.312.54l7.69 4.44a.62.62 0 0 0 .624 0l3.252-1.878-10.55-6.091Z"/></svg></span> PDM</label></div> <div class=tabbed-content> <div class=tabbed-block> <p>Either run <code>uv cache prune</code> or <code>uv cache dir</code> to locate wheel downloads caches, should be at: <table> <tbody class=slim-table> <tr> <td style="width: 20%"><span class=twemoji><svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M2 3h9v9H2zm9 19H2v-9h9zM21 3v9h-9V3zm0 19h-9v-9h9z"/></svg></span> Windows</td> <td><kbd>C:\\Users\(...)\AppData\Local\uv</kbd></td> </tr> <tr> <td><span class=twemoji><svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg></span> MacOS</td> <td><kbd>~/Library/Caches/uv</kbd></td> </tr> <tr> <td><span class=twemoji><svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M12.504 0q-.232 0-.48.021c-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.4.4 0 0 0-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.134.063.198.114.333l.003.003c.391.778 1.113 1.132 1.884 1.071s1.592-.536 2.257-1.306c.631-.765 1.683-1.084 2.378-1.503.348-.199.629-.469.649-.853.023-.4-.2-.811-.714-1.376v-.097l-.003-.003c-.17-.2-.25-.535-.338-.926-.085-.401-.182-.786-.492-1.046h-.003c-.059-.054-.123-.067-.188-.135a.36.36 0 0 0-.19-.064c.431-1.278.264-2.55-.173-3.694-.533-1.41-1.465-2.638-2.175-3.483-.796-1.005-1.576-1.957-1.56-3.368.026-2.152.236-6.133-3.544-6.139m.529 3.405h.013c.213 0 .396.062.584.198.19.135.33.332.438.533.105.259.158.459.166.724 0-.02.006-.04.006-.06v.105l-.004-.021-.004-.024a1.8 1.8 0 0 1-.15.706.95.95 0 0 1-.213.335 1 1 0 0 0-.088-.042c-.104-.045-.198-.064-.284-.133a1.3 1.3 0 0 0-.22-.066c.05-.06.146-.133.183-.198q.08-.193.088-.402v-.02a1.2 1.2 0 0 0-.061-.4c-.045-.134-.101-.2-.183-.333-.084-.066-.167-.132-.267-.132h-.016c-.093 0-.176.03-.262.132a.8.8 0 0 0-.205.334 1.2 1.2 0 0 0-.09.4v.019q.002.134.02.267c-.193-.067-.438-.135-.607-.202a2 2 0 0 1-.018-.2v-.02a1.8 1.8 0 0 1 .15-.768 1.08 1.08 0 0 1 .43-.533 1 1 0 0 1 .594-.2zm-2.962.059h.036c.142 0 .27.048.399.135.146.129.264.288.344.465.09.199.14.4.153.667v.004c.007.134.006.2-.002.266v.08c-.03.007-.056.018-.083.024-.152.055-.274.135-.393.2q.018-.136.003-.267v-.015c-.012-.133-.04-.2-.082-.333a.6.6 0 0 0-.166-.267.25.25 0 0 0-.183-.064h-.021c-.071.006-.13.04-.186.132a.55.55 0 0 0-.12.27 1 1 0 0 0-.023.33v.015c.012.135.037.2.08.334.046.134.098.2.166.268q.014.014.034.024c-.07.057-.117.07-.176.136a.3.3 0 0 1-.131.068 2.6 2.6 0 0 1-.275-.402 1.8 1.8 0 0 1-.155-.667 1.8 1.8 0 0 1 .08-.668 1.4 1.4 0 0 1 .283-.535c.128-.133.26-.2.418-.2m1.37 1.706c.332 0 .733.065 1.216.399.293.2.523.269 1.052.468h.003c.255.136.405.266.478.399v-.131a.57.57 0 0 1 .016.47c-.123.31-.516.643-1.063.842v.002c-.268.135-.501.333-.775.465-.276.135-.588.292-1.012.267a1.1 1.1 0 0 1-.448-.067 4 4 0 0 1-.322-.198c-.195-.135-.363-.332-.612-.465v-.005h-.005c-.4-.246-.616-.512-.686-.71q-.104-.403.193-.6c.224-.135.38-.271.483-.336.104-.074.143-.102.176-.131h.002v-.003c.169-.202.436-.47.839-.601.139-.036.294-.065.466-.065zm2.8 2.142c.358 1.417 1.196 3.475 1.735 4.473.286.534.855 1.659 1.102 3.024.156-.005.33.018.513.064.646-1.671-.546-3.467-1.089-3.966-.22-.2-.232-.335-.123-.335.59.534 1.365 1.572 1.646 2.757.13.535.16 1.104.021 1.67.067.028.135.06.205.067 1.032.534 1.413.938 1.23 1.537v-.043c-.06-.003-.12 0-.18 0h-.016c.151-.467-.182-.825-1.065-1.224-.915-.4-1.646-.336-1.77.465-.008.043-.013.066-.018.135-.068.023-.139.053-.209.064-.43.268-.662.669-.793 1.187-.13.533-.17 1.156-.205 1.869v.003c-.02.334-.17.838-.319 1.35-1.5 1.072-3.58 1.538-5.348.334a2.7 2.7 0 0 0-.402-.533 1.5 1.5 0 0 0-.275-.333c.182 0 .338-.03.465-.067a.62.62 0 0 0 .314-.334c.108-.267 0-.697-.345-1.163s-.931-.995-1.788-1.521c-.63-.4-.986-.87-1.15-1.396-.165-.534-.143-1.085-.015-1.645.245-1.07.873-2.11 1.274-2.763.107-.065.037.135-.408.974-.396.751-1.14 2.497-.122 3.854a8.1 8.1 0 0 1 .647-2.876c.564-1.278 1.743-3.504 1.836-5.268.048.036.217.135.289.202.218.133.38.333.59.465.21.201.477.335.876.335q.058.005.11.006c.412 0 .73-.134.997-.268.29-.134.52-.334.74-.4h.005c.467-.135.835-.402 1.044-.7zm2.185 8.958c.037.6.343 1.245.882 1.377.588.134 1.434-.333 1.791-.765l.211-.01c.315-.007.577.01.847.268l.003.003c.208.199.305.53.391.876.085.4.154.78.409 1.066.486.527.645.906.636 1.14l.003-.007v.018l-.003-.012c-.015.262-.185.396-.498.595-.63.401-1.746.712-2.457 1.57-.618.737-1.37 1.14-2.036 1.191-.664.053-1.237-.2-1.574-.898l-.005-.003c-.21-.4-.12-1.025.056-1.69.176-.668.428-1.344.463-1.897.037-.714.076-1.335.195-1.814.12-.465.308-.797.641-.984l.045-.022zm-10.814.049h.01q.08 0 .157.014c.376.055.706.333 1.023.752l.91 1.664.003.003c.243.533.754 1.064 1.189 1.637.434.598.77 1.131.729 1.57v.006c-.057.744-.48 1.148-1.125 1.294-.645.135-1.52.002-2.395-.464-.968-.536-2.118-.469-2.857-.602q-.553-.1-.723-.4c-.11-.2-.113-.602.123-1.23v-.004l.002-.003c.117-.334.03-.752-.027-1.118-.055-.401-.083-.71.043-.94.16-.334.396-.4.69-.533.294-.135.64-.202.915-.47h.002v-.002c.256-.268.445-.601.668-.838.19-.201.38-.336.663-.336m7.159-9.074c-.435.201-.945.535-1.488.535-.542 0-.97-.267-1.28-.466-.154-.134-.28-.268-.373-.335-.164-.134-.144-.333-.074-.333.109.016.129.134.199.2.096.066.215.2.36.333.292.2.68.467 1.167.467.485 0 1.053-.267 1.398-.466.195-.135.445-.334.648-.467.156-.136.149-.267.279-.267.128.016.034.134-.147.332a8 8 0 0 1-.69.468zm-1.082-1.583V5.64c-.006-.02.013-.042.029-.05.074-.043.18-.027.26.004.063 0 .16.067.15.135-.006.049-.085.066-.135.066-.055 0-.092-.043-.141-.068-.052-.018-.146-.008-.163-.065m-.551 0c-.02.058-.113.049-.166.066-.047.025-.086.068-.14.068-.05 0-.13-.02-.136-.068-.01-.066.088-.133.15-.133.08-.031.184-.047.259-.005.019.009.036.03.03.05v.02h.003z"/></svg></span> Linux</td> <td><kbd>~/.cache/uv</kbd></td> </tr> </tbody> </table></p> </div> <div class=tabbed-block> <p>Either run <code>pip cache purge</code> or <code>pip cache dir</code> to locate wheel download caches, should be at: <table> <tbody class=slim-table> <tr> <td style="width: 20%"><span class=twemoji><svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M2 3h9v9H2zm9 19H2v-9h9zM21 3v9h-9V3zm0 19h-9v-9h9z"/></svg></span> Windows</td> <td><kbd>C:\\Users\(...)\AppData\Local\pip</kbd></td> </tr> <tr> <td><span class=twemoji><svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg></span> MacOS</td> <td><kbd>~/Library/Caches/pip</kbd></td> </tr> <tr> <td><span class=twemoji><svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M12.504 0q-.232 0-.48.021c-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.4.4 0 0 0-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.134.063.198.114.333l.003.003c.391.778 1.113 1.132 1.884 1.071s1.592-.536 2.257-1.306c.631-.765 1.683-1.084 2.378-1.503.348-.199.629-.469.649-.853.023-.4-.2-.811-.714-1.376v-.097l-.003-.003c-.17-.2-.25-.535-.338-.926-.085-.401-.182-.786-.492-1.046h-.003c-.059-.054-.123-.067-.188-.135a.36.36 0 0 0-.19-.064c.431-1.278.264-2.55-.173-3.694-.533-1.41-1.465-2.638-2.175-3.483-.796-1.005-1.576-1.957-1.56-3.368.026-2.152.236-6.133-3.544-6.139m.529 3.405h.013c.213 0 .396.062.584.198.19.135.33.332.438.533.105.259.158.459.166.724 0-.02.006-.04.006-.06v.105l-.004-.021-.004-.024a1.8 1.8 0 0 1-.15.706.95.95 0 0 1-.213.335 1 1 0 0 0-.088-.042c-.104-.045-.198-.064-.284-.133a1.3 1.3 0 0 0-.22-.066c.05-.06.146-.133.183-.198q.08-.193.088-.402v-.02a1.2 1.2 0 0 0-.061-.4c-.045-.134-.101-.2-.183-.333-.084-.066-.167-.132-.267-.132h-.016c-.093 0-.176.03-.262.132a.8.8 0 0 0-.205.334 1.2 1.2 0 0 0-.09.4v.019q.002.134.02.267c-.193-.067-.438-.135-.607-.202a2 2 0 0 1-.018-.2v-.02a1.8 1.8 0 0 1 .15-.768 1.08 1.08 0 0 1 .43-.533 1 1 0 0 1 .594-.2zm-2.962.059h.036c.142 0 .27.048.399.135.146.129.264.288.344.465.09.199.14.4.153.667v.004c.007.134.006.2-.002.266v.08c-.03.007-.056.018-.083.024-.152.055-.274.135-.393.2q.018-.136.003-.267v-.015c-.012-.133-.04-.2-.082-.333a.6.6 0 0 0-.166-.267.25.25 0 0 0-.183-.064h-.021c-.071.006-.13.04-.186.132a.55.55 0 0 0-.12.27 1 1 0 0 0-.023.33v.015c.012.135.037.2.08.334.046.134.098.2.166.268q.014.014.034.024c-.07.057-.117.07-.176.136a.3.3 0 0 1-.131.068 2.6 2.6 0 0 1-.275-.402 1.8 1.8 0 0 1-.155-.667 1.8 1.8 0 0 1 .08-.668 1.4 1.4 0 0 1 .283-.535c.128-.133.26-.2.418-.2m1.37 1.706c.332 0 .733.065 1.216.399.293.2.523.269 1.052.468h.003c.255.136.405.266.478.399v-.131a.57.57 0 0 1 .016.47c-.123.31-.516.643-1.063.842v.002c-.268.135-.501.333-.775.465-.276.135-.588.292-1.012.267a1.1 1.1 0 0 1-.448-.067 4 4 0 0 1-.322-.198c-.195-.135-.363-.332-.612-.465v-.005h-.005c-.4-.246-.616-.512-.686-.71q-.104-.403.193-.6c.224-.135.38-.271.483-.336.104-.074.143-.102.176-.131h.002v-.003c.169-.202.436-.47.839-.601.139-.036.294-.065.466-.065zm2.8 2.142c.358 1.417 1.196 3.475 1.735 4.473.286.534.855 1.659 1.102 3.024.156-.005.33.018.513.064.646-1.671-.546-3.467-1.089-3.966-.22-.2-.232-.335-.123-.335.59.534 1.365 1.572 1.646 2.757.13.535.16 1.104.021 1.67.067.028.135.06.205.067 1.032.534 1.413.938 1.23 1.537v-.043c-.06-.003-.12 0-.18 0h-.016c.151-.467-.182-.825-1.065-1.224-.915-.4-1.646-.336-1.77.465-.008.043-.013.066-.018.135-.068.023-.139.053-.209.064-.43.268-.662.669-.793 1.187-.13.533-.17 1.156-.205 1.869v.003c-.02.334-.17.838-.319 1.35-1.5 1.072-3.58 1.538-5.348.334a2.7 2.7 0 0 0-.402-.533 1.5 1.5 0 0 0-.275-.333c.182 0 .338-.03.465-.067a.62.62 0 0 0 .314-.334c.108-.267 0-.697-.345-1.163s-.931-.995-1.788-1.521c-.63-.4-.986-.87-1.15-1.396-.165-.534-.143-1.085-.015-1.645.245-1.07.873-2.11 1.274-2.763.107-.065.037.135-.408.974-.396.751-1.14 2.497-.122 3.854a8.1 8.1 0 0 1 .647-2.876c.564-1.278 1.743-3.504 1.836-5.268.048.036.217.135.289.202.218.133.38.333.59.465.21.201.477.335.876.335q.058.005.11.006c.412 0 .73-.134.997-.268.29-.134.52-.334.74-.4h.005c.467-.135.835-.402 1.044-.7zm2.185 8.958c.037.6.343 1.245.882 1.377.588.134 1.434-.333 1.791-.765l.211-.01c.315-.007.577.01.847.268l.003.003c.208.199.305.53.391.876.085.4.154.78.409 1.066.486.527.645.906.636 1.14l.003-.007v.018l-.003-.012c-.015.262-.185.396-.498.595-.63.401-1.746.712-2.457 1.57-.618.737-1.37 1.14-2.036 1.191-.664.053-1.237-.2-1.574-.898l-.005-.003c-.21-.4-.12-1.025.056-1.69.176-.668.428-1.344.463-1.897.037-.714.076-1.335.195-1.814.12-.465.308-.797.641-.984l.045-.022zm-10.814.049h.01q.08 0 .157.014c.376.055.706.333 1.023.752l.91 1.664.003.003c.243.533.754 1.064 1.189 1.637.434.598.77 1.131.729 1.57v.006c-.057.744-.48 1.148-1.125 1.294-.645.135-1.52.002-2.395-.464-.968-.536-2.118-.469-2.857-.602q-.553-.1-.723-.4c-.11-.2-.113-.602.123-1.23v-.004l.002-.003c.117-.334.03-.752-.027-1.118-.055-.401-.083-.71.043-.94.16-.334.396-.4.69-.533.294-.135.64-.202.915-.47h.002v-.002c.256-.268.445-.601.668-.838.19-.201.38-.336.663-.336m7.159-9.074c-.435.201-.945.535-1.488.535-.542 0-.97-.267-1.28-.466-.154-.134-.28-.268-.373-.335-.164-.134-.144-.333-.074-.333.109.016.129.134.199.2.096.066.215.2.36.333.292.2.68.467 1.167.467.485 0 1.053-.267 1.398-.466.195-.135.445-.334.648-.467.156-.136.149-.267.279-.267.128.016.034.134-.147.332a8 8 0 0 1-.69.468zm-1.082-1.583V5.64c-.006-.02.013-.042.029-.05.074-.043.18-.027.26.004.063 0 .16.067.15.135-.006.049-.085.066-.135.066-.055 0-.092-.043-.141-.068-.052-.018-.146-.008-.163-.065m-.551 0c-.02.058-.113.049-.166.066-.047.025-.086.068-.14.068-.05 0-.13-.02-.136-.068-.01-.066.088-.133.15-.133.08-.031.184-.047.259-.005.019.009.036.03.03.05v.02h.003z"/></svg></span> Linux</td> <td><kbd>~/.cache/pip</kbd></td> </tr> </tbody> </table></p> </div> <div class=tabbed-block> <p>Either run <code>poetry cache clear</code> or <code>poetry cache list</code> to locate caches and venvs, should be at: <table> <tbody class=slim-table> <tr> <td style="width: 20%"><span class=twemoji><svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M2 3h9v9H2zm9 19H2v-9h9zM21 3v9h-9V3zm0 19h-9v-9h9z"/></svg></span> Windows</td> <td><kbd>C:\\Users\(...)\AppData\Local\pypoetry</kbd></td> </tr> <tr> <td><span class=twemoji><svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg></span> MacOS</td> <td><kbd>~/Library/Caches/pypoetry</kbd></td> </tr> <tr> <td><span class=twemoji><svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M12.504 0q-.232 0-.48.021c-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.4.4 0 0 0-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.134.063.198.114.333l.003.003c.391.778 1.113 1.132 1.884 1.071s1.592-.536 2.257-1.306c.631-.765 1.683-1.084 2.378-1.503.348-.199.629-.469.649-.853.023-.4-.2-.811-.714-1.376v-.097l-.003-.003c-.17-.2-.25-.535-.338-.926-.085-.401-.182-.786-.492-1.046h-.003c-.059-.054-.123-.067-.188-.135a.36.36 0 0 0-.19-.064c.431-1.278.264-2.55-.173-3.694-.533-1.41-1.465-2.638-2.175-3.483-.796-1.005-1.576-1.957-1.56-3.368.026-2.152.236-6.133-3.544-6.139m.529 3.405h.013c.213 0 .396.062.584.198.19.135.33.332.438.533.105.259.158.459.166.724 0-.02.006-.04.006-.06v.105l-.004-.021-.004-.024a1.8 1.8 0 0 1-.15.706.95.95 0 0 1-.213.335 1 1 0 0 0-.088-.042c-.104-.045-.198-.064-.284-.133a1.3 1.3 0 0 0-.22-.066c.05-.06.146-.133.183-.198q.08-.193.088-.402v-.02a1.2 1.2 0 0 0-.061-.4c-.045-.134-.101-.2-.183-.333-.084-.066-.167-.132-.267-.132h-.016c-.093 0-.176.03-.262.132a.8.8 0 0 0-.205.334 1.2 1.2 0 0 0-.09.4v.019q.002.134.02.267c-.193-.067-.438-.135-.607-.202a2 2 0 0 1-.018-.2v-.02a1.8 1.8 0 0 1 .15-.768 1.08 1.08 0 0 1 .43-.533 1 1 0 0 1 .594-.2zm-2.962.059h.036c.142 0 .27.048.399.135.146.129.264.288.344.465.09.199.14.4.153.667v.004c.007.134.006.2-.002.266v.08c-.03.007-.056.018-.083.024-.152.055-.274.135-.393.2q.018-.136.003-.267v-.015c-.012-.133-.04-.2-.082-.333a.6.6 0 0 0-.166-.267.25.25 0 0 0-.183-.064h-.021c-.071.006-.13.04-.186.132a.55.55 0 0 0-.12.27 1 1 0 0 0-.023.33v.015c.012.135.037.2.08.334.046.134.098.2.166.268q.014.014.034.024c-.07.057-.117.07-.176.136a.3.3 0 0 1-.131.068 2.6 2.6 0 0 1-.275-.402 1.8 1.8 0 0 1-.155-.667 1.8 1.8 0 0 1 .08-.668 1.4 1.4 0 0 1 .283-.535c.128-.133.26-.2.418-.2m1.37 1.706c.332 0 .733.065 1.216.399.293.2.523.269 1.052.468h.003c.255.136.405.266.478.399v-.131a.57.57 0 0 1 .016.47c-.123.31-.516.643-1.063.842v.002c-.268.135-.501.333-.775.465-.276.135-.588.292-1.012.267a1.1 1.1 0 0 1-.448-.067 4 4 0 0 1-.322-.198c-.195-.135-.363-.332-.612-.465v-.005h-.005c-.4-.246-.616-.512-.686-.71q-.104-.403.193-.6c.224-.135.38-.271.483-.336.104-.074.143-.102.176-.131h.002v-.003c.169-.202.436-.47.839-.601.139-.036.294-.065.466-.065zm2.8 2.142c.358 1.417 1.196 3.475 1.735 4.473.286.534.855 1.659 1.102 3.024.156-.005.33.018.513.064.646-1.671-.546-3.467-1.089-3.966-.22-.2-.232-.335-.123-.335.59.534 1.365 1.572 1.646 2.757.13.535.16 1.104.021 1.67.067.028.135.06.205.067 1.032.534 1.413.938 1.23 1.537v-.043c-.06-.003-.12 0-.18 0h-.016c.151-.467-.182-.825-1.065-1.224-.915-.4-1.646-.336-1.77.465-.008.043-.013.066-.018.135-.068.023-.139.053-.209.064-.43.268-.662.669-.793 1.187-.13.533-.17 1.156-.205 1.869v.003c-.02.334-.17.838-.319 1.35-1.5 1.072-3.58 1.538-5.348.334a2.7 2.7 0 0 0-.402-.533 1.5 1.5 0 0 0-.275-.333c.182 0 .338-.03.465-.067a.62.62 0 0 0 .314-.334c.108-.267 0-.697-.345-1.163s-.931-.995-1.788-1.521c-.63-.4-.986-.87-1.15-1.396-.165-.534-.143-1.085-.015-1.645.245-1.07.873-2.11 1.274-2.763.107-.065.037.135-.408.974-.396.751-1.14 2.497-.122 3.854a8.1 8.1 0 0 1 .647-2.876c.564-1.278 1.743-3.504 1.836-5.268.048.036.217.135.289.202.218.133.38.333.59.465.21.201.477.335.876.335q.058.005.11.006c.412 0 .73-.134.997-.268.29-.134.52-.334.74-.4h.005c.467-.135.835-.402 1.044-.7zm2.185 8.958c.037.6.343 1.245.882 1.377.588.134 1.434-.333 1.791-.765l.211-.01c.315-.007.577.01.847.268l.003.003c.208.199.305.53.391.876.085.4.154.78.409 1.066.486.527.645.906.636 1.14l.003-.007v.018l-.003-.012c-.015.262-.185.396-.498.595-.63.401-1.746.712-2.457 1.57-.618.737-1.37 1.14-2.036 1.191-.664.053-1.237-.2-1.574-.898l-.005-.003c-.21-.4-.12-1.025.056-1.69.176-.668.428-1.344.463-1.897.037-.714.076-1.335.195-1.814.12-.465.308-.797.641-.984l.045-.022zm-10.814.049h.01q.08 0 .157.014c.376.055.706.333 1.023.752l.91 1.664.003.003c.243.533.754 1.064 1.189 1.637.434.598.77 1.131.729 1.57v.006c-.057.744-.48 1.148-1.125 1.294-.645.135-1.52.002-2.395-.464-.968-.536-2.118-.469-2.857-.602q-.553-.1-.723-.4c-.11-.2-.113-.602.123-1.23v-.004l.002-.003c.117-.334.03-.752-.027-1.118-.055-.401-.083-.71.043-.94.16-.334.396-.4.69-.533.294-.135.64-.202.915-.47h.002v-.002c.256-.268.445-.601.668-.838.19-.201.38-.336.663-.336m7.159-9.074c-.435.201-.945.535-1.488.535-.542 0-.97-.267-1.28-.466-.154-.134-.28-.268-.373-.335-.164-.134-.144-.333-.074-.333.109.016.129.134.199.2.096.066.215.2.36.333.292.2.68.467 1.167.467.485 0 1.053-.267 1.398-.466.195-.135.445-.334.648-.467.156-.136.149-.267.279-.267.128.016.034.134-.147.332a8 8 0 0 1-.69.468zm-1.082-1.583V5.64c-.006-.02.013-.042.029-.05.074-.043.18-.027.26.004.063 0 .16.067.15.135-.006.049-.085.066-.135.066-.055 0-.092-.043-.141-.068-.052-.018-.146-.008-.163-.065m-.551 0c-.02.058-.113.049-.166.066-.047.025-.086.068-.14.068-.05 0-.13-.02-.136-.068-.01-.066.088-.133.15-.133.08-.031.184-.047.259-.005.019.009.036.03.03.05v.02h.003z"/></svg></span> Linux</td> <td><kbd>~/.cache/pypoetry</kbd></td> </tr> </tbody> </table></p> </div> <div class=tabbed-block> <p>Either run <code>pdm cache clear</code> or <code>pdm cache list</code> to locate wheel downloads caches, should be at: <table> <tbody class=slim-table> <tr> <td style="width: 20%"><span class=twemoji><svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M2 3h9v9H2zm9 19H2v-9h9zM21 3v9h-9V3zm0 19h-9v-9h9z"/></svg></span> Windows</td> <td><kbd>C:\\Users\(...)\AppData\Local\pdm</kbd></td> </tr> <tr> <td><span class=twemoji><svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg></span> MacOS</td> <td><kbd>~/Library/Caches/pdm</kbd></td> </tr> <tr> <td><span class=twemoji><svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M12.504 0q-.232 0-.48.021c-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.4.4 0 0 0-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.134.063.198.114.333l.003.003c.391.778 1.113 1.132 1.884 1.071s1.592-.536 2.257-1.306c.631-.765 1.683-1.084 2.378-1.503.348-.199.629-.469.649-.853.023-.4-.2-.811-.714-1.376v-.097l-.003-.003c-.17-.2-.25-.535-.338-.926-.085-.401-.182-.786-.492-1.046h-.003c-.059-.054-.123-.067-.188-.135a.36.36 0 0 0-.19-.064c.431-1.278.264-2.55-.173-3.694-.533-1.41-1.465-2.638-2.175-3.483-.796-1.005-1.576-1.957-1.56-3.368.026-2.152.236-6.133-3.544-6.139m.529 3.405h.013c.213 0 .396.062.584.198.19.135.33.332.438.533.105.259.158.459.166.724 0-.02.006-.04.006-.06v.105l-.004-.021-.004-.024a1.8 1.8 0 0 1-.15.706.95.95 0 0 1-.213.335 1 1 0 0 0-.088-.042c-.104-.045-.198-.064-.284-.133a1.3 1.3 0 0 0-.22-.066c.05-.06.146-.133.183-.198q.08-.193.088-.402v-.02a1.2 1.2 0 0 0-.061-.4c-.045-.134-.101-.2-.183-.333-.084-.066-.167-.132-.267-.132h-.016c-.093 0-.176.03-.262.132a.8.8 0 0 0-.205.334 1.2 1.2 0 0 0-.09.4v.019q.002.134.02.267c-.193-.067-.438-.135-.607-.202a2 2 0 0 1-.018-.2v-.02a1.8 1.8 0 0 1 .15-.768 1.08 1.08 0 0 1 .43-.533 1 1 0 0 1 .594-.2zm-2.962.059h.036c.142 0 .27.048.399.135.146.129.264.288.344.465.09.199.14.4.153.667v.004c.007.134.006.2-.002.266v.08c-.03.007-.056.018-.083.024-.152.055-.274.135-.393.2q.018-.136.003-.267v-.015c-.012-.133-.04-.2-.082-.333a.6.6 0 0 0-.166-.267.25.25 0 0 0-.183-.064h-.021c-.071.006-.13.04-.186.132a.55.55 0 0 0-.12.27 1 1 0 0 0-.023.33v.015c.012.135.037.2.08.334.046.134.098.2.166.268q.014.014.034.024c-.07.057-.117.07-.176.136a.3.3 0 0 1-.131.068 2.6 2.6 0 0 1-.275-.402 1.8 1.8 0 0 1-.155-.667 1.8 1.8 0 0 1 .08-.668 1.4 1.4 0 0 1 .283-.535c.128-.133.26-.2.418-.2m1.37 1.706c.332 0 .733.065 1.216.399.293.2.523.269 1.052.468h.003c.255.136.405.266.478.399v-.131a.57.57 0 0 1 .016.47c-.123.31-.516.643-1.063.842v.002c-.268.135-.501.333-.775.465-.276.135-.588.292-1.012.267a1.1 1.1 0 0 1-.448-.067 4 4 0 0 1-.322-.198c-.195-.135-.363-.332-.612-.465v-.005h-.005c-.4-.246-.616-.512-.686-.71q-.104-.403.193-.6c.224-.135.38-.271.483-.336.104-.074.143-.102.176-.131h.002v-.003c.169-.202.436-.47.839-.601.139-.036.294-.065.466-.065zm2.8 2.142c.358 1.417 1.196 3.475 1.735 4.473.286.534.855 1.659 1.102 3.024.156-.005.33.018.513.064.646-1.671-.546-3.467-1.089-3.966-.22-.2-.232-.335-.123-.335.59.534 1.365 1.572 1.646 2.757.13.535.16 1.104.021 1.67.067.028.135.06.205.067 1.032.534 1.413.938 1.23 1.537v-.043c-.06-.003-.12 0-.18 0h-.016c.151-.467-.182-.825-1.065-1.224-.915-.4-1.646-.336-1.77.465-.008.043-.013.066-.018.135-.068.023-.139.053-.209.064-.43.268-.662.669-.793 1.187-.13.533-.17 1.156-.205 1.869v.003c-.02.334-.17.838-.319 1.35-1.5 1.072-3.58 1.538-5.348.334a2.7 2.7 0 0 0-.402-.533 1.5 1.5 0 0 0-.275-.333c.182 0 .338-.03.465-.067a.62.62 0 0 0 .314-.334c.108-.267 0-.697-.345-1.163s-.931-.995-1.788-1.521c-.63-.4-.986-.87-1.15-1.396-.165-.534-.143-1.085-.015-1.645.245-1.07.873-2.11 1.274-2.763.107-.065.037.135-.408.974-.396.751-1.14 2.497-.122 3.854a8.1 8.1 0 0 1 .647-2.876c.564-1.278 1.743-3.504 1.836-5.268.048.036.217.135.289.202.218.133.38.333.59.465.21.201.477.335.876.335q.058.005.11.006c.412 0 .73-.134.997-.268.29-.134.52-.334.74-.4h.005c.467-.135.835-.402 1.044-.7zm2.185 8.958c.037.6.343 1.245.882 1.377.588.134 1.434-.333 1.791-.765l.211-.01c.315-.007.577.01.847.268l.003.003c.208.199.305.53.391.876.085.4.154.78.409 1.066.486.527.645.906.636 1.14l.003-.007v.018l-.003-.012c-.015.262-.185.396-.498.595-.63.401-1.746.712-2.457 1.57-.618.737-1.37 1.14-2.036 1.191-.664.053-1.237-.2-1.574-.898l-.005-.003c-.21-.4-.12-1.025.056-1.69.176-.668.428-1.344.463-1.897.037-.714.076-1.335.195-1.814.12-.465.308-.797.641-.984l.045-.022zm-10.814.049h.01q.08 0 .157.014c.376.055.706.333 1.023.752l.91 1.664.003.003c.243.533.754 1.064 1.189 1.637.434.598.77 1.131.729 1.57v.006c-.057.744-.48 1.148-1.125 1.294-.645.135-1.52.002-2.395-.464-.968-.536-2.118-.469-2.857-.602q-.553-.1-.723-.4c-.11-.2-.113-.602.123-1.23v-.004l.002-.003c.117-.334.03-.752-.027-1.118-.055-.401-.083-.71.043-.94.16-.334.396-.4.69-.533.294-.135.64-.202.915-.47h.002v-.002c.256-.268.445-.601.668-.838.19-.201.38-.336.663-.336m7.159-9.074c-.435.201-.945.535-1.488.535-.542 0-.97-.267-1.28-.466-.154-.134-.28-.268-.373-.335-.164-.134-.144-.333-.074-.333.109.016.129.134.199.2.096.066.215.2.36.333.292.2.68.467 1.167.467.485 0 1.053-.267 1.398-.466.195-.135.445-.334.648-.467.156-.136.149-.267.279-.267.128.016.034.134-.147.332a8 8 0 0 1-.69.468zm-1.082-1.583V5.64c-.006-.02.013-.042.029-.05.074-.043.18-.027.26.004.063 0 .16.067.15.135-.006.049-.085.066-.135.066-.055 0-.092-.043-.141-.068-.052-.018-.146-.008-.163-.065m-.551 0c-.02.058-.113.049-.166.066-.047.025-.086.068-.14.068-.05 0-.13-.02-.136-.068-.01-.066.088-.133.15-.133.08-.031.184-.047.259-.005.019.009.036.03.03.05v.02h.003z"/></svg></span> Linux</td> <td><kbd>~/.cache/pdm</kbd></td> </tr> </tbody> </table></p> </div> </div> </div> </div> </article> </div> <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script> <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script> </div> <button type=button class="md-top md-icon" data-md-component=top hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg> Back to top </button> </main> <style>
 
     /* Recreate md-footer */
     .footer-extra-layer {
