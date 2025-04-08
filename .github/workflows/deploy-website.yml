@@ -23,4 +23,4 @@ jobs:
         run: uv run ./Projects/Pianola/Website/make.py
 
       - name: Build and Deploy
-        run: uv run mkdocs gh-deploy -f ./Projects/Pianola/mkdocs.yml
+        run: uv run mkdocs gh-deploy -f ./Projects/Pianola/mkdocs.yml --force
