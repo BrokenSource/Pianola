@@ -21,4 +21,4 @@ jobs:
 
       - name: Build and Deploy
         run: uv run mkdocs gh-deploy --force
-        working-directory: Projects/${GITHUB_REPOSITORY#*/}
+        working-directory: Projects/Pianola
