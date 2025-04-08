@@ -20,4 +20,5 @@ jobs:
           git remote set-url origin "https://github.com/${GITHUB_REPOSITORY}.git"
 
       - name: Build and Deploy
-        run: uv run mkdocs gh-deploy -f ./Projects/Pianola/mkdocs.yml --force
+        run: uv run mkdocs gh-deploy --force
+        working-directory: Projects/Pianola
