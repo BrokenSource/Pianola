@@ -1,4 +1,4 @@
-name: deploy-website
+name: make-website
 on:
   workflow_dispatch:
 
