@@ -130,7 +130,7 @@ class PianolaScene(ShaderScene):
                 self.piano.fluid_load(file)
 
             elif (file.suffix in {".png", ".jpg", ".jpeg"}):
-                log.warning("No background image support yet")
+                log.warn("No background image support yet")
 
     def setup(self) -> None:
         self.load_soundfont(self.config.soundfont.file)
