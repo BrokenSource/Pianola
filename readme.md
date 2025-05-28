@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/BrokenSource/Pianola/main/Pianola/Resources/Images/Pianola.png" width="210">
+  <img src="https://raw.githubusercontent.com/BrokenSource/Pianola/main/pianola/resources/images/logo.png" width="210">
   <h1 style="margin-top: 0">Pianola</h1>
   <b>World's finest</b> piano roll visualizer, where elegance meets motion
   <br>

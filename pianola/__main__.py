@@ -1,7 +1,7 @@
 import sys
 
-from Broken import BrokenProfiler
-from Pianola.Pianola import PianolaScene
+from broken import BrokenProfiler
+from pianola import PianolaScene
 
 
 def main():

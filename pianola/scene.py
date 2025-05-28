@@ -4,19 +4,18 @@ from typing import Annotated, Optional
 
 from attr import define
 from pydantic import Field
-from ShaderFlow.Message import ShaderMessage
-from ShaderFlow.Modules.Audio import ShaderAudio
-from ShaderFlow.Modules.Piano import ShaderPiano
-from ShaderFlow.Scene import ShaderScene
+from shaderflow.message import ShaderMessage
+from shaderflow.modules.audio import ShaderAudio
+from shaderflow.modules.piano import ShaderPiano
+from shaderflow.scene import ShaderScene
 from typer import Option
 
-from Broken import BrokenModel, BrokenPath, StaticClass, log
-from Broken.Externals.FFmpeg import BrokenFFmpeg
-from Pianola import PIANOLA, PIANOLA_ABOUT
+from broken import BrokenModel, BrokenPath, StaticClass, log
+from pianola import PIANOLA, PIANOLA_ABOUT
 
 # ------------------------------------------------------------------------------------------------ #
 
-PIANOLA_SHADER: Path = (PIANOLA.RESOURCES.SHADERS/"Pianola.frag")
+PIANOLA_SHADER: Path = (PIANOLA.RESOURCES.SHADERS/"pianola.frag")
 
 class SoundFonts(StaticClass):
 

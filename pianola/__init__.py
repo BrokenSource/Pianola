@@ -1,4 +1,4 @@
-from Broken import BrokenProject, __version__
+from broken import BrokenProject, __version__
 
 PIANOLA_ABOUT = """
 🎹 World's finest piano roll visualizer, where elegance meets motion.\n\n
@@ -8,6 +8,7 @@ PIANOLA_ABOUT = """
 PIANOLA = PROJECT = BrokenProject(
     PACKAGE=__file__,
     APP_NAME="Pianola",
-    APP_AUTHOR="BrokenSource",
     ABOUT=PIANOLA_ABOUT,
 )
+
+from pianola.scene import PianolaScene

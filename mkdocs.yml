@@ -18,8 +18,8 @@ nav:
   # - Code:
   #   - 📦 Package: Code/
 theme:
-  custom_dir: ../../Website/overrides
-  favicon: Pianola/Resources/Images/Pianola.png
+  custom_dir: ../../website/overrides
+  favicon: pianola/resources/images/logo.png
 markdown_extensions:
   pymdownx.snippets:
-    base_path: [../../Website]
+    base_path: [../../website]
