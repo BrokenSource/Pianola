@@ -1,11 +1,11 @@
 [project.urls]
 GitHub    = "https://github.com/BrokenSource/Pianola"
-Changelog = "https://brokensrc.dev/about/changelog"
-Funding   = "https://brokensrc.dev/about/sponsors"
-Contact   = "https://brokensrc.dev/about/contact"
-Download  = "https://brokensrc.dev/get/releases"
-Docs      = "https://brokensrc.dev/pianola"
-Homepage  = "https://brokensrc.dev"
+Changelog = "https://pianola.brokensrc.dev/about/changelog"
+Funding   = "https://pianola.brokensrc.dev/about/sponsors"
+Contact   = "https://pianola.brokensrc.dev/about/contact"
+Docs      = "https://pianola.brokensrc.dev/docs"
+Download  = "https://pianola.brokensrc.dev/get"
+Homepage  = "https://pianola.brokensrc.dev"
 
 [project]
 name        = "pianola"
