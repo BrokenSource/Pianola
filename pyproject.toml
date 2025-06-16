@@ -7,6 +7,9 @@ Docs      = "https://pianola.brokensrc.dev/docs"
 Download  = "https://pianola.brokensrc.dev/get"
 Homepage  = "https://pianola.brokensrc.dev"
 
+[tool.hatch.metadata.hooks.custom]
+path = ".github/hatch_build.py"
+
 [project]
 name        = "pianola"
 description = "🎹 World's finest piano roll visualizer, where elegance meets motion"
@@ -30,11 +33,5 @@ build-backend = "hatchling.build"
 [tool.hatch.build.targets.wheel]
 packages = ["pianola"]
 
-[tool.hatch.metadata.hooks.custom]
-path = ".github/hatch_build.py"
-
 [tool.hatch.metadata]
 allow-direct-references = true
-
-[tool.hatch.build.targets.sdist]
-exclude = ["*"]
