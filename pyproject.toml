@@ -1,7 +1,7 @@
 [project.urls]
+Funding   = "https://github.com/sponsors/Tremeschin/"
 GitHub    = "https://github.com/BrokenSource/Pianola"
 Changelog = "https://pianola.brokensrc.dev/about/changelog"
-Funding   = "https://pianola.brokensrc.dev/about/sponsors"
 Contact   = "https://pianola.brokensrc.dev/about/contact"
 Docs      = "https://pianola.brokensrc.dev/docs"
 Download  = "https://pianola.brokensrc.dev/get"

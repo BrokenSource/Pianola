@@ -18,7 +18,7 @@
     <a href="https://pianola.brokensrc.dev/get/">✅ Installation</a> •
     <a href="https://pianola.brokensrc.dev/">📦 Documentation</a> •
     <a href="https://github.com/BrokenSource/Pianola/issues">🔥 Issues</a> •
-    <a href="https://brokensrc.dev/about/sponsors">❤️ Funding</a>
+    <a href="https://github.com/sponsors/Tremeschin/">❤️ Funding</a>
   </b>
   <br>
   <sub>
@@ -44,7 +44,7 @@
 
 - [x] **Spring** physics model governing many animations, providing a realistic and organic feel to the visuals - a unique innovation in the market.
 
-- [x] **Commercial** use allowed and encouraged - Simply attribute the project, and go the extra mile by [supporting](https://brokensrc.dev/about/sponsors) this project and others directly!
+- [x] **Commercial** use allowed and encouraged - Simply attribute the project, and go the extra mile by [supporting](https://github.com/sponsors/Tremeschin/) this project and others directly!
 
 All the benefits of the parent project [ShaderFlow](https://brokensrc.dev/shaderflow/) are also present 🎉
 
