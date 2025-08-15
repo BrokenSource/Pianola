@@ -10,7 +10,7 @@ nav:
     - Contact: about/contact.md
   - Installation:
     - get/index.md
-    - Installers: get/installers.md
+    # - Installers: get/installers.md
     - Wheels: get/wheels.md
     - Source: get/source.md
   # - Documentation:
@@ -23,3 +23,5 @@ theme:
 markdown_extensions:
   pymdownx.snippets:
     base_path: [../../website]
+watch:
+  - ../../website
