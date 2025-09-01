@@ -25,10 +25,11 @@ dependencies = [
 [project.scripts]
 pianola = "pianola.__main__:main"
 
-[tool.hatch.metadata.hooks.plugin]
 [build-system]
 requires = ["hatchling", "hook@git+https://github.com/BrokenSource/Hook/"]
 build-backend = "hatchling.build"
+
+[tool.hatch.metadata.hooks.plugin]
 
 [tool.hatch.build.targets.wheel]
 packages = ["pianola"]

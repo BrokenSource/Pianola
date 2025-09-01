@@ -1,4 +1,8 @@
-from broken import BrokenProject, __version__
+import importlib.metadata
+
+from broken import BrokenProject
+
+__version__ = importlib.metadata.version(__package__)
 
 PIANOLA_ABOUT = """
 🎹 World's finest piano roll visualizer, where elegance meets motion.\n\n
