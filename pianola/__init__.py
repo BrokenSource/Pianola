@@ -1,6 +1,6 @@
 import importlib.metadata
 
-from broken import BrokenProject
+from broken.project import BrokenProject
 
 __version__ = importlib.metadata.version(__package__)
 
@@ -9,7 +9,7 @@ PIANOLA_ABOUT = """
 → See the [blue link=https://brokensrc.dev/pianola/]Website[/] for examples and more information!\n
 """
 
-PIANOLA = PROJECT = BrokenProject(
+PIANOLA = BrokenProject(
     PACKAGE=__file__,
     APP_NAME="Pianola",
     ABOUT=PIANOLA_ABOUT,

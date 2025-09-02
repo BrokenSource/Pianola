@@ -2,7 +2,8 @@ import functools
 from pathlib import Path
 from typing import Annotated, Optional
 
-from attr import define
+from attrs import define
+from loguru import logger
 from pydantic import Field
 from shaderflow.message import ShaderMessage
 from shaderflow.modules.audio import ShaderAudio
@@ -10,10 +11,12 @@ from shaderflow.modules.piano import ShaderPiano
 from shaderflow.scene import ShaderScene
 from typer import Option
 
-from broken import BrokenModel, BrokenPath, StaticClass, log
+from broken.model import BrokenModel
+from broken.path import BrokenPath
+from broken.utils import StaticClass
 from pianola import PIANOLA, PIANOLA_ABOUT
 
-# ------------------------------------------------------------------------------------------------ #
+# ---------------------------------------------------------------------------- #
 
 PIANOLA_SHADER: Path = (PIANOLA.RESOURCES.SHADERS/"pianola.frag")
 
@@ -34,7 +37,7 @@ class Songs(StaticClass):
         """The Entertainer, Public Domain, by Scott Joplin"""
         return BrokenPath.get_external("https://bitmidi.com/uploads/28765.mid")
 
-# ------------------------------------------------------------------------------------------------ #
+# ---------------------------------------------------------------------------- #
 
 @define
 class PianolaScene(ShaderScene):
@@ -129,7 +132,7 @@ class PianolaScene(ShaderScene):
                 self.piano.fluid_load(file)
 
             elif (file.suffix in {".png", ".jpg", ".jpeg"}):
-                log.warn("No background image support yet")
+                logger.warn("No background image support yet")
 
     def setup(self) -> None:
         self.load_soundfont(self.config.soundfont.file)
