@@ -5,9 +5,9 @@ from typing import Annotated, Optional
 from attrs import define
 from loguru import logger
 from pydantic import Field
+from shaderflow.audio import ShaderAudio
 from shaderflow.message import ShaderMessage
-from shaderflow.modules.audio import ShaderAudio
-from shaderflow.modules.piano import ShaderPiano
+from shaderflow.piano import ShaderPiano
 from shaderflow.scene import ShaderScene
 from typer import Option
 
