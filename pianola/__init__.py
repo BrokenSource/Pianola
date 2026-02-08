@@ -1,18 +1,16 @@
+from dearlog import logger  # isort: split
+
 import importlib.metadata
 
 from broken.project import BrokenProject
 
-__version__ = importlib.metadata.version(__package__)
-
-PIANOLA_ABOUT = """
-🎹 World's finest piano roll visualizer, where elegance meets motion.\n\n
-→ See the [blue link=https://brokensrc.dev/pianola/]Website[/] for examples and more information!\n
-"""
+__version__: str = importlib.metadata.version(__package__)
+__about__:   str = "🎹 World's finest piano roll visualizer, where elegance meets motion"
 
 PIANOLA = BrokenProject(
     PACKAGE=__file__,
     APP_NAME="Pianola",
-    ABOUT=PIANOLA_ABOUT,
+    ABOUT=__about__,
 )
 
 from pianola.scene import PianolaScene

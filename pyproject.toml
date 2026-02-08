@@ -7,7 +7,6 @@ Docs      = "https://pianola.brokensrc.dev/docs"
 Download  = "https://pianola.brokensrc.dev/get"
 Homepage  = "https://pianola.brokensrc.dev"
 
-
 [project]
 name        = "pianola"
 description = "🎹 World's finest piano roll visualizer, where elegance meets motion"
@@ -20,6 +19,7 @@ requires-python = ">=3.10"
 dependencies = [
     "broken-source @ git+https://github.com/BrokenSource/BrokenSource",
     "shaderflow @ git+https://github.com/BrokenSource/ShaderFlow",
+    "dearlog @ git+https://github.com/BrokenSource/DearLog",
 ]
 
 [project.scripts]

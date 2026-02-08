@@ -3,7 +3,6 @@ from pathlib import Path
 from typing import Annotated, Optional
 
 from attrs import define
-from loguru import logger
 from pydantic import Field
 from shaderflow.audio import ShaderAudio
 from shaderflow.message import ShaderMessage
@@ -14,7 +13,7 @@ from typer import Option
 from broken.model import BrokenModel
 from broken.path import BrokenPath
 from broken.utils import StaticClass
-from pianola import PIANOLA, PIANOLA_ABOUT
+from pianola import PIANOLA, __about__, logger
 
 # ---------------------------------------------------------------------------- #
 
@@ -102,7 +101,7 @@ class PianolaScene(ShaderScene):
     # Command line interface
 
     def commands(self):
-        self.cli.description = PIANOLA_ABOUT
+        self.cli.description = __about__
 
         with self.cli.panel(self.scene_panel):
             self.cli.command(self.config.midi)
