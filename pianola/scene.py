@@ -102,7 +102,7 @@ class PianolaScene(ShaderScene):
         )
 
     def build(self):
-        self.shader.fragment = (RESOURCES/"pianola.frag")
+        self.shader.fragment = (RESOURCES/"pianola.glsl")
         self.audio = ShaderAudio(scene=self, name="iAudio")
         self.piano = ShaderPiano(scene=self)
 
