@@ -7,12 +7,8 @@ __about__:   str = __meta__["Summary"]
 __author__:  str = __meta__["Author"]
 __version__: str = __meta__["Version"]
 
-from broken.project import BrokenProject
+from pathlib import Path
 
-PIANOLA = BrokenProject(
-    PACKAGE=__file__,
-    APP_NAME="Pianola",
-    ABOUT=__about__,
-)
+RESOURCES: Path = Path(__file__).parent/"resources"
 
 from pianola.scene import PianolaScene

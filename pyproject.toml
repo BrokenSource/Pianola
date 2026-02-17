@@ -9,7 +9,7 @@ Homepage  = "https://pianola.brokensrc.dev"
 
 [project]
 name        = "pianola"
-description = "🎹 World's finest piano roll visualizer, where elegance meets motion"
+description = "🎹 Smoothest piano roll visualizer"
 authors     = [{name="Tremeschin"}]
 dynamic     = ["keywords"]
 version     = "0.10.0"
@@ -17,7 +17,6 @@ readme      = "readme.md"
 license     = "AGPL-3.0"
 requires-python = ">=3.10"
 dependencies = [
-    "broken-source @ git+https://github.com/BrokenSource/BrokenSource",
     "shaderflow @ git+https://github.com/BrokenSource/ShaderFlow",
     "dearlog @ git+https://github.com/BrokenSource/DearLog",
 ]

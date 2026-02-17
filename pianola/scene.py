@@ -13,11 +13,9 @@ from typer import Option
 from broken.model import BrokenModel
 from broken.path import BrokenPath
 from broken.utils import StaticClass
-from pianola import PIANOLA, __about__, logger
+from pianola import RESOURCES, __about__, logger
 
 # ---------------------------------------------------------------------------- #
-
-PIANOLA_SHADER: Path = (PIANOLA.RESOURCES.SHADERS/"pianola.frag")
 
 class SoundFonts(StaticClass):
 
@@ -114,7 +112,7 @@ class PianolaScene(ShaderScene):
     def build(self):
         self.audio = ShaderAudio(scene=self, name="iAudio")
         self.piano = ShaderPiano(scene=self)
-        self.shader.fragment = PIANOLA_SHADER
+        self.shader.fragment = RESOURCES/"pianola.frag"
 
     def handle(self, message: ShaderMessage) -> None:
         ShaderScene.handle(self, message)

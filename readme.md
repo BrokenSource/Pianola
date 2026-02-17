@@ -1,35 +1,26 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/BrokenSource/Pianola/main/pianola/resources/images/logo.png" width="210">
+  <img src="https://raw.githubusercontent.com/BrokenSource/Pianola/main/website/assets/images/logo.png" width="210">
   <h1 style="margin-top: 0">Pianola</h1>
-  <b>World's finest</b> piano roll visualizer, where elegance meets motion
+  <span>🎹 Smoothest piano roll visualizer 🎹</span>
   <br>
   <br>
-  <a href="https://pypi.org/project/pianola/"><img src="https://img.shields.io/pypi/v/pianola?label=PyPI&color=blue"></a>
-  <a href="https://pypi.org/project/pianola/"><img src="https://img.shields.io/pypi/dw/pianola?label=Installs&color=blue"></a>
-  <a href="https://github.com/BrokenSource/BrokenSource"><img src="https://img.shields.io/github/v/tag/BrokenSource/BrokenSource?label=GitHub&color=orange"></a>
-  <a href="https://github.com/BrokenSource/Pianola/stargazers"><img src="https://img.shields.io/github/stars/BrokenSource/Pianola?label=Stars&style=flat&color=orange"></a>
-  <!-- <a href="https://github.com/BrokenSource/Pianola/releases/"><img src="https://img.shields.io/github/v/release/BrokenSource/Pianola?label=Release&color=light-green"></a> -->
-  <!-- <a href="https://github.com/BrokenSource/Pianola/releases/"><img src="https://img.shields.io/github/downloads/BrokenSource/Pianola/total?label=Downloads&color=light-green"></a> -->
-  <a href="https://discord.gg/KjqvcYwRHm"><img src="https://img.shields.io/discord/1184696441298485370?label=Discord&style=flat&color=purple"></a>
-  <br>
+    <a href="https://pypi.org/project/pianola/"><img src="https://img.shields.io/pypi/v/pianola?label=PyPI&color=blue"></a>
+    <a href="https://pypi.org/project/pianola/"><img src="https://img.shields.io/pypi/dw/pianola?label=Installs&color=blue"></a>
+    <a href="https://github.com/BrokenSource/Pianola"><img src="https://img.shields.io/github/v/tag/BrokenSource/Pianola?label=GitHub&color=orange"></a>
+    <a href="https://github.com/BrokenSource/Pianola/stargazers"><img src="https://img.shields.io/github/stars/BrokenSource/Pianola?label=Stars&style=flat&color=orange"></a>
+    <!-- <a href="https://github.com/BrokenSource/Pianola/releases/"><img src="https://img.shields.io/github/v/release/BrokenSource/Pianola?label=Release&color=light-green"></a> -->
+    <!-- <a href="https://github.com/BrokenSource/Pianola/releases/"><img src="https://img.shields.io/github/downloads/BrokenSource/Pianola/total?label=Downloads&color=light-green"></a> -->
+    <a href="https://discord.gg/KjqvcYwRHm"><img src="https://img.shields.io/discord/1184696441298485370?label=Discord&style=flat&color=purple"></a>
   <br>
   <b>
     Links •
-    <a href="https://pianola.brokensrc.dev/get/">✅ Installation</a> •
-    <a href="https://pianola.brokensrc.dev/">📦 Documentation</a> •
-    <a href="https://github.com/BrokenSource/Pianola/issues">🔥 Issues</a> •
-    <a href="https://github.com/sponsors/Tremeschin/">❤️ Funding</a>
+    <a href="https://pianola.brokensrc.dev/get/">Installation</a> •
+    <a href="https://pianola.brokensrc.dev/">Documentation</a> •
+    <a href="https://github.com/BrokenSource/Pianola/issues">Issues</a> •
+    <a href="https://github.com/sponsors/Tremeschin/">Funding</a>
   </b>
   <br>
-  <sub>
-    <a href="https://www.youtube.com/@Tremeschin">YouTube</a> •
-    <a href="https://www.github.com/BrokenSource/Pianola">GitHub</a> •
-    <a href="https://brokensrc.dev/about/contact">Contact</a> •
-    <a href="https://brokensrc.dev/about/changelog">Changelog</a> •
-    <a href="https://brokensrc.dev/get/uninstalling">Uninstalling</a> •
-    <a href="https://brokensrc.dev/about/license">License</a>
-  </sub>
-  <br>
+  <sub><small>⭐️ Consider starring the project to help it grow! ⭐️</small></sub>
   <br>
 </div>
 
@@ -38,7 +29,7 @@
 
 ## 🔥 Description
 
-**Pianola** is an elegant and powerful _dynamic_ piano roll visualizer written in Python and GLSL Shaders, with an focus on quality, performance and visuals. Unresistable after you see it.
+**Pianola** is an elegant and dynamic piano roll visualizer written in Python and GLSL Shaders, with a focus on quality, performance and visuals.
 
 - [x] **Visualize** your midi files in a beautiful and smooth piano roll animation, with unrestricted customization in the code and high quality output.
 
@@ -48,19 +39,9 @@
 
 All the benefits of the parent project [ShaderFlow](https://brokensrc.dev/shaderflow/) are also present 🎉
 
-## 📦 Installation
+## 📦 Getting Started
 
-Head out to the [**official website**](https://brokensrc.dev/get) for the latest installation instructions and more!
-
-<a href="https://brokensrc.dev/get">
-  <img src="https://github.com/user-attachments/assets/8470c0d2-46de-4068-b9ce-a1261a6c0e69">
-</a>
-
-## ⭐️ Usage
-
-**🚧 Under construction 🚧**
-
-Run `pianola --help` to see all available commands for now!
+🚧 Under maintenance 👷
 
 ## ♻️ Community
 
