@@ -1,10 +1,10 @@
 import sys
 
-from pianola import PianolaScene
+from pianola import Pianola
 
 
 def main():
-    pianola = PianolaScene()
+    pianola = Pianola()
     pianola.cli(*sys.argv[1:])
 
 if __name__ == "__main__":

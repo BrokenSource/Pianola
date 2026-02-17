@@ -11,4 +11,4 @@ from pathlib import Path
 
 RESOURCES: Path = Path(__file__).parent/"resources"
 
-from pianola.scene import PianolaScene
+from pianola.scene import Pianola

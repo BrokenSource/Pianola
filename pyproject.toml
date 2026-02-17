@@ -19,6 +19,7 @@ requires-python = ">=3.10"
 dependencies = [
     "shaderflow @ git+https://github.com/BrokenSource/ShaderFlow",
     "dearlog @ git+https://github.com/BrokenSource/DearLog",
+    "pooch~=1.0",
 ]
 
 [project.scripts]
