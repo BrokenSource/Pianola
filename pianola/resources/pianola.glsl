@@ -87,8 +87,11 @@ void main() {
     float whiteX      = segment.Bx;
     float blackHeight = iPianoHeight*(1 - iPianoBlackRatio);
 
+    // Out of bounds
+    if (uv.y < -0.02) {}
+
     // Inside the piano keys
-    if (uv.y < iPianoHeight) {
+    else if (uv.y < iPianoHeight) {
         bool white     = (isWhiteKey(rollIndex) || (uv.y < blackHeight) || (uv.y > iPianoHeight));
         int  keyIndex  = white ? whiteIndex:rollIndex;
         vec2 whiteStuv = vec2(whiteX, uv.y/iPianoHeight);
@@ -106,7 +109,7 @@ void main() {
         float down        = mix(0.11, 0, press); // Key perspective
 
         // Color the key
-        fragColor.rgb = (channel==-1)?keyColor:mix(keyColor, channelColor, pow(abs(press), 0.5));
+        fragColor.rgb = (channel==-1) ? keyColor:mix(keyColor, channelColor, pow(abs(press), 0.5));
         // fragColor.rgb = mix(keyColor, channelColor, pow(abs(press), 0.5));
         // fragColor.rgb = keyColor;
 

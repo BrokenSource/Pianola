@@ -12,9 +12,8 @@ from shaderflow.scene import ShaderScene
 from typer import Option
 
 from broken.path import BrokenPath
-from pianola import RESOURCES, __about__, logger
+from pianola import RESOURCES, __about__
 
-# ---------------------------------------------------------------------------- #
 
 class PianolaConfig(BaseModel):
     model_config = ConfigDict(use_attribute_docstrings=True)
