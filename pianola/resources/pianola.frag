@@ -4,7 +4,7 @@
 #define BLACK_COLOR vec3(0.2)
 #define TOP_BORDER 0.03
 #define HORIZONTAL 0
-#define VIGNETTE 1
+#define VIGNETTE 0
 
 // Channel colors definitions for keys and notes
 vec3 getChannelColor(int channel) {

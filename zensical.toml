@@ -1,0 +1,78 @@
+[project]
+site_name = "Pianola"
+site_description = "🎹 Smoothest piano roll visualizer"
+site_author = "Tremeschin"
+site_url  = "https://pianola.brokensrc.dev/"
+repo_url  = "https://github.com/BrokenSource/Pianola/"
+repo_name = "BrokenSource/Pianola"
+copyright = "&copy; CC BY-SA 4.0, <a href='https://github.com/Tremeschin/'>Tremeschin</a> 🇧🇷"
+docs_dir  = "website"
+nav = []
+
+[project.theme]
+variant = "modern"
+favicon = "assets/images/logo.png"
+features = [
+  "announce.dismiss",
+  "content.action.view",
+  "content.code.annotate",
+  "content.code.copy",
+  "content.footnote.tooltips",
+  "content.tabs.link",
+  "content.tooltips",
+  "navigation.expand",
+  "navigation.footer",
+  "navigation.indexes",
+  "navigation.instant.prefetch",
+  "navigation.instant.progress",
+  "navigation.instant",
+  "navigation.path",
+  "navigation.tabs",
+  "navigation.top",
+  "search.highlight",
+  "toc.follow",
+]
+
+[project.theme.icon]
+logo = "material/piano"
+repo = "fontawesome/brands/github"
+
+[project.theme.font]
+text = "Inter"
+code = "Cascadia Code"
+
+[[project.theme.palette]]
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to dark mode"
+media       = "(prefers-color-scheme: light)"
+scheme      = "default"
+primary     = "blue"
+accent      = "light-blue"
+
+[[project.theme.palette]]
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to light mode"
+media       = "(prefers-color-scheme: dark)"
+scheme      = "slate"
+primary     = "orange"
+accent      = "orange"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/discord"
+link = "https://discord.gg/KjqvcYwRHm"
+name = "Discord"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/patreon"
+link = "https://www.patreon.com/Tremeschin"
+name = "Patreon"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/github"
+link = "https://github.com/Tremeschin"
+name = "GitHub"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/youtube"
+link = "https://www.youtube.com/@Tremeschin"
+name = "YouTube"

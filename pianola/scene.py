@@ -2,22 +2,20 @@ import functools
 from pathlib import Path
 from typing import Annotated, Optional
 
-from attrs import define
-from pydantic import Field
+from attrs import Factory, define
+from pydantic import BaseModel, ConfigDict, Field
 from shaderflow.audio import ShaderAudio
 from shaderflow.message import ShaderMessage
 from shaderflow.piano import ShaderPiano
 from shaderflow.scene import ShaderScene
 from typer import Option
 
-from broken.model import BrokenModel
 from broken.path import BrokenPath
-from broken.utils import StaticClass
 from pianola import RESOURCES, __about__, logger
 
 # ---------------------------------------------------------------------------- #
 
-class SoundFonts(StaticClass):
+class SoundFonts:
 
     @staticmethod
     @functools.lru_cache
@@ -26,77 +24,65 @@ class SoundFonts(StaticClass):
         URL = "https://freepats.zenvoid.org/Piano/SalamanderGrandPiano/SalamanderGrandPiano-SF2-V3+20200602.tar.xz"
         return next(BrokenPath.get_external(URL).rglob("*.sf2"))
 
-class Songs(StaticClass):
+# ---------------------------------------------------------------------------- #
 
-    @staticmethod
-    @functools.lru_cache
-    def TheEntertainer() -> Path:
-        """The Entertainer, Public Domain, by Scott Joplin"""
-        return BrokenPath.get_external("https://bitmidi.com/uploads/28765.mid")
+class PianolaConfig(BaseModel):
+
+    class Piano(BaseModel):
+        """Configure the piano roll display"""
+        model_config = ConfigDict(use_attribute_docstrings=True)
+
+        roll_time: Annotated[float, Option("--roll-time", "-r")] = 2.0
+        """How long the notes are visible"""
+
+        height: Annotated[float, Option("--height", "-h")] = 0.275
+        """Height of the piano in the shader"""
+
+        black_ratio: Annotated[float, Option("--black-ratio", "-b")] = 0.6
+        """How long are black keys compared to white keys"""
+
+        extra_keys: Annotated[int, Option("--extra-keys", "-e")] = 6
+        """Display the dynamic range plus this many keys on each side"""
+
+    piano: Piano = Field(default_factory=Piano)
+
+    # --------------------------------------|
+
+    class Midi(BaseModel):
+        """Input and configure a midi file to be played"""
+        model_config = ConfigDict(use_attribute_docstrings=True)
+
+        # Public Domain https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=263
+        file: Annotated[Path, Option("--input", "-i")] = RESOURCES/"entertainer.mid"
+        """The midi file to play"""
+
+        audio: Annotated[Optional[Path], Option("--audio", "-a")] = None
+        """The optional pre-rendered final video audio"""
+
+        minimum_velocity: Annotated[int, Option("--min", min=0, max=127)] = 40
+        """Normalize velocities to this minimum value"""
+
+        maximum_velocity: Annotated[int, Option("--max", min=0, max=127)] = 100
+        """Normalize velocities to this maximum value"""
+
+    midi: Midi = Field(default_factory=Midi)
+
+    # --------------------------------------|
+
+    class SoundFont(BaseModel):
+        """Input and configure a soundfont to be used"""
+        model_config = ConfigDict(use_attribute_docstrings=True)
+
+        file: Annotated[Path, Option("--input", "-i")] = SoundFonts.Salamander()
+        """The soundfont to use for the piano"""
+
+    soundfont: SoundFont = Field(default_factory=SoundFont)
 
 # ---------------------------------------------------------------------------- #
 
 @define
 class PianolaScene(ShaderScene):
-
-    class Config(ShaderScene.Config):
-
-        # --------------------------------------|
-
-        class Midi(BrokenModel):
-            """Input and configure a midi file to be played"""
-
-            file: Annotated[Path, Option("--input", "-i")] = Songs.TheEntertainer()
-            """The midi file to play, automatically downloaded if URL"""
-
-            audio: Annotated[Optional[Path], Option("--audio", "-a")] = None
-            """The optional pre-rendered final video audio"""
-
-            minimum_velocity: Annotated[int, Option(
-                "--min-velocity", "--min", min=0, max=127)] = 40
-            """Normalize velocities to this minimum value"""
-
-            maximum_velocity: Annotated[int, Option(
-                "--max-velocity", "--max", min=0, max=127)] = 127
-            """Normalize velocities to this maximum value"""
-
-        midi: Midi = Field(default_factory=Midi)
-
-        # --------------------------------------|
-
-        class Piano(BrokenModel):
-            """Configure the piano roll display"""
-
-            roll_time: Annotated[float, Option(
-                "--roll-time", "-r", min=0)] = 2.0
-            """How long the notes are visible"""
-
-            height: Annotated[float, Option(
-                "--height", "-h", min=0, max=1)] = 0.275
-            """Height of the piano in the shader (0-1)"""
-
-            black_ratio: Annotated[float, Option(
-                "--black-ratio", "-b", min=0, max=1)] = 0.6
-            """How long are black keys compared to white keys"""
-
-            extra_keys: Annotated[int, Option(
-                "--extra-keys", "-e", min=0)] = 6
-            """Display the dynamic range plus this many keys on each side"""
-
-        piano: Piano = Field(default_factory=Piano)
-
-        # --------------------------------------|
-
-        class SoundFont(BrokenModel):
-            """Input and configure a soundfont to be used"""
-
-            file: Annotated[Path, Option("--input", "-i")] = SoundFonts.Salamander()
-            """The soundfont to use for the piano, automatically downloaded if URL"""
-
-        soundfont: SoundFont = Field(default_factory=SoundFont)
-
-    # -------------------------------------------------------------------------------------------- #
-    # Command line interface
+    config: PianolaConfig = Factory(PianolaConfig)
 
     def commands(self):
         self.cli.description = __about__
@@ -106,13 +92,19 @@ class PianolaScene(ShaderScene):
             self.cli.command(self.config.piano)
             self.cli.command(self.config.soundfont)
 
-    # -------------------------------------------------------------------------------------------- #
-    # Module implementation
+    def load_midi(self, midi: Path) -> None:
+        self.piano.fluid_all_notes_off()
+        self.piano.clear()
+        self.piano.load_midi(midi)
+        self.piano.normalize_velocities(
+            minimum=self.config.midi.minimum_velocity,
+            maximum=self.config.midi.maximum_velocity
+        )
 
     def build(self):
+        self.shader.fragment = (RESOURCES/"pianola.frag")
         self.audio = ShaderAudio(scene=self, name="iAudio")
         self.piano = ShaderPiano(scene=self)
-        self.shader.fragment = RESOURCES/"pianola.frag"
 
     def handle(self, message: ShaderMessage) -> None:
         ShaderScene.handle(self, message)
@@ -132,7 +124,7 @@ class PianolaScene(ShaderScene):
                 logger.warn("No background image support yet")
 
     def setup(self) -> None:
-        self.load_soundfont(self.config.soundfont.file)
+        self.piano.fluid_load(self.config.soundfont.file)
         self.load_midi(self.config.midi.file)
 
         # Mirror common settings
@@ -148,22 +140,6 @@ class PianolaScene(ShaderScene):
                 midi=self.config.midi.file
             )
 
+    # Mouse drag time scroll to match piano roll size
     def update(self) -> None:
-
-        # Mouse drag time scroll to match piano roll size
         self._mouse_drag_time_factor = (self.piano.roll_time/(self.piano.height - 1))*self.camera.zoom.value
-
-    # -------------------------------------------------------------------------------------------- #
-    # Internals
-
-    def load_soundfont(self, soundfont: Path) -> None:
-        self.piano.fluid_load(soundfont)
-
-    def load_midi(self, midi: Path) -> None:
-        self.piano.fluid_all_notes_off()
-        self.piano.clear()
-        self.piano.load_midi(midi)
-        self.piano.normalize_velocities(
-            minimum=self.config.midi.minimum_velocity,
-            maximum=self.config.midi.maximum_velocity
-        )
