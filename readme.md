@@ -26,8 +26,8 @@
   <br>
 </div>
 
-<video src="https://github.com/user-attachments/assets/a6cf478a-04b6-4ee2-9d5a-d286bf3dbd6d" controls></video>
-<sup><b>⚖️</b> _The Entertainer_ by Scott Joplin (Public Domain), _Salamander Grand Piano_ by Alexander Holm (CC-BY 3.0)</sup>
+<video src="https://github.com/user-attachments/assets/3de5c4dc-205f-44c7-a6a5-3aa414e1cd09" controls></video>
+<sup><i><b>⚖️</b> <a href="https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=263">The Entertainer</a> by Scott Joplin (Public Domain), <a href="https://www.schristiancollins.com/generaluser.php">GeneralUser GS</a> SoundFont</i></sup>
 
 ## 🔥 Description
 
