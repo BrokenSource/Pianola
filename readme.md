@@ -43,8 +43,4 @@ All the benefits of the parent project [ShaderFlow](https://brokensrc.dev/shader
 
 🚧 Under maintenance 👷
 
-## ♻️ Community
-
-> Be featured here if you make any integrations or a channel using Pianola!
-
-_🌵 Such an empty place here, for now.._
+Run with <code><a href="https://docs.astral.sh/uv/">uvx</a> --from git+https://github.com/BrokenSource/Pianola pianola main</code> for now!
