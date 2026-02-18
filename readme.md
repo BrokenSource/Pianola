@@ -11,14 +11,16 @@
     <!-- <a href="https://github.com/BrokenSource/Pianola/releases/"><img src="https://img.shields.io/github/v/release/BrokenSource/Pianola?label=Release&color=light-green"></a> -->
     <!-- <a href="https://github.com/BrokenSource/Pianola/releases/"><img src="https://img.shields.io/github/downloads/BrokenSource/Pianola/total?label=Downloads&color=light-green"></a> -->
     <a href="https://discord.gg/KjqvcYwRHm"><img src="https://img.shields.io/discord/1184696441298485370?label=Discord&style=flat&color=purple"></a>
+  <!--
   <br>
   <b>
     Links •
     <a href="https://pianola.brokensrc.dev/get/">Installation</a> •
     <a href="https://pianola.brokensrc.dev/">Documentation</a> •
     <a href="https://github.com/BrokenSource/Pianola/issues">Issues</a> •
-    <a href="https://github.com/sponsors/Tremeschin/">Funding</a>
+    <a href="https://github.com/sponsors/Tremeschin/"></a>
   </b>
+  -->
   <br>
   <sub><small>⭐️ Consider starring the project to help it grow! ⭐️</small></sub>
   <br>
@@ -29,18 +31,18 @@
 
 ## 🔥 Description
 
-**Pianola** is an elegant and dynamic piano roll visualizer written in Python and GLSL Shaders, with a focus on quality, performance and visuals.
+**Pianola** is an elegant and dynamic piano roll visualizer written in Python and GLSL Shaders, with a focus on quality, performance and visuals - powered by the [shaderflow](https://github.com/BrokenSource/ShaderFlow) engine.
 
-- [x] **Visualize** your midi files in a beautiful and smooth piano roll animation, with unrestricted customization in the code and high quality output.
-
-- [x] **Spring** physics model governing many animations, providing a realistic and organic feel to the visuals - a unique innovation in the market.
-
-- [x] **Commercial** use allowed and encouraged - Simply attribute the project, and go the extra mile by [supporting](https://github.com/sponsors/Tremeschin/) this project and others directly!
-
-All the benefits of the parent project [ShaderFlow](https://brokensrc.dev/shaderflow/) are also present 🎉
+- [x] **Spring** physics model governing many animations, providing a realistic and organic feel to the visuals.
+- [x] **Unlimited** rendering with any framerate, resolution, or supersampling you want
+- [x] **Commercial** use allowed and encouraged, simply pick a [sponsorship](https://github.com/sponsors/Tremeschin/) tier!
 
 ## 📦 Getting Started
 
-🚧 Under maintenance 👷
+🚧 Under maintenance (reworking website), for now: 👷
 
-Run with <code><a href="https://docs.astral.sh/uv/">uvx</a> --from git+https://github.com/BrokenSource/Pianola pianola main</code> for now!
+Run with <code><a href="https://docs.astral.sh/uv/">uvx</a> --from git+https://github.com/BrokenSource/Pianola --python 3.13 pianola main</code>
+
+- Export videos with `pianola config -i file.mid main --ssaa 2 -o output.mp4`
+- Add your own audio `pianola config --audio file.flac (...)`
+- See options `pianola main --help`, `pianola config --help`
