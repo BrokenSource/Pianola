@@ -46,3 +46,12 @@ Run with <code><a href="https://docs.astral.sh/uv/">uvx</a> --from git+https://g
 - Export videos with `pianola config -i file.mid main --ssaa 2 -o output.mp4`
 - Add your own audio `pianola config --audio file.flac (...)`
 - See options `pianola main --help`, `pianola config --help`
+
+<br><br><br>
+
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=BrokenSource/Pianola&theme=dark"/>
+    <img src="https://api.star-history.com/svg?repos=BrokenSource/Pianola"/>
+  </picture>
+</div>
