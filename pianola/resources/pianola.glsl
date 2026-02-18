@@ -2,9 +2,11 @@
 
 #define WHITE_COLOR vec3(0.9)
 #define BLACK_COLOR vec3(0.2)
+#define PBAR_SIZE 0.015
 #define TOP_BORDER 0.03
 #define HORIZONTAL 0
 #define VIGNETTE 0
+#define BLEED 0.02
 
 // Channel colors definitions for keys and notes
 vec3 getChannelColor(int channel) {
@@ -50,8 +52,10 @@ Segment makeSegment(float x, int a, int b, int offset) {
 void main() {
     GetCamera(iCamera);
 
-    if (iCamera.out_of_bounds)
+    if (iCamera.out_of_bounds) {
+        fragColor = vec4(vec3(0.1), 1);
         return;
+    }
 
     fragColor = vec4(vec3(0.2), 1);
     vec2 uv = iCamera.astuv;
@@ -88,7 +92,7 @@ void main() {
     float blackHeight = iPianoHeight*(1 - iPianoBlackRatio);
 
     // Out of bounds
-    if (uv.y < -0.02) {}
+    if (uv.y < (-1) * BLEED) {}
 
     // Inside the piano keys
     else if (uv.y < iPianoHeight) {
@@ -229,7 +233,10 @@ void main() {
     #endif
 
     // Progress bar
-    if ((uv.y > 0.985) && (uv.x < iTau) && (iTime > 0)) {
+    if (
+        ((1 - PBAR_SIZE) < uv.y) && (uv.y < 1 + BLEED) &&
+        ((-1)*BLEED < uv.x) && (uv.x < iTau) && (uv.x < 1 + BLEED)
+    ) {
         fragColor.rgb *= 0.8 - 0.2 * smoothstep(0, 1, uv.x);
     }
 
