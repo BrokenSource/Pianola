@@ -22,26 +22,32 @@ class PianolaConfig(BaseModel):
     # Piano
 
     roll_time: Annotated[float, Option("--roll", "-r")] = 2.0
-    """How long the notes are visible"""
+    """How long falling notes are visible"""
 
-    height: Annotated[float, Option("--height", "-h")] = 0.275
-    """Height of the piano in the shader"""
+    piano_ratio: Annotated[float, Option("--height", "-h")] = 0.275
+    """Ratio of the screen used for the piano"""
 
     black_ratio: Annotated[float, Option("--black-ratio", "-b")] = 0.6
     """How long are black keys compared to white keys"""
 
     extra_keys: Annotated[int, Option("--extra-keys", "-e")] = 6
-    """Display the dynamic range plus this many keys on each side"""
+    """Extends the dynamic focus on playing notes"""
 
     # --------------------------------------|
     # Midi
 
     # Public Domain https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=263
-    midi: Annotated[Path, Option("--input", "-i")] = (RESOURCES/"entertainer.mid")
-    """Midi file for realtime or rendering input"""
+    midi: Annotated[Path, Option("--midi", "-i")] = (RESOURCES/"entertainer.mid")
+    """Midi file for realtime or rendering"""
+
+    midi_audio_gain: Annotated[float, Option("--midi-audio-gain", "-g")] = 1.5
+    """Master gain for rendered midi files"""
+
+    midi_audio_rate: Annotated[int, Option("--midi-audio-rate", "-r")] = 44100
+    """Sample rate for rendered midi files"""
 
     audio: Annotated[Optional[Path], Option("--audio", "-a")] = None
-    """The optional pre-rendered final video audio"""
+    """Optional pre-rendered final video audio"""
 
     # --------------------------------------|
     # SoundFont
@@ -97,7 +103,7 @@ class Pianola(ShaderScene):
         self.load_midi(self.config.midi)
 
         # Mirror common settings
-        self.piano.height = self.config.height
+        self.piano.height = self.config.piano_ratio
         self.piano.roll_time = self.config.roll_time
         self.piano.black_ratio = self.config.black_ratio
         self.piano.extra_keys = self.config.extra_keys
@@ -109,8 +115,8 @@ class Pianola(ShaderScene):
             subprocess.check_call((
                 "fluidsynth", "-qni",
                 "-F", self._audio.name,
-                "-r", "44100",
-                "-g", "1.8",
+                "-r", str(self.config.midi_audio_rate),
+                "-g", str(self.config.midi_audio_gain),
                 self.config.soundfont,
                 self.config.midi,
             ))
