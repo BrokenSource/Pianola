@@ -85,6 +85,7 @@ class Pianola(ShaderScene):
         self.audio = ShaderAudio(scene=self, name="iAudio")
         self.piano = ShaderPiano(scene=self)
         self.piano.fluid_install()
+        self.piano.fluid_start()
 
     def handle(self, message: ShaderMessage) -> None:
         ShaderScene.handle(self, message)
@@ -100,8 +101,8 @@ class Pianola(ShaderScene):
             self.setup()
 
     def setup(self) -> None:
-        self.piano.fluid_load(self.config.soundfont)
         self.load_midi(self.config.midi)
+        self.piano.fluid_load(self.config.soundfont)
 
         # Mirror common settings
         self.piano.height = self.config.piano_ratio
