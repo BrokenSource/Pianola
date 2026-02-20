@@ -55,7 +55,7 @@ class PianolaConfig(BaseModel):
     # Courtesy http://www.schristiancollins.com/generaluser.php
     soundfont: Annotated[Path, Option("--soundfont", "-s")] = pooch.retrieve(
         url="https://github.com/x42/gmsynth.lv2/raw/b899b78640e0b99ec84d939c51dea2058673a73a/sf2/GeneralUser_LV2.sf2",
-        known_hash="sha256:c278464b823daf9c52106c0957f752817da0e52964817ff682fe3a8d2f8446ce",
+        known_hash="xxh128:25586f570092806dccbf834d2c3517b9",
         path=pianola.directories.user_data_path,
         fname="GeneralUser_LV2.sf2",
     )
