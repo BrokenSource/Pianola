@@ -11,8 +11,8 @@ from shaderflow.piano import ShaderPiano
 from shaderflow.scene import ShaderScene
 from typer import Option
 
+import pianola
 from broken.path import BrokenPath
-from pianola import RESOURCES, __about__
 
 
 class PianolaConfig(BaseModel):
@@ -37,7 +37,7 @@ class PianolaConfig(BaseModel):
     # Midi
 
     # Public Domain https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=263
-    midi: Annotated[Path, Option("--midi", "-i")] = (RESOURCES/"entertainer.mid")
+    midi: Annotated[Path, Option("--midi", "-i")] = (pianola.resources/"entertainer.mid")
     """Midi file for realtime or rendering"""
 
     midi_audio_gain: Annotated[float, Option("--midi-audio-gain", "-g")] = 1.5
@@ -56,7 +56,9 @@ class PianolaConfig(BaseModel):
     soundfont: Annotated[Path, Option("--soundfont", "-s")] = pooch.retrieve(
         url="https://github.com/x42/gmsynth.lv2/raw/b899b78640e0b99ec84d939c51dea2058673a73a/sf2/GeneralUser_LV2.sf2",
         known_hash="sha256:c278464b823daf9c52106c0957f752817da0e52964817ff682fe3a8d2f8446ce",
-        fname="GeneralUser_LV2.sf2")
+        path=pianola.directories.user_data_path,
+        fname="GeneralUser_LV2.sf2",
+    )
     """SoundFont for realtime or rendering audio"""
 
 # ---------------------------------------------------------------------------- #
@@ -66,7 +68,7 @@ class Pianola(ShaderScene):
     config: PianolaConfig = Factory(PianolaConfig)
 
     def commands(self):
-        self.cli.description = __about__
+        self.cli.description = pianola.__about__
 
         with self.cli.panel(self.scene_panel):
             self.cli.command(self.config, name="config")
@@ -81,7 +83,7 @@ class Pianola(ShaderScene):
         # )
 
     def build(self):
-        self.shader.fragment = (RESOURCES/"pianola.glsl")
+        self.shader.fragment = (pianola.resources/"pianola.glsl")
         self.audio = ShaderAudio(scene=self, name="iAudio")
         self.piano = ShaderPiano(scene=self)
         self.piano.fluid_install()
