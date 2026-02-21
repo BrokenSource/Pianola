@@ -58,6 +58,7 @@ class PianolaConfig(BaseModel):
         known_hash="xxh128:25586f570092806dccbf834d2c3517b9",
         path=pianola.directories.user_data_path,
         fname="GeneralUser_LV2.sf2",
+        progressbar=True,
     )
     """SoundFont for realtime or rendering audio"""
 

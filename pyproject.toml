@@ -1,12 +1,3 @@
-[project.urls]
-Funding   = "https://github.com/sponsors/Tremeschin/"
-GitHub    = "https://github.com/BrokenSource/Pianola"
-Changelog = "https://pianola.brokensrc.dev/about/changelog"
-Contact   = "https://pianola.brokensrc.dev/about/contact"
-Docs      = "https://pianola.brokensrc.dev/docs"
-Download  = "https://pianola.brokensrc.dev/get"
-Homepage  = "https://pianola.brokensrc.dev"
-
 [project]
 name        = "pianola"
 description = "🎹 Smoothest piano roll visualizer"
@@ -30,9 +21,6 @@ requires = ["hatchling", "hook@git+https://github.com/BrokenSource/Hook/"]
 build-backend = "hatchling.build"
 
 [tool.hatch.metadata.hooks.plugin]
-
-[tool.hatch.build.targets.wheel]
-packages = ["pianola"]
 
 [tool.hatch.metadata]
 allow-direct-references = true

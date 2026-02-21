@@ -11,16 +11,14 @@
     <!-- <a href="https://github.com/BrokenSource/Pianola/releases/"><img src="https://img.shields.io/github/v/release/BrokenSource/Pianola?label=Release&color=light-green"></a> -->
     <!-- <a href="https://github.com/BrokenSource/Pianola/releases/"><img src="https://img.shields.io/github/downloads/BrokenSource/Pianola/total?label=Downloads&color=light-green"></a> -->
     <a href="https://discord.gg/KjqvcYwRHm"><img src="https://img.shields.io/discord/1184696441298485370?label=Discord&style=flat&color=purple"></a>
-  <!--
   <br>
   <b>
     Links •
-    <a href="https://pianola.brokensrc.dev/get/">Installation</a> •
+    <a href="https://github.com/BrokenSource/Pianola/">GitHub</a> •
     <a href="https://pianola.brokensrc.dev/">Documentation</a> •
-    <a href="https://github.com/BrokenSource/Pianola/issues">Issues</a> •
-    <a href="https://github.com/sponsors/Tremeschin/"></a>
+    <a href="https://pianola.brokensrc.dev/about/license">License</a> •
+    <a href="https://github.com/sponsors/Tremeschin/">Support</a>
   </b>
-  -->
   <br>
   <sub><small>⭐️ Consider starring the project to help it grow! ⭐️</small></sub>
   <br>
