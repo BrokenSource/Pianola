@@ -8,19 +8,14 @@ readme      = "readme.md"
 license     = "AGPL-3.0"
 requires-python = ">=3.10"
 dependencies = [
-    "shaderflow @ git+https://github.com/BrokenSource/ShaderFlow",
-    "dearlog @ git+https://github.com/BrokenSource/DearLog",
+    "dearlog",
     "pooch~=1.0",
+    "shaderflow",
 ]
 
 [project.scripts]
 pianola = "pianola.__main__:main"
 
 [build-system]
-requires = ["hatchling", "hook@git+https://github.com/BrokenSource/Hook/"]
+requires = ["hatchling"]
 build-backend = "hatchling.build"
-
-[tool.hatch.metadata.hooks.plugin]
-
-[tool.hatch.metadata]
-allow-direct-references = true

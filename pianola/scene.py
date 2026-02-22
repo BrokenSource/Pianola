@@ -12,7 +12,6 @@ from shaderflow.scene import ShaderScene
 from typer import Option
 
 import pianola
-from broken.path import BrokenPath
 
 
 class PianolaConfig(BaseModel):
@@ -94,7 +93,7 @@ class Pianola(ShaderScene):
         ShaderScene.handle(self, message)
 
         if isinstance(message, ShaderMessage.Window.FileDrop):
-            file = BrokenPath.get(message.files[0])
+            file = Path(message.files[0])
 
             if (file.suffix == ".mid"):
                 self.config.midi = file
