@@ -41,7 +41,7 @@
 
 Run with <code><a href="https://docs.astral.sh/uv/">uvx</a> --from git+https://github.com/BrokenSource/Pianola --python 3.13 pianola main</code>
 
-- Export videos with `pianola config -i file.mid main --ssaa 2 -o output.mp4`
+- Export videos with `pianola config --midi file.mid main --ssaa 2 --output output.mp4`
 - Add your own audio `pianola config --audio file.flac (...)`
 - See options `pianola main --help`, `pianola config --help`
 

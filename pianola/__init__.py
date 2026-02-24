@@ -19,4 +19,4 @@ directories = PlatformDirs(
     opinion=True,
 )
 
-from pianola.scene import Pianola
+from pianola.scene import PianolaScene

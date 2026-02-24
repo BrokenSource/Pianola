@@ -1,58 +1,58 @@
 import subprocess
 from pathlib import Path
-from typing import Annotated, Optional
+from typing import Annotated, Any, Optional
 
 import pooch
 from attrs import Factory, define
-from pydantic import BaseModel, ConfigDict
+from cyclopts import Parameter
 from shaderflow.audio import ShaderAudio
 from shaderflow.message import ShaderMessage
 from shaderflow.piano import ShaderPiano
 from shaderflow.scene import ShaderScene
-from typer import Option
 
 import pianola
 
 
-class PianolaConfig(BaseModel):
-    model_config = ConfigDict(use_attribute_docstrings=True)
+@define(kw_only=True)
+class PianolaConfig:
+    """Pianola style and inputs configuration"""
 
     # --------------------------------------|
     # Piano
 
-    roll_time: Annotated[float, Option("--roll", "-r")] = 2.0
+    rolltime: Annotated[float, Parameter(group="Piano")] = 2.0
     """How long falling notes are visible"""
 
-    piano_ratio: Annotated[float, Option("--height", "-h")] = 0.275
+    height: Annotated[float, Parameter(group="Piano")] = 0.275
     """Ratio of the screen used for the piano"""
 
-    black_ratio: Annotated[float, Option("--black-ratio", "-b")] = 0.6
+    black: Annotated[float, Parameter(group="Piano")] = 0.6
     """How long are black keys compared to white keys"""
 
-    extra_keys: Annotated[int, Option("--extra-keys", "-e")] = 6
+    sidekeys: Annotated[int, Parameter(group="Piano")] = 6
     """Extends the dynamic focus on playing notes"""
 
     # --------------------------------------|
     # Midi
 
+    audio: Annotated[Optional[Path], Parameter(group="Midi")] = None
+    """Optional pre-rendered final video audio"""
+
     # Public Domain https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=263
-    midi: Annotated[Path, Option("--midi", "-i")] = (pianola.resources/"entertainer.mid")
+    midi: Annotated[Path, Parameter(group="Midi")] = (pianola.resources/"entertainer.mid")
     """Midi file for realtime or rendering"""
 
-    midi_audio_gain: Annotated[float, Option("--midi-audio-gain", "-g")] = 1.5
+    midi_gain: Annotated[float, Parameter(group="Midi")] = 1.5
     """Master gain for rendered midi files"""
 
-    midi_audio_rate: Annotated[int, Option("--midi-audio-rate", "-r")] = 44100
+    samplerate: Annotated[int, Parameter(group="Midi")] = 44100
     """Sample rate for rendered midi files"""
-
-    audio: Annotated[Optional[Path], Option("--audio", "-a")] = None
-    """Optional pre-rendered final video audio"""
 
     # --------------------------------------|
     # SoundFont
 
     # Courtesy http://www.schristiancollins.com/generaluser.php
-    soundfont: Annotated[Path, Option("--soundfont", "-s")] = pooch.retrieve(
+    soundfont: Annotated[Path, Parameter(group="SoundFont")] = pooch.retrieve(
         url="https://github.com/x42/gmsynth.lv2/raw/b899b78640e0b99ec84d939c51dea2058673a73a/sf2/GeneralUser_LV2.sf2",
         known_hash="xxh128:25586f570092806dccbf834d2c3517b9",
         path=pianola.directories.user_data_path,
@@ -64,23 +64,21 @@ class PianolaConfig(BaseModel):
 # ---------------------------------------------------------------------------- #
 
 @define
-class Pianola(ShaderScene):
+class PianolaScene(ShaderScene):
     config: PianolaConfig = Factory(PianolaConfig)
 
+    def smartset(self, object: Any) -> Any:
+        if isinstance(object, PianolaConfig):
+            self.config = object
+        return object
+
     def commands(self):
-        self.cli.description = pianola.__about__
-
-        with self.cli.panel(self.scene_panel):
-            self.cli.command(self.config, name="config")
-
-    def load_midi(self, midi: Path) -> None:
-        self.piano.fluid_all_notes_off()
-        self.piano.clear()
-        self.piano.load_midi(midi)
-        # self.piano.normalize_velocities(
-        #     minimum=80,
-        #     maximum=120,
-        # )
+        self.cli.help = pianola.__about__
+        self.cli.version = pianola.__version__
+        self.cli.command(
+            PianolaConfig, name="config",
+            result_action=self.smartset
+        )
 
     def build(self):
         self.shader.fragment = (pianola.resources/"pianola.glsl")
@@ -103,14 +101,16 @@ class Pianola(ShaderScene):
             self.setup()
 
     def setup(self) -> None:
-        self.load_midi(self.config.midi)
+        self.piano.clear()
+        self.piano.fluid_all_notes_off()
+        self.piano.load_midi(self.config. midi)
         self.piano.fluid_load(self.config.soundfont)
 
         # Mirror common settings
-        self.piano.height = self.config.piano_ratio
-        self.piano.roll_time = self.config.roll_time
-        self.piano.black_ratio = self.config.black_ratio
-        self.piano.extra_keys = self.config.extra_keys
+        self.piano.height = self.config.height
+        self.piano.roll_time = self.config.rolltime
+        self.piano.black_ratio = self.config.black
+        self.piano.extra_keys = self.config.sidekeys
 
         # Render midi to audio when no audio is provided
         if (self.exporting) and (self.config.audio is None):
@@ -119,8 +119,8 @@ class Pianola(ShaderScene):
             subprocess.check_call((
                 "fluidsynth", "-qni",
                 "-F", self._audio.name,
-                "-r", str(self.config.midi_audio_rate),
-                "-g", str(self.config.midi_audio_gain),
+                "-r", str(self.config.samplerate),
+                "-g", str(self.config.midi_gain),
                 self.config.soundfont,
                 self.config.midi,
             ))
