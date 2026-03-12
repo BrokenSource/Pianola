@@ -2,7 +2,7 @@
 site_name = "Pianola"
 site_description = "🎹 Smoothest piano roll visualizer"
 site_author = "Tremeschin"
-site_url  = "https://pianola.brokensrc.dev/"
+site_url  = "https://pianola.tremeschin.com/"
 repo_url  = "https://github.com/BrokenSource/Pianola/"
 repo_name = "BrokenSource/Pianola"
 copyright = "&copy; CC BY-SA 4.0, <a href='https://github.com/Tremeschin/'>Tremeschin</a> 🇧🇷"

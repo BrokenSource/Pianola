@@ -8,15 +8,15 @@
     <a href="https://pypi.org/project/pianola/"><img src="https://img.shields.io/pypi/dw/pianola?label=Installs&color=blue"></a>
     <a href="https://github.com/BrokenSource/Pianola"><img src="https://img.shields.io/github/v/tag/BrokenSource/Pianola?label=GitHub&color=orange"></a>
     <a href="https://github.com/BrokenSource/Pianola/stargazers"><img src="https://img.shields.io/github/stars/BrokenSource/Pianola?label=Stars&style=flat&color=orange"></a>
-    <!-- <a href="https://github.com/BrokenSource/Pianola/releases/"><img src="https://img.shields.io/github/v/release/BrokenSource/Pianola?label=Release&color=light-green"></a> -->
-    <!-- <a href="https://github.com/BrokenSource/Pianola/releases/"><img src="https://img.shields.io/github/downloads/BrokenSource/Pianola/total?label=Downloads&color=light-green"></a> -->
+    <a href="https://github.com/BrokenSource/Pianola/releases/"><img src="https://img.shields.io/github/v/release/BrokenSource/Pianola?label=Pyaket&color=light-green"></a>
+    <a href="https://github.com/BrokenSource/Pianola/releases/"><img src="https://img.shields.io/github/downloads/BrokenSource/Pianola/total?label=%E2%86%93&color=light-green"></a>
     <a href="https://discord.gg/KjqvcYwRHm"><img src="https://img.shields.io/discord/1184696441298485370?label=Discord&style=flat&color=purple"></a>
   <br>
   <b>
     Links •
     <a href="https://github.com/BrokenSource/Pianola/">GitHub</a> •
-    <a href="https://pianola.brokensrc.dev/">Documentation</a> •
-    <a href="https://pianola.brokensrc.dev/about/license">License</a> •
+    <a href="https://pianola.tremeschin.com/">Documentation</a> •
+    <a href="https://pianola.tremeschin.com/about/license">License</a> •
     <a href="https://github.com/sponsors/Tremeschin/">Support</a>
   </b>
   <br>
