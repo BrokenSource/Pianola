@@ -12,4 +12,3 @@ scene.main(
     ssaa=2,
     fps=60,
 )
-

@@ -37,19 +37,23 @@
 
 ## 📦 Getting Started
 
-🚧 Under maintenance (reworking website), for now: 👷
+🚧 Under maintenance (reworking website) • For now, either: 👷
 
-Run with <code><a href="https://docs.astral.sh/uv/">uvx</a> --from git+https://github.com/BrokenSource/Pianola --python 3.13 pianola main</code>
+### Command line
+
+Run with <code><a href="https://docs.astral.sh/uv/">uvx</a> pianola main</code>
 
 - Export videos with `pianola config --midi file.mid main --ssaa 2 --output output.mp4`
 - Add your own audio `pianola config --audio file.flac (...)`
 - See options `pianola main --help`, `pianola config --help`
 
-<br><br><br>
+### Dependency
 
-<div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=BrokenSource/Pianola&theme=dark"/>
-    <img src="https://api.star-history.com/svg?repos=BrokenSource/Pianola"/>
-  </picture>
-</div>
+Add into your `pyproject.toml`:
+
+```toml
+[project]
+dependencies = ["pianola"]
+```
+
+Check usage in the <kbd><a href="https://github.com/BrokenSource/Pianola/tree/main/examples">Examples</a></kbd> directory!
