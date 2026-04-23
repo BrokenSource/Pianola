@@ -15,6 +15,9 @@ dependencies = [
     "shaderflow",
 ]
 
+[project.urls]
+GitHub = "https://github.com/BrokenSource/Pianola"
+
 [project.scripts]
 pianola = "pianola.__main__:main"
 

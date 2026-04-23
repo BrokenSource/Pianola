@@ -103,7 +103,7 @@ class PianolaScene(ShaderScene):
     def setup(self) -> None:
         self.piano.clear()
         self.piano.fluid_all_notes_off()
-        self.piano.load_midi(self.config. midi)
+        self.piano.load_midi(self.config.midi)
         self.piano.fluid_load(self.config.soundfont)
 
         # Mirror common settings
