@@ -1,6 +1,6 @@
 <div align="center">
   <img src="https://raw.githubusercontent.com/BrokenSource/Pianola/main/website/assets/images/logo.png" width="170">
-  <h1 style="margin-top: 0">Pianola</h1>
+  <h1>Pianola</h1>
   <span>🎹 Smoothest piano roll visualizer 🎹</span>
   <br>
   <br>
@@ -11,14 +11,6 @@
     <!-- <a href="https://github.com/BrokenSource/Pianola/releases/"><img src="https://img.shields.io/github/v/release/BrokenSource/Pianola?label=Pyaket&color=light-green"></a> -->
     <!-- <a href="https://github.com/BrokenSource/Pianola/releases/"><img src="https://img.shields.io/github/downloads/BrokenSource/Pianola/total?label=%E2%86%93&color=light-green"></a> -->
     <a href="https://discord.gg/KjqvcYwRHm"><img src="https://img.shields.io/discord/1184696441298485370?label=Discord&style=flat&color=purple"></a>
-  <br>
-  <b>
-    Links •
-    <a href="https://github.com/BrokenSource/Pianola/">GitHub</a> •
-    <a href="https://pianola.tremeschin.com/">Documentation</a> •
-    <a href="https://pianola.tremeschin.com/about/license">License</a> •
-    <a href="https://github.com/sponsors/Tremeschin/">Support</a>
-  </b>
   <br>
   <sub><small>⭐️ Consider starring the project to help it grow! ⭐️</small></sub>
   <br>
@@ -31,7 +23,7 @@
 
 **Pianola** is an elegant and dynamic piano roll visualizer written in Python and GLSL Shaders, with a focus on quality, performance and visuals - powered by the [shaderflow](https://github.com/BrokenSource/ShaderFlow) engine.
 
-- [x] **Spring** physics model governing many animations, providing a realistic and organic feel to the visuals.
+- [x] **Spring** physics model governing animations, providing a realistic and organic feel to the visuals.
 - [x] **Unlimited** rendering with any framerate, resolution, or supersampling you want
 - [x] **Commercial** use allowed and encouraged, simply pick a [sponsorship](https://github.com/sponsors/Tremeschin/) tier!
 

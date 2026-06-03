@@ -1,0 +1,24 @@
+name: release
+on:
+  push:
+    tags:
+      - "v*"
+jobs:
+  main:
+    name: Release
+    runs-on: ubuntu-latest
+    environment: release
+    permissions:
+      id-token: write
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+      - uses: astral-sh/setup-uv@v8.1.0
+      - run:  test "$(uv version --short)" = "${GITHUB_REF_NAME#v}"
+      - run:  uv build --wheel
+      - run:  uv publish
+      - uses: softprops/action-gh-release@v3
+        with:
+          name: Release ${{ github.ref_name }}
+          tag_name: ${{ github.ref_name }}
+          files: dist/*.whl
