@@ -2,8 +2,7 @@
 name        = "pianola"
 description = "🎹 Smoothest piano roll visualizer"
 authors     = [{name="Tremeschin"}]
-dynamic     = ["keywords"]
-version     = "0.10.0"
+dynamic     = ["version"]
 readme      = "readme.md"
 license     = "AGPL-3.0"
 requires-python = ">=3.10"
@@ -24,3 +23,7 @@ pianola = "pianola.__main__:main"
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+[tool.hatch.version]
+pattern = "(?P<version>.*)"
+path = ".version"
