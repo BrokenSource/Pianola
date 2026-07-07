@@ -1,10 +1,9 @@
 [project]
 name        = "pianola"
 description = "🎹 Smoothest piano roll visualizer"
-authors     = [{name="Tremeschin"}]
 version     = "0.10.0"
-readme      = "readme.md"
 license     = "AGPL-3.0"
+readme      = "readme.md"
 requires-python = ">=3.10"
 dependencies = [
     "cyclopts",
