@@ -21,6 +21,9 @@ favicon = "assets/images/logo.png"
 logo = "material/piano"
 repo = "fontawesome/brands/github"
 
+[project.plugins.social]
+enabled = true
+
 [[project.extra.social]]
 name = "Discord"
 icon = "fontawesome/brands/discord"
