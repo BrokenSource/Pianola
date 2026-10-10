@@ -5,6 +5,7 @@ site_description = "🎹 Smoothest piano roll visualizer"
 site_url  = "https://pianola.tremeschin.com/"
 repo_url  = "https://github.com/BrokenSource/Pianola/"
 repo_name = "BrokenSource/Pianola"
+extra_css = ["main.css"]
 docs_dir  = "website"
 nav = [
   {Origin = "https://tremeschin.com/"},
