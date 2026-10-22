@@ -1,6 +1,6 @@
 import subprocess
 from pathlib import Path
-from typing import Annotated, Any, Optional
+from typing import Annotated, Any, override
 
 import pooch
 from attrs import Factory, define
@@ -35,7 +35,7 @@ class PianolaConfig:
     # --------------------------------------|
     # Midi
 
-    audio: Annotated[Optional[Path], Parameter(group="Midi")] = None
+    audio: Annotated[Path | None, Parameter(group="Midi")] = None
     """Optional pre-rendered final video audio"""
 
     # Public Domain https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=263
@@ -72,6 +72,7 @@ class PianolaScene(ShaderScene):
             self.config = object
         return object
 
+    @override
     def commands(self):
         self.cli.help = pianola.__about__
         self.cli.version = pianola.__version__
@@ -80,6 +81,7 @@ class PianolaScene(ShaderScene):
             result_action=self.smartset
         )
 
+    @override
     def build(self):
         self.shader.fragment = (pianola.resources/"pianola.glsl")
         self.audio = ShaderAudio(scene=self, name="iAudio")
@@ -87,6 +89,7 @@ class PianolaScene(ShaderScene):
         self.piano.fluid_install()
         self.piano.fluid_start()
 
+    @override
     def handle(self, message: ShaderMessage) -> None:
         ShaderScene.handle(self, message)
 
@@ -100,6 +103,7 @@ class PianolaScene(ShaderScene):
 
             self.setup()
 
+    @override
     def setup(self) -> None:
         self.piano.clear()
         self.piano.fluid_all_notes_off()
@@ -126,6 +130,8 @@ class PianolaScene(ShaderScene):
             ))
             self.audio.file = self._audio.name
 
-    # Mouse drag time scroll to match piano roll size
+    @override
     def update(self) -> None:
+
+        # Mouse drag time scroll to match piano roll size
         self._mouse_drag_time_factor = (self.piano.roll_time/(self.piano.height - 1))*self.camera.zoom.value
